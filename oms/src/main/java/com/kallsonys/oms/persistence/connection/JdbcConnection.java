@@ -28,11 +28,28 @@ public class JdbcConnection {
 	private String user = "system";
 	private String pass = "Gmaj2060725!";
 
-	public void conexionBD() throws ClassNotFoundException, SQLException {
-		String url = "jdbc:oracle:thin@:" + this.server + ":" + this.port + ":" + this.type;
-
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		con = DriverManager.getConnection(url, this.user, this.pass);
+	public void conexionBD() {
+		String url = "jdbc:oracle:thin:@" + this.server + ":" + this.port + ":" + this.type;
+		
+		 try {
+	            Class.forName("oracle.jdbc.driver.OracleDriver");
+	            System.out.println("Oracle JDBC Driver Registered!");
+	            con = DriverManager.getConnection(url, this.user, this.pass);
+		        if (con != null) {
+		            System.out.println("You made it, take control your database now!");
+		        } else {
+		            System.out.println("Failed to make connection!");
+		        }
+	        } catch (ClassNotFoundException e) {
+	            System.err.println("Where is your Oracle JDBC Driver?");
+	            e.printStackTrace();
+	            return;
+	        }catch (SQLException e) {
+	            System.err.println("Connection Failed! Check output console");
+	            e.printStackTrace();
+	            return;
+	        }
+		
 	}
 
 	/**
