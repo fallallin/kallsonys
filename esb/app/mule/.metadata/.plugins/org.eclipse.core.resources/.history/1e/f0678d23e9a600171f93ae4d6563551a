@@ -1,0 +1,25 @@
+package co.com.kallsonys.payment.ws;
+
+import co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardFault1;
+import co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardRq;
+import co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardRs;
+import co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardFault1;
+import co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardRq;
+import co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardRs;
+
+public class CreditCardWebService implements ICreditCardWebService extends AbstractMessageTransformer {
+
+	@Override
+	public VerifyCreditCardRs verifyCreditCard(VerifyCreditCardRq verifyCreditCardRq) throws VerifyCreditCardFault1 {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public PaymentCreditCardRs paymentCreditCard(PaymentCreditCardRq paymentCreditCardRq)
+			throws PaymentCreditCardFault1 {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

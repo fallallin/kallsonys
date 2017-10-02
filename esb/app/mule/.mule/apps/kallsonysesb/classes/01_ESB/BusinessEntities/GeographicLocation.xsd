@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/geographiclocation" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/geographiclocation" elementFormDefault="unqualified">
+	<complexType name="GeographicLocation">
+		<sequence>
+			<element name="itemId" type="string" maxOccurs="1"/>
+			<element name="itemName" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="itemDescription" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+</schema>

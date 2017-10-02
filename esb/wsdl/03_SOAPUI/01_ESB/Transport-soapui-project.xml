@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9bbf584f-8083-4188-888f-84ea9c9243db" activeEnvironment="Default" name="Transport" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e73baf9d-e5a5-42f7-9712-66c839a7b7d5" wsaVersion="NONE" name="PaymentBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/payment/v1}PaymentBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/01_ESB/Message/03_Transport/wsdl/1.2/Transport.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Message\03_Transport\wsdl\1.2\Transport.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Message\03_Transport\wsdl\1.2\Transport.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="FactoriesQuotesOrders" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1">
+  <types>
+    <schema targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1">
+      <include schemaLocation="../../xsd/Transport.xsd"/>
+      <import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" schemaLocation="../../../../Common/exceptiongeneric.xsd"/>
+    </schema>
+  </types>
+  <wsdl:message name="Payment_in">
+    <wsdl:part name="PaymentRq" element="tns:PaymentRq"/>
+  </wsdl:message>
+  <wsdl:message name="Payment_out">
+    <wsdl:part name="PaymentRs" element="tns:PaymentRs"/>
+  </wsdl:message>
+  <wsdl:message name="Payment_fault1">
+    <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+  </wsdl:message>
+  <wsdl:portType name="PaymentPortType">
+    <wsdl:operation name="payment">
+      <wsdl:input name="Payment_Input" message="tns:Payment_in"/>
+      <wsdl:output name="Payment_Output" message="tns:Payment_out"/>
+      <wsdl:fault name="Payment_Fault" message="tns:Payment_fault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PaymentBinding" type="tns:PaymentPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="payment">
+      <soap12:operation soapAction="payment"/>
+      <wsdl:input name="Payment_Input">
+        <soap12:body parts="PaymentRq" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="Payment_Output">
+        <soap12:body parts="PaymentRs" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Payment_Fault">
+        <soap12:fault name="Payment_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PaymentService">
+    <wsdl:port name="PaymentPort" binding="tns:PaymentBinding">
+      <soap12:address location="http://localhost:8080/message/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Common\exceptiongeneric.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/common/exceptiongeneric">
+  <element name="exceptionGeneric" type="this:exceptionGeneric"/>
+  <complexType name="exceptionGeneric">
+    <sequence>
+      <element name="code" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="description" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="subCode" type="this:exceptionGeneric" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Message\03_Transport\xsd\Transport.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:crecar="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:this="http://www.kallsonys.com.co/cim/message/payment/v1">
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" schemaLocation="../../../BusinessEntities/CreditCard.xsd"/>
+  <element name="PaymentRq">
+    <complexType>
+      <complexContent>
+        <restriction base="crecar:CreditCard">
+          <sequence>
+            <element name="cardType" type="crecar:cardTypeEnum" minOccurs="1" maxOccurs="1"/>
+            <element name="cardNumber" type="string" minOccurs="1" maxOccurs="1"/>
+          </sequence>
+        </restriction>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="PaymentRs">
+    <complexType>
+      <complexContent>
+        <restriction base="crecar:CreditCard">
+          <sequence>
+            <element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
+          </sequence>
+        </restriction>
+      </complexContent>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\BusinessEntities\CreditCard.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/creditcard">
+  <complexType name="CreditCard">
+    <sequence>
+      <element name="cardType" type="this:cardTypeEnum" minOccurs="0" maxOccurs="1"/>
+      <element name="cardNumber" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="valid" type="boolean" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="cardTypeEnum">
+    <restriction base="string">
+      <enumeration value="DISCOVER"/>
+      <enumeration value="VISA"/>
+      <enumeration value="MASTERCARD"/>
+      <enumeration value="AMERICANEXPRESS"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/message/</con:endpoint></con:endpoints><con:operation id="b1c74aec-dab4-43a4-af73-350c240b9ab0" isOneWay="false" action="payment" name="payment" bindingOperationName="payment" type="Request-Response" outputName="Payment_Output" inputName="Payment_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fe068b9d-a83b-425a-b4a5-383ede2564b9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/message/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v1:PaymentRq>\r
+         <!--type: cardTypeEnum - enumeration: [DISCOVER,VISA,MASTERCARD,AMERICANEXPRESS]-->\r
+         <cardType>?</cardType>\r
+         <!--type: string-->\r
+         <cardNumber>?</cardNumber>\r
+      </v1:PaymentRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/PaymentPortType/Payment_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

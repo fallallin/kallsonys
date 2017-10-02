@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.kallsonys.com.co/cim/businessentities/company" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:cc="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/paymentcc" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/paymentcc" elementFormDefault="unqualified">
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/company" schemaLocation="Company.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="Order.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" schemaLocation="CreditCard.xsd"/>
+	<!-- Payment Entity  -->
+	<complexType name="PaymentCC_v1.0">
+		<sequence>
+			<element name="customerInfo" type="c:Company" minOccurs="0"/>
+			<element name="orderInfo" type="order:OrderInfo_v1.0" minOccurs="0"/>
+			<element name="creditCardInfo" type="cc:CreditCard" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

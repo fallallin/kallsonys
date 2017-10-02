@@ -1,0 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.kallsonys.payment.ws;
+
+import javax.jws.WebService;
+
+/**
+ *
+ * @author ohuertas
+ */
+@WebService
+public interface ICreditCardServiceWSDL {
+    public co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardRs verifyCreditCard(co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardRq verifyCreditCardRq) throws co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardFault1;
+
+    public co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardRs paymentCreditCard(co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardRq paymentCreditCardRq) throws co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardFault1;
+}

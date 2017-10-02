@@ -1,0 +1,13 @@
+<v1:PaymentCreditCardRq xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">
+   <customerInfo>
+      <companyId>#[json:idCustomer]</companyId>
+   </customerInfo>
+   <orderInfo>
+      <orderId>#[json:orderId]</orderId>
+      <orderPrice>#[json:orderId]</orderPrice>
+   </orderInfo>
+   <creditCardInfo>
+      <cardType>#[json:orderId]</cardType>
+      <cardNumber>#[json:orderId]</cardNumber>
+   </creditCardInfo>
+</v1:PaymentCreditCardRq>

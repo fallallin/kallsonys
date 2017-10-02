@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<definitions name="DHLShipmentService" targetNamespace="http://dhl.com.co/" xmlns:tns="http://dhl.com.co/"
+xmlns:xsd1="http://dhl.com.co/DHLShipmentService"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" >
+	<types>
+		<schema targetNamespace="http://dhl.com.co/DHLShipmentService" xmlns="http://www.w3.org/2001/XMLSchema">
+			<element name="fullfillShipment">
+				<complexType>
+					<sequence>
+						<element name="shipment" type="xsd1:Shipment" minOccurs="1"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="fullfillShipmentResponse">
+				<complexType>
+					<sequence>
+						<element name="fullfillShipmentResult" type="boolean"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="checkShipmentStatus">
+				<complexType>
+					<sequence>
+						<element name="orderId" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="checkShipmentStatusResponse">
+				<complexType>
+					<sequence>
+						<element name="checkShipmentStatusResult" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<complexType name="Shipment">
+				<sequence>
+					<element name="partner" type="string" minOccurs="1"/>
+					<element name="supplier" type="string" minOccurs="1"/>
+					<element name="orderId" type="string" minOccurs="1"/>
+					<element name="addresseeName" type="string" minOccurs="1"/>
+					<element name="addresseeLastName" type="string" minOccurs="1"/>
+					<element name="country" type="string" minOccurs="1"/>
+					<element name="city" type="string" minOccurs="1"/>
+					<element name="street" type="string" minOccurs="1"/>
+					<element name="state" type="string" minOccurs="1"/>
+					<element name="zipcode" type="string" minOccurs="1"/>
+					<element name="items" type="xsd1:Collection" minOccurs="1"/>
+				</sequence>
+			</complexType>
+			<complexType name="Item">
+				<sequence>
+					<element name="itemID" type="string" minOccurs="1"/>
+					<element name="prodID" type="string" minOccurs="1"/>
+					<element name="productName" type="string" minOccurs="1"/>
+					<element name="partNumber" type="string" minOccurs="1"/>
+					<element name="price" type="int" minOccurs="1"/>
+					<element name="quantity" type="int" minOccurs="1"/>
+				</sequence>
+			</complexType>
+			<complexType name="Collection">
+				<sequence>
+					<element name="item" type="xsd1:Item" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="fullfillShipmentSoapIn">
+		<part name="parameters" element="xsd1:fullfillShipment"/>
+	</message>
+	<message name="fullfillShipmentSoapOut">
+		<part name="parameters" element="xsd1:fullfillShipmentResponse"/>
+	</message>
+	<message name="checkShipmentStatusIn">
+		<part name="parameters" element="xsd1:checkShipmentStatus"/>
+	</message>
+	<message name="checkShipmentStatusOut">
+		<part name="parameters" element="xsd1:checkShipmentStatusResponse"/>
+	</message>
+	<portType name="DHLShipmentServicePort">
+		<operation name="fullfillShipment">
+			<input message="tns:fullfillShipmentSoapIn"/>
+			<output message="tns:fullfillShipmentSoapOut"/>
+		</operation>
+		<operation name="checkShipmentStatus">
+			<input message="tns:checkShipmentStatusIn"/>
+			<output message="tns:checkShipmentStatusOut"/>
+		</operation>
+	</portType>
+	<binding name="DHLShipmentServiceBinding" type="tns:DHLShipmentServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="fullfillShipment">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="checkShipmentStatus">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="DHLShipmentService">
+		<documentation>DHL Shipment Service</documentation>
+		<port name="DHLShipmentServicePort" binding="tns:DHLShipmentServiceBinding">
+			<soap:address location="http://localhost:8080/DHLApp/DHLShipmentService"/>
+		</port>
+	</service>
+</definitions>

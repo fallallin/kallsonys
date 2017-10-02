@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/shipment" elementFormDefault="unqualified">
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="Item.xsd"/>
+	<complexType name="Shipment">
+		<sequence>
+			<element name="orderId" type="string" minOccurs="1"/>
+			<element name="addresseeName" type="string" minOccurs="1"/>
+			<element name="addresseeLastName" type="string" minOccurs="1"/>
+			<element name="country" type="string" minOccurs="1"/>
+			<element name="state" type="string" minOccurs="1"/>
+			<element name="city" type="string" minOccurs="1"/>
+			<element name="neighborhood" type="string" minOccurs="1"/>
+			<element name="street" type="string" minOccurs="1"/>
+			<element name="zipcode" type="string" minOccurs="1"/>
+			<element name="items" type="this:ItemCollection" minOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="ItemCollection">
+		<sequence>
+			<element name="item" type="item:Item" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</schema>

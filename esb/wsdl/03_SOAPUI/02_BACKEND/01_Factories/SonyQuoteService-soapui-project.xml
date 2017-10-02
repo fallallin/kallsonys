@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="77348f0b-e9f0-4987-b150-091e52b23079" activeEnvironment="Default" name="SonyQuoteService" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="78bfbee7-0638-4317-bc20-1d7e249e358a" wsaVersion="NONE" name="SonyQuoteServiceBinding" type="wsdl" bindingName="{http://sony.com.co/}SonyQuoteServiceBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/WebSony/SonyQuoteService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/WebSony/SonyQuoteService?wsdl"><con:part><con:url>http://localhost:8080/WebSony/SonyQuoteService?wsdl</con:url><con:content><![CDATA[<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown.-->
+<definitions name="SonyQuoteService" targetNamespace="http://sony.com.co/" xmlns:tns="http://sony.com.co/" xmlns:xsd1="http://sony.com.co/SonyQuoteService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <types>
+    <schema targetNamespace="http://sony.com.co/SonyQuoteService" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="Item">
+        <sequence>
+          <element name="itemId" type="string" nillable="true"/>
+          <element name="quantity" type="long"/>
+        </sequence>
+      </complexType>
+      <complexType name="Quote">
+        <sequence>
+          <element name="supplierPrice" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="SonyQuoteServiceProcessRequest">
+        <complexType>
+          <sequence>
+            <element name="orderId" type="string" nillable="true"/>
+            <element name="items" type="xsd1:Item" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SonyQuoteServiceProcessResponse">
+        <complexType>
+          <sequence>
+            <element name="result" type="xsd1:Quote" nillable="true"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="orderQuouteElement">
+        <complexType>
+          <sequence>
+            <element name="orderId" type="string" nillable="true"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="orderQuouteResponseElement">
+        <complexType>
+          <sequence>
+            <element name="result" type="boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="SonyQuoteServiceRequestMessage">
+    <part name="payload" element="xsd1:SonyQuoteServiceProcessRequest"/>
+  </message>
+  <message name="SonyQuoteServiceResponseMessage">
+    <part name="payload" element="xsd1:SonyQuoteServiceProcessResponse"/>
+  </message>
+  <message name="SonyOrderService_orderQuoute">
+    <part name="parameters" element="xsd1:orderQuouteElement"/>
+  </message>
+  <message name="SonyOrderService_orderQuouteResponse">
+    <part name="parameters" element="xsd1:orderQuouteResponseElement"/>
+  </message>
+  <portType name="SonyQuoteService">
+    <operation name="orderQuoute">
+      <input message="tns:SonyQuoteServiceRequestMessage"/>
+      <output message="tns:SonyQuoteServiceResponseMessage"/>
+    </operation>
+    <operation name="validateOrderQuoute">
+      <input message="tns:SonyOrderService_orderQuoute"/>
+      <output message="tns:SonyOrderService_orderQuouteResponse"/>
+    </operation>
+  </portType>
+  <binding name="SonyQuoteServiceBinding" type="tns:SonyQuoteService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="orderQuoute">
+      <soap:operation soapAction="urn:#orderQuoute"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateOrderQuoute">
+      <soap:operation soapAction="http://example.com/validateOrderQuoute"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SonyQuoteService">
+    <documentation>Sony service</documentation>
+    <port name="SonyQuoteServicePort" binding="tns:SonyQuoteServiceBinding">
+      <soap:address location="http://localhost:8080/WebSony/SonyQuoteService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7001/SonyFactory/SonyQuoteService</con:endpoint></con:endpoints><con:operation id="97e3672b-3596-4e39-b80a-670f4cd1d0ed" isOneWay="false" action="urn:#orderQuoute" name="orderQuoute" bindingOperationName="orderQuoute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca611d73-487c-45a9-a991-45d67794b0e9" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/SonyFactory/SonyQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <son:SonyQuoteServiceProcessRequest>\r
+         <!--type: string-->\r
+         <orderId>123</orderId>\r
+         <!--Zero or more repetitions:-->\r
+         <items>\r
+            <!--type: string-->\r
+            <itemId>1</itemId>\r
+            <!--type: long-->\r
+            <quantity>80</quantity>\r
+         </items>
+         <items>
+            <itemId>34</itemId>
+            <quantity>90</quantity>
+         </items>
+         <items>
+            <itemId>34</itemId>
+            <quantity>90</quantity>
+         </items>
+      </son:SonyQuoteServiceProcessRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/><con:wsrmConfig version="1.2"/></con:call><con:call id="49fc06ce-1e6b-4d0a-80a5-2b68e6d50bbc" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/SonyFactory/SonyQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <son:SonyQuoteServiceProcessRequest>\r
+         <!--type: string-->\r
+         <orderId>?</orderId>\r
+         <!--Zero or more repetitions:-->\r
+         <items>\r
+            <!--type: string-->\r
+            <itemId>?</itemId>\r
+            <!--type: long-->\r
+            <quantity>?</quantity>\r
+         </items>\r
+      </son:SonyQuoteServiceProcessRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="254599d0-3f5b-4ce2-b35c-61d2ab08f85d" isOneWay="false" action="http://example.com/validateOrderQuoute" name="validateOrderQuoute" bindingOperationName="validateOrderQuoute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ede48dd9-80ce-4c54-b3d7-b41623a4d816" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/SonyFactory/SonyQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <son:orderQuouteElement>\r
+         <!--type: string-->\r
+         <orderId>1</orderId>\r
+      </son:orderQuouteElement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/validateOrderQuoute"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="2609f732-0d88-429b-93a3-2eebfdcd37c8" port="8088" path="/mockSonyQuoteServiceBinding" host="ASW1817" name="SonyQuoteServiceBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="orderQuoute" id="cffdfb3b-58d5-4274-a9be-2221474f9f77" interface="SonyQuoteServiceBinding" operation="orderQuoute"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="1f7a0f0f-82cd-4676-bf66-9481159d8f65" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <son:SonyQuoteServiceProcessResponse>
+         <result>
+            <!--type: string-->
+            <supplierPrice>?</supplierPrice>
+         </result>
+      </son:SonyQuoteServiceProcessResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="validateOrderQuoute" id="a4b688a4-5008-4068-8989-5722bdf6fd98" interface="SonyQuoteServiceBinding" operation="validateOrderQuoute"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="194bb673-27b3-4022-9e53-5e71d43c08b1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <son:orderQuouteResponseElement>
+         <!--type: boolean-->
+         <result>?</result>
+      </son:orderQuouteResponseElement>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/validateOrderQuoute"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

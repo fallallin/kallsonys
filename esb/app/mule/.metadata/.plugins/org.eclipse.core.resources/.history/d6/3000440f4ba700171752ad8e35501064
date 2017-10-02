@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://payment.com/ValidateCreditCard">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <val:Payment>
+         <idOrder>#[flowVars.vl_orderId]</idOrder>
+		 <CreditCard>
+		    <ccType>#[flowVars.vl_cardType]</ccType>
+		    <ccNum>#[flowVars.vl_cardNumber]</ccNum>
+		 </CreditCard>
+		 <idCustomer>#[flowVars.vl_companyId]</idCustomer>
+		 <purchaseValue>#[flowVars.vl_orderPrice]</purchaseValue>
+      </val:Payment>
+   </soapenv:Body>
+</soapenv:Envelope>

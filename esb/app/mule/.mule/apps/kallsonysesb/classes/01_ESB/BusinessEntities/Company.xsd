@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/company" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/company" elementFormDefault="unqualified">
+	<complexType name="Company">
+		<sequence>
+			<element name="companyId" type="tns:CompanyTypeEnum" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<simpleType name="CompanyTypeEnum">
+		<restriction base="string">
+			<enumeration value="KALLSONYS"/>
+		</restriction>
+	</simpleType>
+</schema>

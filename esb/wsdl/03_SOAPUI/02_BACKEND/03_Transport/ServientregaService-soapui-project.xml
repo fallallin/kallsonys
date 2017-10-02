@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7b247142-b70d-46f8-bd6e-536b52aa5dcb" activeEnvironment="Default" name="ServientregaService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="59fa803c-b9e1-49cd-9c7c-76394f008a1c" wadlVersion="http://wadl.dev.java.net/2009/02" name="ServientregaService" type="rest" basePath="/rest" definitionUrl="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/02_BACKEND/03_Transport/ServientregaService.wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/02_BACKEND/03_Transport/ServientregaService.wadl"><con:part><con:url>file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/02_BACKEND/03_Transport/ServientregaService.wadl</con:url><con:content><![CDATA[<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://servientrega.com.co/">
+  <doc xml:lang="en" title="ServientregaService"/>
+  <resources base="http://localhost:7080/rest">
+    <resource path="/verificarEstadoEnvio" id="verificarEstadoEnvio">
+      <doc xml:lang="en" title="verificarEstadoEnvio"/>
+      <!--Lista de parametros Header para el consumo del servicio-->
+      <method name="GET" id="verificarEstadoEnvio">
+        <doc xml:lang="en" title="verificarEstadoEnvio"/>
+        <request>
+          <doc>{
+							"Body": 
+							{
+								"verificarEstadoEnvioRequest": 
+								{
+									"orderId": ""
+								}
+							}
+						}</doc>
+          <representation mediaType="application/json" element="tns:verificarEstadoEnvio"/>
+        </request>
+        <response>
+          <doc>{
+							"Body": 
+							{
+								"verificarEstadoEnvioResponse":
+								{
+									"verificarEstadoEnvioResult": "No existe"
+								}
+							}
+						}</doc>
+        </response>
+      </method>
+    </resource>
+    <resource path="/cumplirConEnvio" id="cumplirConEnvio">
+      <doc xml:lang="en" title="cumplirConEnvio"/>
+      <!--Lista de parametros Header para el consumo del servicio-->
+      <method name="POST" id="cumplirConEnvio">
+        <doc xml:lang="en" title="cumplirConEnvio"/>
+        <request>
+          <doc>{
+							"Body":	
+							{
+								"cumplirConEnvioRequest": 
+								{
+									orderId: "",
+									nombre: "",
+									apellido: "",
+									direccion: "",
+									departamento: "",
+									ciudad: "",
+									zipCode: "",
+									estadoEnvio: "",
+									listadoElementos:
+									{
+										 itemId: 0,
+										 idProducto: 0,
+										 nombreProducto: "",
+										 numeroParte: "",
+										 precio: "",
+										 cantidad: 0
+									}
+								}
+							}
+						}</doc>
+          <representation mediaType="application/json" element="tns:cumplirConEnvio"/>
+        </request>
+        <response>
+          <doc>{
+							"Body": 
+							{"cumplirConEnvioResponse":    
+								{
+									"cumplirConEnvioResult": "true"
+								}
+							}
+						}</doc>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>]]></con:content><con:type>http://wadl.dev.java.net/2009/02</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7080</con:endpoint></con:endpoints><con:resource name="verificarEstadoEnvio" path="/verificarEstadoEnvio" id="b13ba354-817e-4349-8bd7-03c2d4e7d852"><con:settings/><con:parameters/><con:method name="verificarEstadoEnvio" id="afe9200c-226b-4135-90c2-8f3bdfe8238a" method="GET"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xmlns:ser="http://servientrega.com.co/">ser:verificarEstadoEnvio</con:element><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="322a33b0-d29b-4e7b-8419-ba9232ad2bc4" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:7080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="cumplirConEnvio" path="/cumplirConEnvio" id="006cb59f-55d8-4e47-b7c9-a3a09b928250"><con:settings/><con:parameters/><con:method name="cumplirConEnvio" id="4b2f723e-ebf9-450d-87c3-8285f70b5068" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST" id=""><con:mediaType>application/json</con:mediaType><con:params/><con:element xmlns:ser="http://servientrega.com.co/">ser:cumplirConEnvio</con:element><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" id="489c79ad-1bd5-49ed-8b8f-ddb615dfef04" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>http://localhost:7080</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<definitions xmlns:tns="http://deprisa.com.co/" xmlns:xsd1="http://deprisa.com.co/DeprisaService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="DeprisaService" targetNamespace="http://deprisa.com.co/">
+	<types>
+		<schema targetNamespace="http://deprisa.com.co/DeprisaService" xmlns="http://www.w3.org/2001/XMLSchema">
+			<element name="cumplirConEnvio">
+				<complexType>
+					<sequence>
+						<element name="envio" type="xsd1:Envio" minOccurs="1"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="cumplirConEnvioResponse">
+				<complexType>
+					<sequence>
+						<element name="cumplirConEnvioResult" type="boolean"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="verificarEstadoEnvio">
+				<complexType>
+					<sequence>
+						<element name="orderId" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="verificarEstadoEnvioResponse">
+				<complexType>
+					<sequence>
+						<element name="verificarEstadoEnvioResult" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<complexType name="Envio">
+				<sequence>
+					<element name="orderId" type="string" minOccurs="1"/>
+					<element name="apellido" type="string" minOccurs="1"/>
+					<element name="nombre" type="string" minOccurs="1"/>
+					<element name="direccion" type="string" minOccurs="1"/>
+					<element name="ciudad" type="string" minOccurs="1"/>
+					<element name="departamento" type="string" minOccurs="1"/>
+					<element name="barrio" type="string" minOccurs="1"/>
+					<element name="estado" type="string" minOccurs="1"/>
+					<element name="items" type="xsd1:Collection" minOccurs="1"/>
+				</sequence>
+			</complexType>
+			<complexType name="Item">
+				<sequence>
+					<element name="itemID" type="string" minOccurs="1"/>
+					<element name="prodID" type="string" minOccurs="1"/>
+					<element name="nombreProducto" type="string" minOccurs="1"/>
+					<element name="numeroParte" type="string" minOccurs="1"/>
+					<element name="precio" type="int" minOccurs="1"/>
+					<element name="cantidad" type="int" minOccurs="1"/>
+				</sequence>
+			</complexType>
+			<complexType name="Collection">
+				<sequence>
+					<element name="item" type="xsd1:Item" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="cumplirConEnvioSoapIn">
+		<part name="parameters" element="xsd1:cumplirConEnvio"/>
+	</message>
+	<message name="cumplirConEnvioSoapOut">
+		<part name="parameters" element="xsd1:cumplirConEnvioResponse"/>
+	</message>
+	<message name="verificarEstadoEnvioIn">
+		<part name="parameters" element="xsd1:verificarEstadoEnvio"/>
+	</message>
+	<message name="verificarEstadoEnvioOut">
+		<part name="parameters" element="xsd1:verificarEstadoEnvioResponse"/>
+	</message>
+	<portType name="DeprisaServicePort">
+		<operation name="cumplirConEnvio">
+			<input message="tns:cumplirConEnvioSoapIn"/>
+			<output message="tns:cumplirConEnvioSoapOut"/>
+		</operation>
+		<operation name="verificarEstadoEnvio">
+			<input message="tns:verificarEstadoEnvioIn"/>
+			<output message="tns:verificarEstadoEnvioOut"/>
+		</operation>
+	</portType>
+	<binding name="DeprisaServiceBinding" type="tns:DeprisaServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="cumplirConEnvio">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="verificarEstadoEnvio">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="DeprisaService">
+		<documentation>Deprisa Service</documentation>
+		<port name="DeprisaServicePort" binding="tns:DeprisaServiceBinding">
+			<soap:address location="http://localhost:8080/DeprisaApp/DeprisaService"/>
+		</port>
+	</service>
+</definitions>

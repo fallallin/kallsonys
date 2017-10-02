@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-workspace name="KALLSONY_BACKEND" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:project name="RapidService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/01_Factories/RapidService-soapui-project.xml</con:project>
+  <con:project name="SonyQuoteService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/01_Factories/SonyQuoteService-soapui-project.xml</con:project>
+  <con:project name="DHLService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/03_Transport/DHLService-soapui-project.xml</con:project>
+  <con:project name="DeprisaService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/03_Transport/DeprisaService-soapui-project.xml</con:project>
+  <con:project name="ServientregaService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/03_Transport/ServientregaService-soapui-project.xml</con:project>
+  <con:project name="Contrato_regla_ventas">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/04_BRMS/Contrato-regla-ventas-soapui-project.xml</con:project>
+  <con:project name="PaymentService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/02_Payment/PaymentService-soapui-project.xml</con:project>
+  <con:project name="TestPayment">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/02_Payment/TestPayment-soapui-project.xml</con:project>
+  <con:project name="TestSony">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/01_Factories/TestSony-soapui-project.xml</con:project>
+  <con:collectInfoForSupport>false</con:collectInfoForSupport>
+</con:soapui-workspace>

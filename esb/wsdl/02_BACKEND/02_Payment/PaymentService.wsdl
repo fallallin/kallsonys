@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<definitions xmlns:tns="http://payment.com" xmlns:types="http://payment.com/ValidateCreditCard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="ValidateCreditCard" targetNamespace="http://payment.com">
+	<types>
+		<schema targetNamespace="http://payment.com/ValidateCreditCard" xmlns="http://www.w3.org/2001/XMLSchema">
+			<complexType name="CreditCardType">
+				<sequence>
+					<element name="ccType" type="string"/>
+					<element name="ccNum" type="string"/>
+				</sequence>
+			</complexType>
+			<complexType name="PaymentType">
+				<sequence>
+					<element name="idOrder" type="string"/>
+					<element name="CreditCard" type="types:CreditCardType"/>
+					<element name="idCustomer" type="string"/>
+					<element name="purchaseValue" type="decimal"/>
+				</sequence>
+			</complexType>
+			<element name="CreditCard" type="types:CreditCardType"/>
+			<element name="Payment" type="types:PaymentType"/>
+			<element name="valid" type="boolean"/>
+			<element name="isPaid" type="boolean"/>
+			<element name="error" type="string"/>
+		</schema>
+	</types>
+	<message name="CreditCardValidationRequestMessage">
+		<part name="CreditCard" element="types:CreditCard"/>
+	</message>
+	<message name="CreditCardValidationResponseMessage">
+		<part name="valid" element="types:valid"/>
+	</message>
+	<message name="CreditCardValidationFaultMessage">
+		<part name="error" element="types:error"/>
+	</message>
+	<message name="PaymentRequestMessage">
+		<part name="CreditCard" element="types:Payment"/>
+	</message>
+	<message name="PaymentResponseMessage">
+		<part name="payment" element="types:isPaid"/>
+	</message>
+	<message name="PaymentFaultMessage">
+		<part name="error" element="types:error"/>
+	</message>
+	<portType name="ValidateCreditCard">
+		<operation name="VerifyCC">
+			<input name="CreditCardInfo_Input" message="tns:CreditCardValidationRequestMessage"/>
+			<output name="CreditCardInfo_Output" message="tns:CreditCardValidationResponseMessage"/>
+			<fault name="CreditCardValidationFaultMessage" message="tns:CreditCardValidationFaultMessage"/>
+		</operation>
+		<operation name="Payment">
+			<input name="Payment_Input" message="tns:PaymentRequestMessage"/>
+			<output name="Payment_Output" message="tns:PaymentResponseMessage"/>
+			<fault name="PaymentFaultMessage" message="tns:PaymentFaultMessage"/>
+		</operation>
+	</portType>
+	<binding name="ValidateCreditCardBinding" type="tns:ValidateCreditCard">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="VerifyCC">
+			<soap:operation soapAction="VerifyCC"/>
+			<input name="CreditCardInfo_Input">
+				<soap:body use="literal"/>
+			</input>
+			<output name="CreditCardInfo_Output">
+				<soap:body use="literal"/>
+			</output>
+			<fault name="CreditCardValidationFaultMessage">
+				<soap:fault name="CreditCardValidationFaultMessage" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="Payment">
+			<soap:operation soapAction="PaymentAction"/>
+			<input name="Payment_Input">
+				<soap:body use="literal"/>
+			</input>
+			<output name="Payment_Output">
+				<soap:body use="literal"/>
+			</output>
+			<fault name="PaymentFaultMessage">
+				<soap:fault name="PaymentFaultMessage" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="ValidateCreditCard">
+		<documentation>Payment service</documentation>
+		<port name="ValidateCreditCard" binding="tns:ValidateCreditCardBinding">
+			<soap:address location="http://localhost:8080/PaymentApp/ValidateCreditCard"/>
+		</port>
+	</service>
+</definitions>

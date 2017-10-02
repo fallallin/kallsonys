@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "WSCPayment",
+            "typeId": "Payment"
+        }
+    },
+    "outputMessageMetadata": {},
+    "id": "d4365024-fd1f-4109-8378-4d532d0efce9",
+    "version": "5.2.0.0"
+}

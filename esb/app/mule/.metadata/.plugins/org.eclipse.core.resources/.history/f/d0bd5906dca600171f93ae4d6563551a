@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.kallsonys.payment.ws;
+
+import javax.jws.WebService;
+import javax.xml.ws.BindingType;
+
+/**
+ *
+ * @author ohuertas
+ */
+@WebService(serviceName = "CreditCardService", portName = "CreditCardPort", endpointInterface = "co.com.kallsonys.cim.message.payment.v1.CreditCardPortType", targetNamespace = "http://www.kallsonys.com.co/cim/message/payment/v1", wsdlLocation = "WEB-INF/wsdl/CreditCardServiceWSDL/Payment.wsdl")
+@BindingType(value = "http://java.sun.com/xml/ns/jaxws/2003/05/soap/bindings/HTTP/")
+public class CreditCardServiceWSDL implements ICreditCardServiceWSDL {
+
+    @Override
+    public co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardRs verifyCreditCard(co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardRq verifyCreditCardRq) throws co.com.kallsonys.cim.message.payment.v1.VerifyCreditCardFault1 {
+        //TODO implement this method
+        throw new UnsupportedOperationException("Not implemented yet.");
+    }
+    
+    @Override
+    public co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardRs paymentCreditCard(co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardRq paymentCreditCardRq) throws co.com.kallsonys.cim.message.payment.v1.PaymentCreditCardFault1 {
+        //TODO implement this method
+        throw new UnsupportedOperationException("Not implemented yet.");
+    }
+    
+}

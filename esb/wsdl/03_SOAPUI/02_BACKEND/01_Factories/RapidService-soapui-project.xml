@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="91e04744-8413-495b-81e9-fae3796fd8cb" activeEnvironment="Default" name="RapidService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="19a0f94c-c558-485d-a1f0-22073d994553" wsaVersion="NONE" name="RapidServiceQuoteServiceBinding" type="wsdl" bindingName="{http://RapidService.com.co/}RapidServiceQuoteServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/PUJ/01_Asignaturas/07_Implementacion/03_Talleres/01_WebService/RapidService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\PUJ\01_Asignaturas\07_Implementacion\03_Talleres\01_WebService\RapidService.wsdl"><con:part><con:url>file:\D:\PUJ\01_Asignaturas\07_Implementacion\03_Talleres\01_WebService\RapidService.wsdl</con:url><con:content><![CDATA[<definitions name="RapidServiceQuoteService" targetNamespace="http://RapidService.com.co/" xmlns:tns="http://RapidService.com.co/" xmlns:xsd1="http://RapidService.com.co/RapidServiceQuoteService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <types>
+    <schema targetNamespace="http://RapidService.com.co/RapidServiceQuoteService" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="Item">
+        <sequence>
+          <element name="itemId" type="string" nillable="true"/>
+          <element name="quantity" type="long"/>
+        </sequence>
+      </complexType>
+      <element name="orderQuouteElement">
+        <complexType>
+          <sequence>
+            <element name="orderId" type="string" nillable="true"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="orderQuouteResponseElement">
+        <complexType>
+          <sequence>
+            <element name="result" type="boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="processQuoteElement">
+        <complexType>
+          <sequence>
+            <element name="orderId" type="string" nillable="true"/>
+            <element name="items" type="xsd1:Item" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="Quote">
+        <sequence>
+          <element name="supplierPrice" type="string" nillable="true"/>
+        </sequence>
+      </complexType>
+      <element name="processQuoteResponseElement">
+        <complexType>
+          <sequence>
+            <element name="result" type="xsd1:Quote" nillable="true"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="RapidService_orderQuoute">
+    <part name="parameters" element="xsd1:orderQuouteElement"/>
+  </message>
+  <message name="RapidService_orderQuouteResponse">
+    <part name="parameters" element="xsd1:orderQuouteResponseElement"/>
+  </message>
+  <message name="RapidService_processQuote">
+    <part name="parameters" element="xsd1:processQuoteElement"/>
+  </message>
+  <message name="RapidService_processQuoteResponse">
+    <part name="parameters" element="xsd1:processQuoteResponseElement"/>
+  </message>
+  <portType name="RapidServiceQuoteService">
+    <operation name="orderQuoute">
+      <input message="tns:RapidService_orderQuoute"/>
+      <output message="tns:RapidService_orderQuouteResponse"/>
+    </operation>
+    <operation name="processQuote">
+      <input message="tns:RapidService_processQuote"/>
+      <output message="tns:RapidService_processQuoteResponse"/>
+    </operation>
+  </portType>
+  <binding name="RapidServiceQuoteServiceBinding" type="tns:RapidServiceQuoteService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="orderQuoute">
+      <soap:operation soapAction="urn:#orderQuoute"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="processQuote">
+      <soap:operation soapAction="http://example.com/processQuote"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="RapidServiceQuoteService">
+    <documentation>Rapid Service service</documentation>
+    <port name="RapidServiceQuoteServicePort" binding="tns:RapidServiceQuoteServiceBinding">
+      <soap:address location="http://localhost:8080/RapidServiceApp/RapidServiceQuoteService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockRapidServiceQuoteServiceBinding</con:endpoint><con:endpoint>http://localhost:8080/RapidServiceApp/RapidServiceQuoteService</con:endpoint></con:endpoints><con:operation id="73ddc042-7454-495c-93c5-6c70a6bd9e3a" isOneWay="false" action="urn:#orderQuoute" name="orderQuoute" bindingOperationName="orderQuoute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="298cfdf8-8312-443f-9fe4-aec0092cff56" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/RapidServiceApp/RapidServiceQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rap="http://RapidService.com.co/RapidServiceQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <rap:orderQuouteElement>\r
+         <!--type: string-->\r
+         <orderId>gero et</orderId>\r
+      </rap:orderQuouteElement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a71d1286-d6fe-4981-ba40-2ea9cb6f3e82" isOneWay="false" action="http://example.com/processQuote" name="processQuote" bindingOperationName="processQuote" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5ff009b9-6106-406f-bc2b-1c1ff40838d4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/RapidServiceApp/RapidServiceQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rap="http://RapidService.com.co/RapidServiceQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <rap:processQuoteElement>\r
+         <!--type: string-->\r
+         <orderId>gero et</orderId>\r
+         <!--Zero or more repetitions:-->\r
+         <items>\r
+            <!--type: string-->\r
+            <itemId>sonoras imperio</itemId>\r
+            <!--type: long-->\r
+            <quantity>10</quantity>\r
+         </items>\r
+      </rap:processQuoteElement>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/processQuote"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="add6ea81-739b-4dc7-9cf3-89edcedb728f" port="8088" path="/mockRapidServiceQuoteServiceBinding" host="ASW1817" name="RapidServiceQuoteServiceBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="orderQuoute" id="9bd153b1-e911-4af2-ace8-9cecbce7095e" interface="RapidServiceQuoteServiceBinding" operation="orderQuoute"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="2a3ec4ee-6d98-45e6-8234-caf890e85320" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rap="http://RapidService.com.co/RapidServiceQuoteService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rap:orderQuouteResponseElement>
+         <!--type: boolean-->
+         <result>?</result>
+      </rap:orderQuouteResponseElement>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="processQuote" id="bc6be549-9944-4f26-a76d-92d8ac824d2b" interface="RapidServiceQuoteServiceBinding" operation="processQuote"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="e646ba1c-8ce0-48c5-873b-ab897c62d247" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:rap="http://RapidService.com.co/RapidServiceQuoteService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <rap:processQuoteResponseElement>
+         <result>
+            <!--type: string-->
+            <supplierPrice>?</supplierPrice>
+         </result>
+      </rap:processQuoteResponseElement>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://example.com/processQuote"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

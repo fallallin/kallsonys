@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6c977c10-b0fd-48fa-8996-e775c0e213de" activeEnvironment="Default" name="DeprisaService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d4d37d73-c37d-4d40-ba23-f66eaa07d318" wsaVersion="NONE" name="DeprisaServiceBinding" type="wsdl" bindingName="{http://deprisa.com.co/}DeprisaServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/02_BACKEND/03_Transport/DeprisaService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\02_BACKEND\03_Transport\DeprisaService.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\02_BACKEND\03_Transport\DeprisaService.wsdl</con:url><con:content><![CDATA[<definitions name="DeprisaService" targetNamespace="http://deprisa.com.co/" xmlns:tns="http://deprisa.com.co/" xmlns:xsd1="http://deprisa.com.co/DeprisaService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema targetNamespace="http://deprisa.com.co/DeprisaService" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="cumplirConEnvio">
+        <complexType>
+          <sequence>
+            <element name="envio" type="xsd1:Envio" minOccurs="1"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cumplirConEnvioResponse">
+        <complexType>
+          <sequence>
+            <element name="cumplirConEnvioResult" type="boolean"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="verificarEstadoEnvio">
+        <complexType>
+          <sequence>
+            <element name="orderId" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="verificarEstadoEnvioResponse">
+        <complexType>
+          <sequence>
+            <element name="verificarEstadoEnvioResult" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="Envio">
+        <sequence>
+          <element name="orderId" type="string" minOccurs="1"/>
+          <element name="apellido" type="string" minOccurs="1"/>
+          <element name="nombre" type="string" minOccurs="1"/>
+          <element name="direccion" type="string" minOccurs="1"/>
+          <element name="ciudad" type="string" minOccurs="1"/>
+          <element name="departamento" type="string" minOccurs="1"/>
+          <element name="barrio" type="string" minOccurs="1"/>
+          <element name="estado" type="string" minOccurs="1"/>
+          <element name="items" type="xsd1:Collection" minOccurs="1"/>
+        </sequence>
+      </complexType>
+      <complexType name="Item">
+        <sequence>
+          <element name="itemID" type="string" minOccurs="1"/>
+          <element name="prodID" type="string" minOccurs="1"/>
+          <element name="nombreProducto" type="string" minOccurs="1"/>
+          <element name="numeroParte" type="string" minOccurs="1"/>
+          <element name="precio" type="int" minOccurs="1"/>
+          <element name="cantidad" type="int" minOccurs="1"/>
+        </sequence>
+      </complexType>
+      <complexType name="Collection">
+        <sequence>
+          <element name="item" type="xsd1:Item" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+      </complexType>
+    </schema>
+  </types>
+  <message name="cumplirConEnvioSoapIn">
+    <part name="parameters" element="xsd1:cumplirConEnvio"/>
+  </message>
+  <message name="cumplirConEnvioSoapOut">
+    <part name="parameters" element="xsd1:cumplirConEnvioResponse"/>
+  </message>
+  <message name="verificarEstadoEnvioIn">
+    <part name="parameters" element="xsd1:verificarEstadoEnvio"/>
+  </message>
+  <message name="verificarEstadoEnvioOut">
+    <part name="parameters" element="xsd1:verificarEstadoEnvioResponse"/>
+  </message>
+  <portType name="DeprisaServicePort">
+    <operation name="cumplirConEnvio">
+      <input message="tns:cumplirConEnvioSoapIn"/>
+      <output message="tns:cumplirConEnvioSoapOut"/>
+    </operation>
+    <operation name="verificarEstadoEnvio">
+      <input message="tns:verificarEstadoEnvioIn"/>
+      <output message="tns:verificarEstadoEnvioOut"/>
+    </operation>
+  </portType>
+  <binding name="DeprisaServiceBinding" type="tns:DeprisaServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="cumplirConEnvio">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="verificarEstadoEnvio">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DeprisaService">
+    <documentation>Deprisa Service</documentation>
+    <port name="DeprisaServicePort" binding="tns:DeprisaServiceBinding">
+      <soap:address location="http://localhost:8080/DeprisaApp/DeprisaService"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint></con:endpoints><con:operation id="514e77aa-5ccd-48ff-9930-0a49d4014a29" isOneWay="false" action="" name="cumplirConEnvio" bindingOperationName="cumplirConEnvio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2952aef4-7486-476a-8abb-2daa50db76c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dep:cumplirConEnvio>\r
+         <envio>\r
+            <!--type: string-->\r
+            <orderId>?</orderId>\r
+            <!--type: string-->\r
+            <apellido>?</apellido>\r
+            <!--type: string-->\r
+            <nombre>?</nombre>\r
+            <!--type: string-->\r
+            <direccion>?</direccion>\r
+            <!--type: string-->\r
+            <ciudad>?</ciudad>\r
+            <!--type: string-->\r
+            <departamento>?</departamento>\r
+            <!--type: string-->\r
+            <barrio>?</barrio>\r
+            <!--type: string-->\r
+            <estado>?</estado>\r
+            <items>\r
+               <!--1 or more repetitions:-->\r
+               <item>\r
+                  <!--type: string-->\r
+                  <itemID>?</itemID>\r
+                  <!--type: string-->\r
+                  <prodID>?</prodID>\r
+                  <!--type: string-->\r
+                  <nombreProducto>?</nombreProducto>\r
+                  <!--type: string-->\r
+                  <numeroParte>?</numeroParte>\r
+                  <!--type: int-->\r
+                  <precio>?</precio>\r
+                  <!--type: int-->\r
+                  <cantidad>?</cantidad>\r
+               </item>\r
+            </items>\r
+         </envio>\r
+      </dep:cumplirConEnvio>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/cumplirConEnvioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9434c3f8-23b4-4903-9f60-7f8ddd2b4a9c" isOneWay="false" action="" name="verificarEstadoEnvio" bindingOperationName="verificarEstadoEnvio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="237875c8-6799-40d8-930c-808596307f40" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dep:verificarEstadoEnvio>\r
+         <!--type: string-->\r
+         <orderId>?</orderId>\r
+      </dep:verificarEstadoEnvio>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/verificarEstadoEnvioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
