@@ -25,7 +25,16 @@
               </typeQName>
             </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
             <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
-              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey" reference="../../../../../org.mule.common.metadata.DefaultMetaDataKey"/>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey">
+                <id>Payment</id>
+                <displayName>Payment</displayName>
+                <category>DEFAULT</category>
+                <metaDataKeyPropertiesManager>
+                  <properties>
+                    <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+                  </properties>
+                </metaDataKeyPropertiesManager>
+              </metaDataKey>
               <derivedStructure>false</derivedStructure>
               <generatedStructure>false</generatedStructure>
             </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
@@ -158,10 +167,10 @@
 		&lt;/schema&gt;</string>
                 </schemas>
                 <encoding>windows-1252</encoding>
-                <baseUri>http://localhost:8989/Payment/ValidateCreditCard?wsdl</baseUri>
+                <baseUri>http://localhost:7001/Payment/ValidateCreditCard?WSDL</baseUri>
               </schemas>
               <namespaceManager>
-                <namespacePrefix class="tree-map">
+                <namespacePrefix>
                   <entry>
                     <string>http://payment.com/ValidateCreditCard</string>
                     <string>ns0</string>
@@ -245,7 +254,7 @@
         <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
           <schemas reference="../../fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/schemas/schemas"/>
           <encoding reference="../../fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/schemas/encoding"/>
-          <baseUri>http://localhost:8989/Payment/ValidateCreditCard?wsdl</baseUri>
+          <baseUri>http://localhost:7001/Payment/ValidateCreditCard?WSDL</baseUri>
         </schemas>
         <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/namespaceManager"/>
       </org.mule.common.metadata.DefaultXmlMetaDataModel>
@@ -274,7 +283,16 @@
               </typeQName>
             </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
             <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
-              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey" reference="../../../../../org.mule.common.metadata.DefaultMetaDataKey"/>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey">
+                <id>isPaid</id>
+                <displayName>isPaid</displayName>
+                <category>DEFAULT</category>
+                <metaDataKeyPropertiesManager>
+                  <properties>
+                    <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+                  </properties>
+                </metaDataKeyPropertiesManager>
+              </metaDataKey>
               <derivedStructure>false</derivedStructure>
               <generatedStructure>false</generatedStructure>
             </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
@@ -333,10 +351,10 @@
 		&lt;/schema&gt;</string>
           </schemas>
           <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/schemas/encoding"/>
-          <baseUri>http://localhost:8989/Payment/ValidateCreditCard?wsdl</baseUri>
+          <baseUri>http://localhost:7001/Payment/ValidateCreditCard?WSDL</baseUri>
         </schemas>
         <namespaceManager>
-          <namespacePrefix class="tree-map">
+          <namespacePrefix>
             <entry>
               <string>http://payment.com/ValidateCreditCard</string>
               <string>ns0</string>

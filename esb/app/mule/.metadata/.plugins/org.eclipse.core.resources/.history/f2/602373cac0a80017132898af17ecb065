@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <jms:activemq-connector name="Active_MQ" username="admin" password="admin" brokerURL="tcp://localhost:61616" validateConnections="true" doc:name="Active MQ"/>
+    <flow name="paymentFlow">
+        <jms:inbound-endpoint exchange-pattern="request-response" queue="pay.mq" connector-ref="Active_MQ" doc:name="JMS"/>
+        <http:request config-ref="HTTP_Request_Configuration" path="/payment" method="" doc:name="HTTP"/>
+        <logger message="Mensaje que llego a PaymentFlow:  #[payload]" level="INFO" doc:name="Logger"/>
+        <parse-template location="paymentRq" doc:name="PaymentCreditCardRq"/>
+        <ws:consumer config-ref="WSCPayment" operation="Payment" doc:name="WSCPayment"/>
+        <logger message="Respuesta #[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

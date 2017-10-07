@@ -86,7 +86,7 @@
       <soap:address location="http://localhost:8080/PaymentApp/ValidateCreditCard"/>
     </port>
   </service>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockValidateCreditCardBinding</con:endpoint><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard</con:endpoint></con:endpoints><con:operation id="5b793d33-b99a-4d6b-a830-5e51c9b7046f" isOneWay="false" action="PaymentAction" name="Payment" bindingOperationName="Payment" type="Request-Response" outputName="Payment_Output" inputName="Payment_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="282ff451-2323-4973-909f-feda6f015afa" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard?wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://payment.com/ValidateCreditCard">\r
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard</con:endpoint><con:endpoint>http://localhost:9091/back/soap/payment</con:endpoint></con:endpoints><con:operation id="5b793d33-b99a-4d6b-a830-5e51c9b7046f" isOneWay="false" action="PaymentAction" name="Payment" bindingOperationName="Payment" type="Request-Response" outputName="Payment_Output" inputName="Payment_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="282ff451-2323-4973-909f-feda6f015afa" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9091/back/soap/payment</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://payment.com/ValidateCreditCard">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <val:Payment>\r
@@ -104,7 +104,26 @@
          <purchaseValue>20.12</purchaseValue>\r
       </val:Payment>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PaymentAction"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7f74529c-4b78-475f-bb49-de21216c09bf" isOneWay="false" action="VerifyCC" name="VerifyCC" bindingOperationName="VerifyCC" type="Request-Response" outputName="CreditCardInfo_Output" inputName="CreditCardInfo_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0afacac8-1022-406f-b3d7-42a0be491609" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://payment.com/ValidateCreditCard">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PaymentAction"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bf1a1496-0555-4d7e-9370-960ac7655b87" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard?wsdl</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soap:Header>\r
+      <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">\r
+         <mule:MULE_CORRELATION_ID>95c57960-a8c5-11e7-af82-904820524153</mule:MULE_CORRELATION_ID>\r
+         <mule:MULE_CORRELATION_GROUP_SIZE>-1</mule:MULE_CORRELATION_GROUP_SIZE>\r
+         <mule:MULE_CORRELATION_SEQUENCE>-1</mule:MULE_CORRELATION_SEQUENCE>\r
+      </mule:header>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <val:Payment xmlns:val="http://payment.com/ValidateCreditCard">\r
+         <idOrder>1</idOrder>\r
+         <CreditCard>\r
+            <ccType>VISA</ccType>\r
+            <ccNum>1001</ccNum>\r
+         </CreditCard>\r
+         <idCustomer>KALLSONYS</idCustomer>\r
+         <purchaseValue>10</purchaseValue>\r
+      </val:Payment>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PaymentAction"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7f74529c-4b78-475f-bb49-de21216c09bf" isOneWay="false" action="VerifyCC" name="VerifyCC" bindingOperationName="VerifyCC" type="Request-Response" outputName="CreditCardInfo_Output" inputName="CreditCardInfo_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0afacac8-1022-406f-b3d7-42a0be491609" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://payment.com/ValidateCreditCard">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <val:CreditCard>\r

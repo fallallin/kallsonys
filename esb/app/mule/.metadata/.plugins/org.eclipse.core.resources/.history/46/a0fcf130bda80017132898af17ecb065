@@ -1,0 +1,6 @@
+#** GENERATED CONTENT ** Mule Application Deployment Descriptor
+#Tue Oct 03 23:33:09 COT 2017
+redeployment.enabled=true
+encoding=UTF-8
+domain=default
+config.resources=ejemplocolas.xml,ejemplocolas2.xml,esbPayment.xml,sonyfactory.xml

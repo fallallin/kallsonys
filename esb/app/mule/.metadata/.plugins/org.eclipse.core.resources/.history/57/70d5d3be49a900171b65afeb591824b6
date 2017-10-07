@@ -1,0 +1,9 @@
+<val:Payment xmlns:val="http://payment.com/ValidateCreditCard">
+   <idOrder>1</idOrder>
+   <CreditCard>
+      <ccType>VISA</ccType>
+      <ccNum>1001</ccNum>
+   </CreditCard>
+   <idCustomer>KALLSONYS</idCustomer>
+   <purchaseValue>10</purchaseValue>
+</val:Payment>
