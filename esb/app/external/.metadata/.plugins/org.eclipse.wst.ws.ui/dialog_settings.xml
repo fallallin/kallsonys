@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="1/org.eclipse.jst.ws.wsImpl.java">
+		<item value="/dhl/dhl-web/src/main/webapp/wsdl/DHLService.wsdl"/>
+		<item value="/dhl/src/main/resources/wsdl/DHLService.wsdl"/>
+	</list>
+</section>

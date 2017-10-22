@@ -21,6 +21,9 @@ import javax.jws.WebService;
 public class PaymentWebService {
 
     private final String _ID_KALLSONYS_ = "KALLSONYS";
+    private final String _MSGERROR_NO_ES_CLIENTE_ = "No fue posible realizar el pago porque el cliente no es KallSonys";
+    private final String _MSGERROR_VALOR_INVALIDO_ = "No fue posible realizar el pago porque el valor a pagar es invalido";
+    private final String _MSGERROR_NO_EXISTE_TARJETA_ = "No fue posible realizar el pago porque la tarjeta no pertenece al banco";
 
     @EJB
     private CreditCardFacade creditCardBean;
@@ -42,16 +45,16 @@ public class PaymentWebService {
                     try {
                         result = logPaymentFacade.saveLogPayment(creditCard);
                     } catch (Exception ex) {
-                        throw new com.payment.PaymentFaultMessage(ex.getMessage(), "ERROR");
+                        throw new com.payment.PaymentFaultMessage(ex.getMessage(), ex.getMessage());
                     }
                 } else {
-                    throw new com.payment.PaymentFaultMessage("No fue posible realizar el pago porque el cliente no es KallSonys", "ERROR");
+                    throw new com.payment.PaymentFaultMessage(_MSGERROR_NO_ES_CLIENTE_, _MSGERROR_NO_ES_CLIENTE_);
                 }
             } else {
-                throw new com.payment.PaymentFaultMessage("No fue posible realizar el pago porque el valor a pagar es invalido", "ERROR");
+                throw new com.payment.PaymentFaultMessage(_MSGERROR_VALOR_INVALIDO_, _MSGERROR_VALOR_INVALIDO_);
             }
         } else {
-            throw new com.payment.PaymentFaultMessage("No fue posible realizar el pago porque la tarjeta no pertenece al banco", "ERROR");
+            throw new com.payment.PaymentFaultMessage(_MSGERROR_NO_EXISTE_TARJETA_, _MSGERROR_NO_EXISTE_TARJETA_);
         }   
         return result;
     } 

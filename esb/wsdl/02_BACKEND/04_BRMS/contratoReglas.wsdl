@@ -1,0 +1,1003 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://DefaultNamespace" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="DEFAULT_ReglasKallSonys" targetNamespace="http://DefaultNamespace">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+			<xsd:complexType name="Iterable">
+				<xsd:sequence/>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://cxf.apache.org/arrays" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://cxf.apache.org/arrays">
+			<xsd:complexType name="ArrayOfAnyType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="anyType" nillable="true" type="xsd:anyType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfArrayOfAnyType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="ArrayOfAnyType" nillable="true" type="tns:ArrayOfAnyType"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://DefaultNamespace" xmlns:ns4="http://properties.table.rules.openl.org" xmlns:ns3="http://context.rules.openl.org" xmlns:ns2="http://table.rules.openl.org" xmlns:ns1="http://binding.openl.org" xmlns:ns0="http://types.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://DefaultNamespace">
+			<xsd:import namespace="http://types.openl.org"/>
+			<xsd:import namespace="http://binding.openl.org"/>
+			<xsd:import namespace="http://table.rules.openl.org"/>
+			<xsd:import namespace="http://context.rules.openl.org"/>
+			<xsd:import namespace="http://properties.table.rules.openl.org"/>
+			<xsd:complexType name="string2IOpenFieldMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="xsd:string"/>
+								<xsd:element minOccurs="0" name="value" type="ns0:IOpenField"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenField2IBoundNodeMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="ns0:IOpenField"/>
+								<xsd:element minOccurs="0" name="value" type="ns1:IBoundNode"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IBoundNode2IOpenFieldMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="ns1:IBoundNode"/>
+								<xsd:element minOccurs="0" name="value" type="ns0:IOpenField"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="string2PointMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="xsd:string"/>
+								<xsd:element minOccurs="0" name="value" type="ns2:Point"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="string2IOpenClassMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="xsd:string"/>
+								<xsd:element minOccurs="0" name="value" type="ns0:IOpenClass"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="string2anyTypeMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="xsd:string"/>
+								<xsd:element minOccurs="0" name="value" type="xsd:anyType"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenClass2IBoundNodeMap">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="entry">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="key" type="ns0:IOpenClass"/>
+								<xsd:element minOccurs="0" name="value" type="ns1:IBoundNode"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfString">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="MontoMaximo" type="tns:MontoMaximo"/>
+			<xsd:complexType name="MontoMaximo">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="runtimeContext" type="ns3:IRulesRuntimeContext"/>
+					<xsd:element minOccurs="0" name="monto" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="MontoMaximoResponse" type="tns:MontoMaximoResponse"/>
+			<xsd:complexType name="MontoMaximoResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="return" nillable="true" type="xsd:decimal"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ValidacionTarjeta" type="tns:ValidacionTarjeta"/>
+			<xsd:complexType name="ValidacionTarjeta">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="runtimeContext" type="ns3:IRulesRuntimeContext"/>
+					<xsd:element minOccurs="0" name="monto" nillable="true" type="xsd:double"/>
+					<xsd:element minOccurs="0" name="tipoTarjeta" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ValidacionTarjetaResponse" type="tns:ValidacionTarjetaResponse"/>
+			<xsd:complexType name="ValidacionTarjetaResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="return" nillable="true" type="xsd:boolean"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ReglaMensajeria" type="tns:ReglaMensajeria"/>
+			<xsd:complexType name="ReglaMensajeria">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="runtimeContext" type="ns3:IRulesRuntimeContext"/>
+					<xsd:element minOccurs="0" name="pais" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="proveedor" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ReglaMensajeriaResponse" type="tns:ReglaMensajeriaResponse"/>
+			<xsd:complexType name="ReglaMensajeriaResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="return" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getPresupuestoGerencia" type="tns:getPresupuestoGerencia"/>
+			<xsd:complexType name="getPresupuestoGerencia">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="arg0" type="ns3:IRulesRuntimeContext"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getPresupuestoGerenciaResponse" type="tns:getPresupuestoGerenciaResponse"/>
+			<xsd:complexType name="getPresupuestoGerenciaResponse">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="return" type="ns4:TableProperties"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://text.util.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://text.util.openl.org">
+			<xsd:complexType name="IPosition">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="ILocation">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="end" nillable="true" type="tns:IPosition"/>
+					<xsd:element minOccurs="0" name="start" nillable="true" type="tns:IPosition"/>
+					<xsd:element minOccurs="0" name="textLocation" type="xsd:boolean"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://source.openl.org" xmlns:ns1="http://DefaultNamespace" xmlns:ns0="http://io.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://source.openl.org">
+			<xsd:import namespace="http://io.java"/>
+			<xsd:import namespace="http://DefaultNamespace"/>
+			<xsd:complexType name="IOpenSourceCodeModule">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="byteStream" nillable="true" type="ns0:InputStream"/>
+					<xsd:element minOccurs="0" name="characterStream" nillable="true" type="ns0:Reader"/>
+					<xsd:element minOccurs="0" name="code" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="modified" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="params" nillable="true" type="ns1:string2anyTypeMap"/>
+					<xsd:element minOccurs="0" name="startPosition" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="uri" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://enumeration.rules.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://enumeration.rules.openl.org">
+			<xsd:complexType name="ArrayOfCountriesEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CountriesEnum" nillable="true" type="tns:CountriesEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="RegionsEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NCSA"/>
+					<xsd:enumeration value="EU"/>
+					<xsd:enumeration value="EMEA"/>
+					<xsd:enumeration value="APJ"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="CurrenciesEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ALL"/>
+					<xsd:enumeration value="DZD"/>
+					<xsd:enumeration value="ARS"/>
+					<xsd:enumeration value="AUD"/>
+					<xsd:enumeration value="BHD"/>
+					<xsd:enumeration value="BYR"/>
+					<xsd:enumeration value="BOB"/>
+					<xsd:enumeration value="BAM"/>
+					<xsd:enumeration value="BRL"/>
+					<xsd:enumeration value="CAD"/>
+					<xsd:enumeration value="CLP"/>
+					<xsd:enumeration value="CNY"/>
+					<xsd:enumeration value="COP"/>
+					<xsd:enumeration value="CRC"/>
+					<xsd:enumeration value="HRK"/>
+					<xsd:enumeration value="CZK"/>
+					<xsd:enumeration value="DKK"/>
+					<xsd:enumeration value="DOP"/>
+					<xsd:enumeration value="EGP"/>
+					<xsd:enumeration value="EUR"/>
+					<xsd:enumeration value="GTQ"/>
+					<xsd:enumeration value="HNL"/>
+					<xsd:enumeration value="HKD"/>
+					<xsd:enumeration value="HUF"/>
+					<xsd:enumeration value="ISK"/>
+					<xsd:enumeration value="INR"/>
+					<xsd:enumeration value="IDR"/>
+					<xsd:enumeration value="IQD"/>
+					<xsd:enumeration value="ILS"/>
+					<xsd:enumeration value="JPY"/>
+					<xsd:enumeration value="JOD"/>
+					<xsd:enumeration value="KWD"/>
+					<xsd:enumeration value="LVL"/>
+					<xsd:enumeration value="LBP"/>
+					<xsd:enumeration value="LTL"/>
+					<xsd:enumeration value="MKD"/>
+					<xsd:enumeration value="MYR"/>
+					<xsd:enumeration value="MXN"/>
+					<xsd:enumeration value="MAD"/>
+					<xsd:enumeration value="NZD"/>
+					<xsd:enumeration value="NIO"/>
+					<xsd:enumeration value="NOK"/>
+					<xsd:enumeration value="OMR"/>
+					<xsd:enumeration value="PAB"/>
+					<xsd:enumeration value="PYG"/>
+					<xsd:enumeration value="PEN"/>
+					<xsd:enumeration value="PHP"/>
+					<xsd:enumeration value="PLN"/>
+					<xsd:enumeration value="QAR"/>
+					<xsd:enumeration value="RON"/>
+					<xsd:enumeration value="RUB"/>
+					<xsd:enumeration value="SAR"/>
+					<xsd:enumeration value="RSD"/>
+					<xsd:enumeration value="SGD"/>
+					<xsd:enumeration value="ZAR"/>
+					<xsd:enumeration value="SDG"/>
+					<xsd:enumeration value="SEK"/>
+					<xsd:enumeration value="CHF"/>
+					<xsd:enumeration value="SYP"/>
+					<xsd:enumeration value="TWD"/>
+					<xsd:enumeration value="TND"/>
+					<xsd:enumeration value="TRY"/>
+					<xsd:enumeration value="UAH"/>
+					<xsd:enumeration value="AED"/>
+					<xsd:enumeration value="GBP"/>
+					<xsd:enumeration value="USD"/>
+					<xsd:enumeration value="UYU"/>
+					<xsd:enumeration value="VEF"/>
+					<xsd:enumeration value="VND"/>
+					<xsd:enumeration value="YER"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfCaRegionsEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CaRegionsEnum" nillable="true" type="tns:CaRegionsEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="ValidateDTEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ON"/>
+					<xsd:enumeration value="OFF"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfLanguagesEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="LanguagesEnum" nillable="true" type="tns:LanguagesEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="UsStatesEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="AL"/>
+					<xsd:enumeration value="AK"/>
+					<xsd:enumeration value="AZ"/>
+					<xsd:enumeration value="AR"/>
+					<xsd:enumeration value="CA"/>
+					<xsd:enumeration value="CO"/>
+					<xsd:enumeration value="CT"/>
+					<xsd:enumeration value="DC"/>
+					<xsd:enumeration value="DE"/>
+					<xsd:enumeration value="FL"/>
+					<xsd:enumeration value="GA"/>
+					<xsd:enumeration value="HI"/>
+					<xsd:enumeration value="ID"/>
+					<xsd:enumeration value="IL"/>
+					<xsd:enumeration value="IN"/>
+					<xsd:enumeration value="IA"/>
+					<xsd:enumeration value="KS"/>
+					<xsd:enumeration value="KY"/>
+					<xsd:enumeration value="LA"/>
+					<xsd:enumeration value="ME"/>
+					<xsd:enumeration value="MD"/>
+					<xsd:enumeration value="MA"/>
+					<xsd:enumeration value="MI"/>
+					<xsd:enumeration value="MN"/>
+					<xsd:enumeration value="MS"/>
+					<xsd:enumeration value="MO"/>
+					<xsd:enumeration value="MT"/>
+					<xsd:enumeration value="NE"/>
+					<xsd:enumeration value="NV"/>
+					<xsd:enumeration value="NH"/>
+					<xsd:enumeration value="NJ"/>
+					<xsd:enumeration value="NM"/>
+					<xsd:enumeration value="NY"/>
+					<xsd:enumeration value="NC"/>
+					<xsd:enumeration value="ND"/>
+					<xsd:enumeration value="OH"/>
+					<xsd:enumeration value="OK"/>
+					<xsd:enumeration value="OR"/>
+					<xsd:enumeration value="PA"/>
+					<xsd:enumeration value="PR"/>
+					<xsd:enumeration value="RI"/>
+					<xsd:enumeration value="SC"/>
+					<xsd:enumeration value="SD"/>
+					<xsd:enumeration value="TN"/>
+					<xsd:enumeration value="TX"/>
+					<xsd:enumeration value="UT"/>
+					<xsd:enumeration value="VT"/>
+					<xsd:enumeration value="VA"/>
+					<xsd:enumeration value="WA"/>
+					<xsd:enumeration value="WV"/>
+					<xsd:enumeration value="WI"/>
+					<xsd:enumeration value="WY"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="OriginsEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Base"/>
+					<xsd:enumeration value="Deviation"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="CountriesEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="AL"/>
+					<xsd:enumeration value="DZ"/>
+					<xsd:enumeration value="AR"/>
+					<xsd:enumeration value="AU"/>
+					<xsd:enumeration value="AT"/>
+					<xsd:enumeration value="BH"/>
+					<xsd:enumeration value="BY"/>
+					<xsd:enumeration value="BE"/>
+					<xsd:enumeration value="BO"/>
+					<xsd:enumeration value="BA"/>
+					<xsd:enumeration value="BR"/>
+					<xsd:enumeration value="BG"/>
+					<xsd:enumeration value="CA"/>
+					<xsd:enumeration value="CL"/>
+					<xsd:enumeration value="CN"/>
+					<xsd:enumeration value="CO"/>
+					<xsd:enumeration value="CR"/>
+					<xsd:enumeration value="HR"/>
+					<xsd:enumeration value="CY"/>
+					<xsd:enumeration value="CZ"/>
+					<xsd:enumeration value="DK"/>
+					<xsd:enumeration value="DO"/>
+					<xsd:enumeration value="EC"/>
+					<xsd:enumeration value="EG"/>
+					<xsd:enumeration value="SV"/>
+					<xsd:enumeration value="EE"/>
+					<xsd:enumeration value="FI"/>
+					<xsd:enumeration value="FR"/>
+					<xsd:enumeration value="DE"/>
+					<xsd:enumeration value="GR"/>
+					<xsd:enumeration value="GT"/>
+					<xsd:enumeration value="HN"/>
+					<xsd:enumeration value="HK"/>
+					<xsd:enumeration value="HU"/>
+					<xsd:enumeration value="IS"/>
+					<xsd:enumeration value="IN"/>
+					<xsd:enumeration value="ID"/>
+					<xsd:enumeration value="IQ"/>
+					<xsd:enumeration value="IE"/>
+					<xsd:enumeration value="IL"/>
+					<xsd:enumeration value="IT"/>
+					<xsd:enumeration value="JP"/>
+					<xsd:enumeration value="JO"/>
+					<xsd:enumeration value="KW"/>
+					<xsd:enumeration value="LV"/>
+					<xsd:enumeration value="LB"/>
+					<xsd:enumeration value="LT"/>
+					<xsd:enumeration value="LU"/>
+					<xsd:enumeration value="MK"/>
+					<xsd:enumeration value="MY"/>
+					<xsd:enumeration value="MT"/>
+					<xsd:enumeration value="MX"/>
+					<xsd:enumeration value="MA"/>
+					<xsd:enumeration value="NL"/>
+					<xsd:enumeration value="NZ"/>
+					<xsd:enumeration value="NI"/>
+					<xsd:enumeration value="NO"/>
+					<xsd:enumeration value="OM"/>
+					<xsd:enumeration value="PA"/>
+					<xsd:enumeration value="PY"/>
+					<xsd:enumeration value="PE"/>
+					<xsd:enumeration value="PH"/>
+					<xsd:enumeration value="PL"/>
+					<xsd:enumeration value="PT"/>
+					<xsd:enumeration value="PR"/>
+					<xsd:enumeration value="QA"/>
+					<xsd:enumeration value="RO"/>
+					<xsd:enumeration value="RU"/>
+					<xsd:enumeration value="SA"/>
+					<xsd:enumeration value="CS"/>
+					<xsd:enumeration value="SG"/>
+					<xsd:enumeration value="SK"/>
+					<xsd:enumeration value="SI"/>
+					<xsd:enumeration value="ZA"/>
+					<xsd:enumeration value="ES"/>
+					<xsd:enumeration value="SD"/>
+					<xsd:enumeration value="SE"/>
+					<xsd:enumeration value="CH"/>
+					<xsd:enumeration value="SY"/>
+					<xsd:enumeration value="TW"/>
+					<xsd:enumeration value="TH"/>
+					<xsd:enumeration value="TN"/>
+					<xsd:enumeration value="TR"/>
+					<xsd:enumeration value="UA"/>
+					<xsd:enumeration value="AE"/>
+					<xsd:enumeration value="GB"/>
+					<xsd:enumeration value="US"/>
+					<xsd:enumeration value="UY"/>
+					<xsd:enumeration value="VE"/>
+					<xsd:enumeration value="VN"/>
+					<xsd:enumeration value="YE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="UsRegionsEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="MW"/>
+					<xsd:enumeration value="NE"/>
+					<xsd:enumeration value="SE"/>
+					<xsd:enumeration value="SW"/>
+					<xsd:enumeration value="W"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfCaProvincesEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CaProvincesEnum" nillable="true" type="tns:CaProvincesEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfUsStatesEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="UsStatesEnum" nillable="true" type="tns:UsStatesEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="LanguagesEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ALB"/>
+					<xsd:enumeration value="ARA"/>
+					<xsd:enumeration value="BEL"/>
+					<xsd:enumeration value="BUL"/>
+					<xsd:enumeration value="CAT"/>
+					<xsd:enumeration value="CHI"/>
+					<xsd:enumeration value="SCR"/>
+					<xsd:enumeration value="CZE"/>
+					<xsd:enumeration value="DAN"/>
+					<xsd:enumeration value="DUT"/>
+					<xsd:enumeration value="ENG"/>
+					<xsd:enumeration value="FIN"/>
+					<xsd:enumeration value="FRE"/>
+					<xsd:enumeration value="GER"/>
+					<xsd:enumeration value="GRE"/>
+					<xsd:enumeration value="HEB"/>
+					<xsd:enumeration value="HIN"/>
+					<xsd:enumeration value="HUN"/>
+					<xsd:enumeration value="IND"/>
+					<xsd:enumeration value="GLE"/>
+					<xsd:enumeration value="ITA"/>
+					<xsd:enumeration value="JPN"/>
+					<xsd:enumeration value="LAV"/>
+					<xsd:enumeration value="LIT"/>
+					<xsd:enumeration value="MAC"/>
+					<xsd:enumeration value="MAY"/>
+					<xsd:enumeration value="MLT"/>
+					<xsd:enumeration value="NOR"/>
+					<xsd:enumeration value="POL"/>
+					<xsd:enumeration value="POR"/>
+					<xsd:enumeration value="RUM"/>
+					<xsd:enumeration value="RUS"/>
+					<xsd:enumeration value="SCC"/>
+					<xsd:enumeration value="SLO"/>
+					<xsd:enumeration value="SPA"/>
+					<xsd:enumeration value="THA"/>
+					<xsd:enumeration value="TUR"/>
+					<xsd:enumeration value="UKR"/>
+					<xsd:enumeration value="VIE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfCurrenciesEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="CurrenciesEnum" nillable="true" type="tns:CurrenciesEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfUsRegionsEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="UsRegionsEnum" nillable="true" type="tns:UsRegionsEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="CaProvincesEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="AB"/>
+					<xsd:enumeration value="BC"/>
+					<xsd:enumeration value="PE"/>
+					<xsd:enumeration value="MB"/>
+					<xsd:enumeration value="NB"/>
+					<xsd:enumeration value="NS"/>
+					<xsd:enumeration value="NU"/>
+					<xsd:enumeration value="ON"/>
+					<xsd:enumeration value="QC"/>
+					<xsd:enumeration value="SK"/>
+					<xsd:enumeration value="NL"/>
+					<xsd:enumeration value="YT"/>
+					<xsd:enumeration value="NT"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="CaRegionsEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="QC"/>
+					<xsd:enumeration value="HQ"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ArrayOfRegionsEnum">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="RegionsEnum" nillable="true" type="tns:RegionsEnum"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="RecalculateEnum">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ALWAYS"/>
+					<xsd:enumeration value="NEVER"/>
+					<xsd:enumeration value="ANALYZE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://meta.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://meta.openl.org">
+			<xsd:complexType name="IMetaInfo">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="sourceUrl" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://table.rules.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://table.rules.openl.org">
+			<xsd:complexType name="Point">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="column" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="row" type="xsd:int"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://calc.rules.openl.org" xmlns:ns1="http://cxf.apache.org/arrays" xmlns:ns0="http://DefaultNamespace" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://calc.rules.openl.org">
+			<xsd:import namespace="http://DefaultNamespace"/>
+			<xsd:import namespace="http://cxf.apache.org/arrays"/>
+			<xsd:complexType name="SpreadsheetResult">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="columnNames" nillable="true" type="ns0:ArrayOfString"/>
+					<xsd:element minOccurs="0" name="columnTitles" nillable="true" type="ns0:ArrayOfString"/>
+					<xsd:element minOccurs="0" name="fieldsCoordinates" nillable="true" type="ns0:string2PointMap"/>
+					<xsd:element minOccurs="0" name="results" nillable="true" type="ns1:ArrayOfArrayOfAnyType"/>
+					<xsd:element minOccurs="0" name="rowNames" nillable="true" type="ns0:ArrayOfString"/>
+					<xsd:element minOccurs="0" name="rowTitles" nillable="true" type="ns0:ArrayOfString"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://properties.table.rules.openl.org" xmlns:ns2="http://enumeration.rules.openl.org" xmlns:ns1="http://DefaultNamespace" xmlns:ns0="http://impl.types.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://properties.table.rules.openl.org">
+			<xsd:import namespace="http://DefaultNamespace"/>
+			<xsd:import namespace="http://enumeration.rules.openl.org"/>
+			<xsd:import namespace="http://impl.types.openl.org"/>
+			<xsd:complexType name="TableProperties">
+				<xsd:complexContent>
+					<xsd:extension base="ns0:DynamicObject">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="active" nillable="true" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="allDimensionalProperties" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="allProperties" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="autoType" nillable="true" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="buildPhase" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="caProvinces" nillable="true" type="ns2:ArrayOfCaProvincesEnum"/>
+							<xsd:element minOccurs="0" name="caRegions" nillable="true" type="ns2:ArrayOfCaRegionsEnum"/>
+							<xsd:element minOccurs="0" name="cacheable" nillable="true" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="category" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="country" nillable="true" type="ns2:ArrayOfCountriesEnum"/>
+							<xsd:element minOccurs="0" name="createdBy" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="createdOn" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="currency" nillable="true" type="ns2:ArrayOfCurrenciesEnum"/>
+							<xsd:element minOccurs="0" name="currentTableType" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="custom1" nillable="true" type="ns1:ArrayOfString"/>
+							<xsd:element minOccurs="0" name="custom2" nillable="true" type="ns1:ArrayOfString"/>
+							<xsd:element minOccurs="0" name="datatypePackage" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="effectiveDate" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="endRequestDate" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="expirationDate" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="externalPropertiesAppliedForModule" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="failOnMiss" nillable="true" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="id" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="lang" nillable="true" type="ns2:ArrayOfLanguagesEnum"/>
+							<xsd:element minOccurs="0" name="lob" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="modifiedBy" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="modifiedOn" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="origin" nillable="true" type="ns2:OriginsEnum"/>
+							<xsd:element minOccurs="0" name="precision" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="propertiesAppliedByDefault" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="propertiesAppliedForCategory" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="propertiesAppliedForModule" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="propertiesDefinedInTable" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="propertiesDefinedInTableIgnoreSystem" nillable="true" type="ns1:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="propertiesEmpty" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="recalculate" nillable="true" type="ns2:RecalculateEnum"/>
+							<xsd:element minOccurs="0" name="region" nillable="true" type="ns2:ArrayOfRegionsEnum"/>
+							<xsd:element minOccurs="0" name="scope" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="startRequestDate" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="state" nillable="true" type="ns2:ArrayOfUsStatesEnum"/>
+							<xsd:element minOccurs="0" name="tags" nillable="true" type="ns1:ArrayOfString"/>
+							<xsd:element minOccurs="0" name="transaction" nillable="true" type="ns1:ArrayOfString"/>
+							<xsd:element minOccurs="0" name="usregion" nillable="true" type="ns2:ArrayOfUsRegionsEnum"/>
+							<xsd:element minOccurs="0" name="validateDT" nillable="true" type="ns2:ValidateDTEnum"/>
+							<xsd:element minOccurs="0" name="version" nillable="true" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://runtime.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://runtime.openl.org">
+			<xsd:complexType name="IRuntimeContext">
+				<xsd:sequence/>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://syntax.openl.org" xmlns:ns1="http://text.util.openl.org" xmlns:ns0="http://source.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://syntax.openl.org">
+			<xsd:import namespace="http://source.openl.org"/>
+			<xsd:import namespace="http://text.util.openl.org"/>
+			<xsd:complexType name="ISyntaxNode">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="module" nillable="true" type="ns0:IOpenSourceCodeModule"/>
+					<xsd:element minOccurs="0" name="numberOfChildren" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="parent" nillable="true" type="tns:ISyntaxNode"/>
+					<xsd:element minOccurs="0" name="sourceLocation" nillable="true" type="ns1:ILocation"/>
+					<xsd:element minOccurs="0" name="type" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://types.openl.org" xmlns:ns5="http://syntax.openl.org" xmlns:ns4="http://binding.openl.org" xmlns:ns3="http://meta.openl.org" xmlns:ns2="http://base.openl.org" xmlns:ns1="http://domain.openl.org" xmlns:ns0="http://DefaultNamespace" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://types.openl.org">
+			<xsd:import namespace="http://DefaultNamespace"/>
+			<xsd:import namespace="http://domain.openl.org"/>
+			<xsd:import namespace="http://binding.openl.org"/>
+			<xsd:import namespace="http://syntax.openl.org"/>
+			<xsd:import namespace="http://meta.openl.org"/>
+			<xsd:import namespace="http://base.openl.org"/>
+			<xsd:complexType name="IAggregateInfo">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType name="IMethodSignature">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="numberOfParameters" type="xsd:int"/>
+					<xsd:element minOccurs="0" name="parameterTypes" nillable="true" type="tns:ArrayOfIOpenClass"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenMethod">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="declaringClass" nillable="true" type="tns:IOpenClass"/>
+					<xsd:element minOccurs="0" name="info" nillable="true" type="tns:IMemberMetaInfo"/>
+					<xsd:element minOccurs="0" name="method" nillable="true" type="tns:IOpenMethod"/>
+					<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="signature" nillable="true" type="tns:IMethodSignature"/>
+					<xsd:element minOccurs="0" name="static" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="type" nillable="true" type="tns:IOpenClass"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfIOpenMethod">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="IOpenMethod" nillable="true" type="tns:IOpenMethod"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenMethodHeader">
+				<xsd:complexContent>
+					<xsd:extension base="tns:IOpenMember">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="signature" nillable="true" type="tns:IMethodSignature"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenClass">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="abstract" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="aggregateInfo" nillable="true" type="tns:IAggregateInfo"/>
+					<xsd:element minOccurs="0" name="array" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="componentClass" nillable="true" type="tns:IOpenClass"/>
+					<xsd:element minOccurs="0" name="declaredFields" nillable="true" type="ns0:string2IOpenFieldMap"/>
+					<xsd:element minOccurs="0" name="declaredMethods" nillable="true" type="tns:ArrayOfIOpenMethod"/>
+					<xsd:element minOccurs="0" name="domain" nillable="true" type="ns1:IDomain"/>
+					<xsd:element minOccurs="0" name="fields" nillable="true" type="ns0:string2IOpenFieldMap"/>
+					<xsd:element minOccurs="0" name="indexField" nillable="true" type="tns:IOpenField"/>
+					<xsd:element minOccurs="0" name="methods" nillable="true" type="tns:ArrayOfIOpenMethod"/>
+					<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="nameSpace" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="openClass" nillable="true" type="tns:IOpenClass"/>
+					<xsd:element minOccurs="0" name="simple" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="types" nillable="true" type="ns0:string2IOpenClassMap"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenMember">
+				<xsd:complexContent>
+					<xsd:extension base="ns2:INamedThing">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="declaringClass" nillable="true" type="tns:IOpenClass"/>
+							<xsd:element minOccurs="0" name="info" nillable="true" type="tns:IMemberMetaInfo"/>
+							<xsd:element minOccurs="0" name="static" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="type" nillable="true" type="tns:IOpenClass"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="IOpenField">
+				<xsd:complexContent>
+					<xsd:extension base="tns:IOpenMember">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="const" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="readable" type="xsd:boolean"/>
+							<xsd:element minOccurs="0" name="writable" type="xsd:boolean"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfIOpenClass">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="IOpenClass" nillable="true" type="tns:IOpenClass"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfIOpenField">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="IOpenField" nillable="true" type="tns:IOpenField"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IMemberMetaInfo">
+				<xsd:complexContent>
+					<xsd:extension base="ns3:IMetaInfo">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="dependencies" nillable="true" type="ns4:BindingDependencies"/>
+							<xsd:element minOccurs="0" name="properties" nillable="true" type="ns0:string2anyTypeMap"/>
+							<xsd:element minOccurs="0" name="syntaxNode" nillable="true" type="ns5:ISyntaxNode"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.types.openl.org" xmlns:ns1="http://DefaultNamespace" xmlns:ns0="http://types.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://impl.types.openl.org">
+			<xsd:import namespace="http://types.openl.org"/>
+			<xsd:import namespace="http://DefaultNamespace"/>
+			<xsd:complexType abstract="true" name="AMethod">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="declaringClass" nillable="true" type="ns0:IOpenClass"/>
+					<xsd:element minOccurs="0" name="header" nillable="true" type="ns0:IOpenMethodHeader"/>
+					<xsd:element minOccurs="0" name="info" nillable="true" type="ns0:IMemberMetaInfo"/>
+					<xsd:element minOccurs="0" name="method" nillable="true" type="ns0:IOpenMethod"/>
+					<xsd:element minOccurs="0" name="moduleName" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="signature" nillable="true" type="ns0:IMethodSignature"/>
+					<xsd:element minOccurs="0" name="static" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="type" nillable="true" type="ns0:IOpenClass"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType abstract="true" name="ExecutableMethod">
+				<xsd:complexContent>
+					<xsd:extension base="tns:AMethod">
+						<xsd:sequence/>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="DynamicObject">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="fieldValues" nillable="true" type="ns1:string2anyTypeMap"/>
+					<xsd:element minOccurs="0" name="type" nillable="true" type="ns0:IOpenClass"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ArrayOfExecutableMethod">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="ExecutableMethod" nillable="true" type="tns:ExecutableMethod"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://binding.openl.org" xmlns:ns3="http://impl.types.openl.org" xmlns:ns2="http://DefaultNamespace" xmlns:ns1="http://types.openl.org" xmlns:ns0="http://syntax.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://binding.openl.org">
+			<xsd:import namespace="http://syntax.openl.org"/>
+			<xsd:import namespace="http://types.openl.org"/>
+			<xsd:import namespace="http://DefaultNamespace"/>
+			<xsd:import namespace="http://impl.types.openl.org"/>
+			<xsd:complexType name="ArrayOfIBoundNode">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="IBoundNode" nillable="true" type="tns:IBoundNode"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="IBoundNode">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="children" nillable="true" type="tns:ArrayOfIBoundNode"/>
+					<xsd:element minOccurs="0" name="literalExpression" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="lvalue" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="staticTarget" type="xsd:boolean"/>
+					<xsd:element minOccurs="0" name="syntaxNode" nillable="true" type="ns0:ISyntaxNode"/>
+					<xsd:element minOccurs="0" name="targetNode" nillable="true" type="tns:IBoundNode"/>
+					<xsd:element minOccurs="0" name="type" nillable="true" type="ns1:IOpenClass"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="BindingDependencies">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="assigned" nillable="true" type="ns1:ArrayOfIOpenField"/>
+					<xsd:element minOccurs="0" name="assignedMap" nillable="true" type="ns2:IOpenField2IBoundNodeMap"/>
+					<xsd:element minOccurs="0" name="fieldNodes" nillable="true" type="tns:ArrayOfIBoundNode"/>
+					<xsd:element minOccurs="0" name="fieldsMap" nillable="true" type="ns2:IBoundNode2IOpenFieldMap"/>
+					<xsd:element minOccurs="0" name="methods" nillable="true" type="ns1:ArrayOfIOpenMethod"/>
+					<xsd:element minOccurs="0" name="rulesMethods" nillable="true" type="ns3:ArrayOfExecutableMethod"/>
+					<xsd:element minOccurs="0" name="types" nillable="true" type="ns1:ArrayOfIOpenClass"/>
+					<xsd:element minOccurs="0" name="typesMap" nillable="true" type="ns2:IOpenClass2IBoundNodeMap"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://domain.openl.org" xmlns:ns1="http://lang.java" xmlns:ns0="http://base.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://domain.openl.org">
+			<xsd:import namespace="http://lang.java"/>
+			<xsd:import namespace="http://base.openl.org"/>
+			<xsd:complexType name="IType">
+				<xsd:complexContent>
+					<xsd:extension base="ns0:INameSpacedThing">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="domain" nillable="true" type="tns:IDomain"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+			<xsd:complexType name="IDomain">
+				<xsd:complexContent>
+					<xsd:extension base="ns1:Iterable">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="elementType" nillable="true" type="tns:IType"/>
+							<xsd:element minOccurs="0" name="finite" type="xsd:boolean"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://base.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://base.openl.org">
+			<xsd:complexType name="INamedThing">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="INameSpacedThing">
+				<xsd:complexContent>
+					<xsd:extension base="tns:INamedThing">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="nameSpace" nillable="true" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://io.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java">
+			<xsd:complexType abstract="true" name="Reader">
+				<xsd:sequence/>
+			</xsd:complexType>
+			<xsd:complexType abstract="true" name="InputStream">
+				<xsd:sequence/>
+			</xsd:complexType>
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://context.rules.openl.org" xmlns:ns1="http://enumeration.rules.openl.org" xmlns:ns0="http://runtime.openl.org" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://context.rules.openl.org">
+			<xsd:import namespace="http://enumeration.rules.openl.org"/>
+			<xsd:import namespace="http://runtime.openl.org"/>
+			<xsd:complexType name="IRulesRuntimeContext">
+				<xsd:complexContent>
+					<xsd:extension base="ns0:IRuntimeContext">
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="caProvince" nillable="true" type="ns1:CaProvincesEnum"/>
+							<xsd:element minOccurs="0" name="caRegion" nillable="true" type="ns1:CaRegionsEnum"/>
+							<xsd:element minOccurs="0" name="country" nillable="true" type="ns1:CountriesEnum"/>
+							<xsd:element minOccurs="0" name="currency" nillable="true" type="ns1:CurrenciesEnum"/>
+							<xsd:element minOccurs="0" name="currentDate" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="lang" nillable="true" type="ns1:LanguagesEnum"/>
+							<xsd:element minOccurs="0" name="lob" nillable="true" type="xsd:string"/>
+							<xsd:element minOccurs="0" name="region" nillable="true" type="ns1:RegionsEnum"/>
+							<xsd:element minOccurs="0" name="requestDate" type="xsd:dateTime"/>
+							<xsd:element minOccurs="0" name="usRegion" nillable="true" type="ns1:UsRegionsEnum"/>
+							<xsd:element minOccurs="0" name="usState" nillable="true" type="ns1:UsStatesEnum"/>
+						</xsd:sequence>
+					</xsd:extension>
+				</xsd:complexContent>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MontoMaximo">
+		<wsdl:part element="tns:MontoMaximo" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ValidacionTarjeta">
+		<wsdl:part element="tns:ValidacionTarjeta" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="MontoMaximoResponse">
+		<wsdl:part element="tns:MontoMaximoResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ReglaMensajeriaResponse">
+		<wsdl:part element="tns:ReglaMensajeriaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getPresupuestoGerencia">
+		<wsdl:part element="tns:getPresupuestoGerencia" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="getPresupuestoGerenciaResponse">
+		<wsdl:part element="tns:getPresupuestoGerenciaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ValidacionTarjetaResponse">
+		<wsdl:part element="tns:ValidacionTarjetaResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="ReglaMensajeria">
+		<wsdl:part element="tns:ReglaMensajeria" name="parameters"/>
+	</wsdl:message>
+	<wsdl:portType name="DEFAULT_ReglasKallSonysPortType">
+		<wsdl:operation name="MontoMaximo">
+			<wsdl:input message="tns:MontoMaximo" name="MontoMaximo"/>
+			<wsdl:output message="tns:MontoMaximoResponse" name="MontoMaximoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ValidacionTarjeta">
+			<wsdl:input message="tns:ValidacionTarjeta" name="ValidacionTarjeta"/>
+			<wsdl:output message="tns:ValidacionTarjetaResponse" name="ValidacionTarjetaResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ReglaMensajeria">
+			<wsdl:input message="tns:ReglaMensajeria" name="ReglaMensajeria"/>
+			<wsdl:output message="tns:ReglaMensajeriaResponse" name="ReglaMensajeriaResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getPresupuestoGerencia">
+			<wsdl:input message="tns:getPresupuestoGerencia" name="getPresupuestoGerencia"/>
+			<wsdl:output message="tns:getPresupuestoGerenciaResponse" name="getPresupuestoGerenciaResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DEFAULT_ReglasKallSonysSoapBinding" type="tns:DEFAULT_ReglasKallSonysPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="MontoMaximo">
+			<soap:operation soapAction="" style="document"/>
+			<wsdl:input name="MontoMaximo">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="MontoMaximoResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ValidacionTarjeta">
+			<soap:operation soapAction="" style="document"/>
+			<wsdl:input name="ValidacionTarjeta">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ValidacionTarjetaResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ReglaMensajeria">
+			<soap:operation soapAction="" style="document"/>
+			<wsdl:input name="ReglaMensajeria">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="ReglaMensajeriaResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getPresupuestoGerencia">
+			<soap:operation soapAction="" style="document"/>
+			<wsdl:input name="getPresupuestoGerencia">
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="getPresupuestoGerenciaResponse">
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DEFAULT_ReglasKallSonys">
+		<wsdl:port binding="tns:DEFAULT_ReglasKallSonysSoapBinding" name="DEFAULT_ReglasKallSonysPortType">
+			<soap:address location="http://localhost:8080/openlTabletsWs/DEFAULT/ReglasKallSonys"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

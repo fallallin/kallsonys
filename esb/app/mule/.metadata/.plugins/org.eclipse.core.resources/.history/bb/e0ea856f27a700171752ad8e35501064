@@ -1,9 +1,0 @@
-<val:Payment xmlns:val="http://payment.com/ValidateCreditCard">
-   <idOrder>#[json:orderId]</idOrder>
-   <CreditCard>
-      <ccType>#[json:cardType]</ccType>
-      <ccNum>#[json:cardNumber]</ccNum>
-   </CreditCard>
-   <idCustomer>#[json:companyId]</idCustomer>
-   <purchaseValue>#[json:orderPrice]</purchaseValue>
-</val:Payment>

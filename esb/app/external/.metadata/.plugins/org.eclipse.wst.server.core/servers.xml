@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="1" hostname="localhost" id="Oracle WebLogic Server 12c R2 (12.2.1.2) [base_domain]" name="Oracle WebLogic Server 12c R2 (12.2.1.2) [base_domain]" runtime-id="Oracle WebLogic Server 12c R2 (12.2.1.2)" server-type="weblogic.server" server-type-id="weblogic.server" start-timeout="480" stop-timeout="240" timestamp="4" weblogic_domain_path="D:\app\oracle\user_projects\domains\base_domain" weblogic_host_name="" weblogic_is_remote="false" weblogic_port="7001" weblogic_use_bootprop="true" weblogic_use_config_xml="true">
+    <list key="modules"/>
+  </server>
+</servers>

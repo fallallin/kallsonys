@@ -1,0 +1,31 @@
+package co.com.kallsonys.esb.util;
+
+import java.util.List;
+
+import org.apache.cxf.binding.soap.SoapMessage;
+import org.apache.cxf.binding.soap.interceptor.AbstractSoapInterceptor;
+import org.apache.cxf.headers.Header;
+import org.apache.cxf.interceptor.Fault;
+import org.apache.cxf.phase.Phase;
+
+public class UtilHeaderFilterInterceptor extends AbstractSoapInterceptor {
+	
+	public UtilHeaderFilterInterceptor() {
+        super(Phase.PRE_MARSHAL);
+        System.out.println("************** Holas Constructor ****************");
+    }
+
+	@Override
+	public void handleMessage(SoapMessage message) throws Fault {
+		System.out.println("************** Holas ****************");
+		SoapMessage inboundMessage = (SoapMessage) message.getExchange().getInMessage();
+		List<Header> headers = inboundMessage.getHeaders();
+		if (headers != null) {
+			for (Header header : headers) {
+				System.out.println(header.getName() + ":" + header.getObject().toString());
+				
+			}
+		}
+	}
+
+}

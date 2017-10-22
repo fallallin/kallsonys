@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/common/headers" targetNamespace="http://www.kallsonys.com.co/common/headers" elementFormDefault="unqualified">
+	<complexType name="HeaderType">
+		<sequence>
+			<element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+			<element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+			<element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<complexType name="HeaderRqType">
+		<complexContent>
+			<restriction base="tns:HeaderType">
+				<sequence>
+					<element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+					<element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+					<element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="HeaderRsType">
+		<complexContent>
+			<restriction base="tns:HeaderType">
+				<sequence>
+					<element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+</schema>

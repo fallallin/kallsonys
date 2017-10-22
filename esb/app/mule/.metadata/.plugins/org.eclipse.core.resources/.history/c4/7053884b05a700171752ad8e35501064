@@ -1,8 +1,0 @@
-package co.com.kallsonys.payment.ws;
-
-public class CreditCardPortTypeImpl implements CreditCardPortType {
-
-	@Resource
-    private WebServiceContext context;
-
-}

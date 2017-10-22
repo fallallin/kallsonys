@@ -1,3 +1,0 @@
-<son:orderQuouteElement xmlns:son="http://sony.com.co/SonyQuoteService">
-   <orderId>#[json:orderId]</orderId>
-</son:orderQuouteElement>

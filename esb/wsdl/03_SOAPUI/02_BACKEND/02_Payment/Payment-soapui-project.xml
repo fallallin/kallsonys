@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2fb5e75f-7037-4599-a805-0947a76b89a6" activeEnvironment="Default" name="Payment" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="bedb3483-b9b3-4764-b437-0a997cf5c01a" wsaVersion="NONE" name="CreditCardBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/payment/v1}CreditCardBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/app/mule/Kallsonys/src/main/wsdl/01_ESB/Message/02_Payment/wsdl/1.2/Payment.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\02_Payment\wsdl\1.2\Payment.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\02_Payment\wsdl\1.2\Payment.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PaymentCreditCard" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1" xmlns:ns="http://www.kallsonys.com.co/cim/businessentities/company" xmlns:ns1="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:ns2="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:ns3="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:ns4="http://www.kallsonys.com.co/cim/businessentities/paymentcc" xmlns:ns5="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:ns6="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:ns7="http://www.kallsonys.com.co/cim/common/money">
+  <wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
+  <wsdl:import namespace="http://www.kallsonys.com.co/cim/message/payment/v1" location="../../xsd/Payment.xsd"/>
+  <xsd:types>
+    <xsd:schema targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1">
+      <xsd:include schemaLocation="../../xsd/Payment.xsd"/>
+    </xsd:schema>
+  </xsd:types>
+  <wsdl:message name="headerRq">
+    <wsdl:part name="headerRq" element="tns:headerRq"/>
+  </wsdl:message>
+  <wsdl:message name="headerRs">
+    <wsdl:part name="headerRs" element="tns:headerRs"/>
+  </wsdl:message>
+  <wsdl:message name="VerifyCreditCard_in">
+    <wsdl:part name="VerifyCreditCardRq" element="tns:VerifyCreditCardRq"/>
+  </wsdl:message>
+  <wsdl:message name="VerifyCreditCard_out">
+    <wsdl:part name="VerifyCreditCardRs" element="tns:VerifyCreditCardRs"/>
+  </wsdl:message>
+  <wsdl:message name="VerifyCreditCard_fault1">
+    <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentCreditCard_in">
+    <wsdl:part name="PaymentCreditCardRq" element="tns:PaymentCreditCardRq"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentCreditCard_out">
+    <wsdl:part name="PaymentCreditCardRs" element="tns:PaymentCreditCardRs"/>
+  </wsdl:message>
+  <wsdl:message name="PaymentCreditCard_fault1">
+    <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+  </wsdl:message>
+  <wsdl:portType name="CreditCardPortType">
+    <wsdl:operation name="verifyCreditCard">
+      <wsdl:input name="VerifyCreditCard_Input" message="tns:VerifyCreditCard_in"/>
+      <wsdl:output name="VerifyCreditCard_Output" message="tns:VerifyCreditCard_out"/>
+      <wsdl:fault name="VerifyCreditCard_Fault" message="tns:VerifyCreditCard_fault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="paymentCreditCard">
+      <wsdl:input name="PaymentCreditCard_Input" message="tns:PaymentCreditCard_in"/>
+      <wsdl:output name="PaymentCreditCard_Output" message="tns:PaymentCreditCard_out"/>
+      <wsdl:fault name="PaymentCreditCard_Fault" message="tns:PaymentCreditCard_fault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditCardBinding" type="tns:CreditCardPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="verifyCreditCard">
+      <soap12:operation soapAction="verifyCreditCard"/>
+      <wsdl:input name="VerifyCreditCard_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+        <soap12:body parts="VerifyCreditCardRq" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="VerifyCreditCard_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:body parts="VerifyCreditCardRs" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="VerifyCreditCard_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:fault name="VerifyCreditCard_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="paymentCreditCard">
+      <soap12:operation soapAction="paymentCreditCard"/>
+      <wsdl:input name="PaymentCreditCard_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+        <soap12:body parts="PaymentCreditCardRq" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PaymentCreditCard_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:body parts="PaymentCreditCardRs" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="PaymentCreditCard_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:fault name="PaymentCreditCard_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditCardService">
+    <wsdl:port name="CreditCardPort" binding="tns:CreditCardBinding">
+      <soap12:address location="http://localhost:9191/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\ExceptionGeneric.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/common/exceptiongeneric">
+  <element name="exceptionGeneric" type="tns:ExceptionGeneric"/>
+  <complexType name="ExceptionGeneric">
+    <sequence>
+      <element name="code" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="description" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="subCode" type="tns:ExceptionGeneric" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\02_Payment\xsd\Payment.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:c="http://www.kallsonys.com.co/cim/businessentities/company" xmlns:money="http://www.kallsonys.com.co/cim/common/money" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:cc="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:pcc="http://www.kallsonys.com.co/cim/businessentities/paymentcc" xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1">
+  <import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/company" schemaLocation="../../../BusinessEntities/Company.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" schemaLocation="../../../BusinessEntities/CreditCard.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/paymentcc" schemaLocation="../../../BusinessEntities/PaymentCC.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
+  <element name="headerRq" type="h:HeaderRqType"/>
+  <element name="headerRs" type="h:HeaderRsType"/>
+  <element name="VerifyCreditCardRq">
+    <complexType>
+      <complexContent>
+        <restriction base="cc:CreditCard">
+          <sequence>
+            <element name="cardType" type="cc:cardTypeEnum" minOccurs="1" maxOccurs="1"/>
+            <element name="cardNumber" type="string" minOccurs="1" maxOccurs="1"/>
+          </sequence>
+        </restriction>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="VerifyCreditCardRs">
+    <complexType>
+      <sequence>
+        <element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="PaymentCreditCardRq">
+    <complexType>
+      <complexContent>
+        <restriction base="pcc:PaymentCC_v1.0">
+          <sequence>
+            <element name="customerInfo" type="c:Company" minOccurs="0"/>
+            <element name="orderInfo" type="tns:OrderInfoType" minOccurs="0"/>
+            <element name="creditCardInfo" type="cc:CreditCard" minOccurs="0"/>
+          </sequence>
+        </restriction>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="PaymentCreditCardRs">
+    <complexType>
+      <sequence>
+        <element name="isPaid" type="boolean" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="OrderInfoType">
+    <complexContent>
+      <restriction base="order:OrderInfo_v1.0">
+        <sequence>
+          <element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="orderPrice" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\Headers.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/common/headers" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/common/headers">
+  <complexType name="HeaderType">
+    <sequence>
+      <element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+      <element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+      <element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="HeaderRqType">
+    <complexContent>
+      <restriction base="tns:HeaderType">
+        <sequence>
+          <element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+          <element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+          <element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="HeaderRsType">
+    <complexContent>
+      <restriction base="tns:HeaderType">
+        <sequence>
+          <element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Company.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/company" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/company">
+  <complexType name="Company">
+    <sequence>
+      <element name="companyId" type="tns:CompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="CompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="KALLSONYS"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\CreditCard.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/creditcard">
+  <complexType name="CreditCard">
+    <sequence>
+      <element name="cardType" type="tns:cardTypeEnum" minOccurs="0" maxOccurs="1"/>
+      <element name="cardNumber" type="string" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="cardTypeEnum">
+    <restriction base="string">
+      <enumeration value="DISCOVER"/>
+      <enumeration value="VISA"/>
+      <enumeration value="MASTERCARD"/>
+      <enumeration value="AMERICANEXPRESS"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\PaymentCC.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/paymentcc" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:c="http://www.kallsonys.com.co/cim/businessentities/company" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:cc="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/paymentcc">
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/company" schemaLocation="Company.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="Order.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" schemaLocation="CreditCard.xsd"/>
+  <!--Payment Entity-->
+  <complexType name="PaymentCC_v1.0">
+    <sequence>
+      <element name="customerInfo" type="c:Company" minOccurs="0"/>
+      <element name="orderInfo" type="order:OrderInfo_v1.0" minOccurs="0"/>
+      <element name="creditCardInfo" type="cc:CreditCard" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Order.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/order" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:money="http://www.kallsonys.com.co/cim/common/money" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/order">
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="ProductVendorCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="ShipmentCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="Item.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
+  <!--Product Entity-->
+  <complexType name="Order_v1.0">
+    <sequence>
+      <element name="orderInfo" type="tns:OrderInfo_v1.0" minOccurs="0"/>
+      <element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
+      <element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="OrderInfo_v1.0">
+    <sequence>
+      <element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="orderPrice" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="ShipmentInfo_v1.0">
+    <sequence>
+      <element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\ProductVendorCompany.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany">
+  <complexType name="ProductVendorCompany">
+    <sequence>
+      <element name="productVendorCompanyId" type="tns:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ProductVendorCompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="SONY"/>
+      <enumeration value="RAPIDSERVICE"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\ShipmentCompany.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany">
+  <complexType name="ShipmentCompany">
+    <sequence>
+      <element name="shipmentCompanyId" type="this:ShipmentCompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ShipmentCompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="DHL"/>
+      <enumeration value="SERVIENTREGA"/>
+      <enumeration value="DEPRISA"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Item.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/item" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:money="http://www.kallsonys.com.co/cim/common/money">
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
+  <complexType name="Item">
+    <sequence>
+      <element name="itemId" type="string" maxOccurs="1"/>
+      <element name="itemName" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="prodID" type="string" minOccurs="1"/>
+      <element name="productName" type="string" minOccurs="1"/>
+      <element name="partNumber" type="string" minOccurs="1"/>
+      <element name="itemDescription" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="price" type="money:MoneyGeneric" minOccurs="1"/>
+      <element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\Money.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/money" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/common/money">
+  <element name="money" type="this:MoneyGeneric"/>
+  <simpleType name="MoneyGeneric">
+    <restriction base="decimal">
+      <fractionDigits value="2"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockCreditCardBinding</con:endpoint><con:endpoint>http://localhost:9191/soap</con:endpoint></con:endpoints><con:operation id="f4b07bce-ce31-430e-918b-6fb566aa0c42" isOneWay="false" action="paymentCreditCard" name="paymentCreditCard" bindingOperationName="paymentCreditCard" type="Request-Response" outputName="PaymentCreditCard_Output" inputName="PaymentCreditCard_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="704a2cbd-26c6-40cc-881f-17c5e6111539" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/payment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:PaymentCreditCardRq>\r
+         <!--Optional:-->
+         <customerInfo>
+            <!--type: CompanyTypeEnum - enumeration: [KALLSONYS]-->
+            <companyId>KALLSONYS</companyId>
+         </customerInfo>
+         <!--Optional:-->
+         <orderInfo>
+            <!--Optional:-->
+            <!--type: string-->
+            <orderId>25</orderId>
+            <!--Optional:-->
+            <!--type: MoneyGeneric-->
+            <orderPrice>10</orderPrice>
+         </orderInfo>
+         <!--Optional:-->
+         <creditCardInfo>
+            <!--Optional:-->
+            <!--type: cardTypeEnum - enumeration: [DISCOVER,VISA,MASTERCARD,AMERICANEXPRESS]-->
+            <cardType>VISA</cardType>
+            <!--Optional:-->
+            <!--type: string-->
+            <cardNumber>1001</cardNumber>
+         </creditCardInfo>
+      </v1:PaymentCreditCardRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/PaymentCreditCard_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="96a471c9-a118-4e2d-9394-ae7a01cac99a" isOneWay="false" action="verifyCreditCard" name="verifyCreditCard" bindingOperationName="verifyCreditCard" type="Request-Response" outputName="VerifyCreditCard_Output" inputName="VerifyCreditCard_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5df11aac-c088-455f-811a-850697455307" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9191/soap</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:VerifyCreditCardRq>\r
+         <!--type: cardTypeEnum - enumeration: [DISCOVER,VISA,MASTERCARD,AMERICANEXPRESS]-->\r
+         <cardType>?</cardType>\r
+         <!--type: string-->\r
+         <cardNumber>?</cardNumber>\r
+      </v1:VerifyCreditCardRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/VerifyCreditCard_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="a6250990-2387-40bf-a4b0-85f75d67e748" port="8088" path="/mockCreditCardBinding" host="ASW1817" name="CreditCardBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="paymentCreditCard" id="3d14d883-d0df-485d-92a1-1c05371d9562" interface="CreditCardBinding" operation="paymentCreditCard"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="280985bf-d6f7-4e1d-abed-6d20cf04eb46" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
+   <soap:Body>
+      <v1:PaymentCreditCardRs>
+         <!--type: boolean-->
+         <isPaid>?</isPaid>
+      </v1:PaymentCreditCardRs>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/PaymentCreditCard_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="verifyCreditCard" id="9a43d7eb-044e-4a87-ad64-13e97c128ced" interface="CreditCardBinding" operation="verifyCreditCard"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="48931601-6d35-4c3b-9b7a-79ac0dedd428" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
+   <soap:Body>
+      <v1:VerifyCreditCardRs>
+         <!--type: boolean-->
+         <valid>?</valid>
+      </v1:VerifyCreditCardRs>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/VerifyCreditCard_Output"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

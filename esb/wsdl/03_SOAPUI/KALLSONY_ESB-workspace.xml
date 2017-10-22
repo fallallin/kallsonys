@@ -3,6 +3,6 @@
   <con:settings/>
   <con:project name="FactoriesQuotesOrders">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/01_ESB/FactoriesQuotesOrders-soapui-project.xml</con:project>
   <con:project name="Transport">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/01_ESB/Transport-soapui-project.xml</con:project>
-  <con:project name="Payment">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/01_ESB/Payment-soapui-project.xml</con:project>
+  <con:project name="Payment">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/02_Payment/Payment-soapui-project.xml</con:project>
   <con:collectInfoForSupport>false</con:collectInfoForSupport>
 </con:soapui-workspace>

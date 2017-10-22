@@ -1,0 +1,65 @@
+package co.com.kallsonys.esb.util;
+
+public class UtilHeaderFiltering {
+	public static void applyFilter(UtilHeaderFilter filter, Object obj) {
+	    try {
+	        // Try to locate a list at the top-level of the response
+	        List filterableList = null;
+	        for(Method getter : obj.getClass().getMethods()) {
+	            if(List.class.isAssignableFrom(getter.getReturnType()) &&
+	                    getter.getParameterCount() == 0) {
+	                filterableList = 
+	                    (List)getter.invoke(obj, (Object[])null);
+	            }
+	        }
+	 
+	        // If we have a list, apply the filter to each element
+	        if(filterableList != null) {
+	            int i = 0;
+	            while(i < filterableList.size()) {
+	                try {
+	                    // Use BeanUtils to pull the property out
+	                    String value = BeanUtils.getProperty(
+	                        filterableList.get(i++), filter.getProperty());
+	 
+	                    // Use BigDecimal for numerics, raw string otherwise
+	                    Comparable ruleValue = 
+	                        filter.getCompareAs().equals(ComparisonType.NUMERIC) ?
+	                            new BigDecimal(filter.getValue()) :
+	                            filter.getValue();
+	                    Comparable thisValue = 
+	                        filter.getCompareAs().equals(ComparisonType.NUMERIC) ?
+	                            new BigDecimal(value) :
+	                            value;
+	 
+	                    // Perform the approopriate comparison
+	                    boolean hit = false;
+	                    switch(filter.getComparison()) {
+	                        case EQUAL :
+	                            hit = ruleValue.compareTo(thisValue) == 0;
+	                            break;
+	                        case NOT_EQUAL :
+	                            hit = ruleValue.compareTo(thisValue) != 0;
+	                            break;
+	                        case GREATER_THAN :
+	                            hit = thisValue.compareTo(ruleValue) > 0;
+	                            break;
+	                        case LESS_THAN :
+	                            hit = thisValue.compareTo(ruleValue) < 0;
+	                            break;
+	                    }
+	 
+	                    // Remove if the filter applied
+	                    if(hit) {
+	                        filterableList.remove(--i);
+	                    }
+	                } catch(Exception e) {
+	                    // TODO: Log
+	                }
+	            }
+	        }
+	    } catch(Exception e) {
+	        // TODO: Log
+	    }
+	}
+}

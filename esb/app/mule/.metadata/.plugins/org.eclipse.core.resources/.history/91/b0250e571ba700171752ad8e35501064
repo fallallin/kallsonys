@@ -1,7 +1,0 @@
-package co.com.kallsonys.pojo;
-
-public class PaymentCreditCardPOJO {
-	private String companyId;
-	private 
-
-}

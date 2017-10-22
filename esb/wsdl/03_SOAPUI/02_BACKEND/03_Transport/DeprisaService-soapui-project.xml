@@ -109,7 +109,7 @@
       <soap:address location="http://localhost:8080/DeprisaApp/DeprisaService"/>
     </port>
   </service>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint></con:endpoints><con:operation id="514e77aa-5ccd-48ff-9930-0a49d4014a29" isOneWay="false" action="" name="cumplirConEnvio" bindingOperationName="cumplirConEnvio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2952aef4-7486-476a-8abb-2daa50db76c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">\r
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockDeprisaServiceBinding</con:endpoint><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint></con:endpoints><con:operation id="514e77aa-5ccd-48ff-9930-0a49d4014a29" isOneWay="false" action="" name="cumplirConEnvio" bindingOperationName="cumplirConEnvio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2952aef4-7486-476a-8abb-2daa50db76c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <dep:cumplirConEnvio>\r
@@ -150,7 +150,7 @@
          </envio>\r
       </dep:cumplirConEnvio>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/cumplirConEnvioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9434c3f8-23b4-4903-9f60-7f8ddd2b4a9c" isOneWay="false" action="" name="verificarEstadoEnvio" bindingOperationName="verificarEstadoEnvio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="237875c8-6799-40d8-930c-808596307f40" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DeprisaApp/DeprisaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/cumplirConEnvioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9434c3f8-23b4-4903-9f60-7f8ddd2b4a9c" isOneWay="false" action="" name="verificarEstadoEnvio" bindingOperationName="verificarEstadoEnvio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="237875c8-6799-40d8-930c-808596307f40" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.0.9:7001/servientrega-web/webresources/application.wadl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <dep:verificarEstadoEnvio>\r
@@ -158,4 +158,20 @@
          <orderId>?</orderId>\r
       </dep:verificarEstadoEnvio>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/verificarEstadoEnvioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/verificarEstadoEnvioRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="58b333ed-10fd-4cb9-9d60-10fc3973251a" port="8088" path="/mockDeprisaServiceBinding" host="ASW1817" name="DeprisaServiceBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="cumplirConEnvio" id="758d8059-3c40-44f3-9d01-1bc9ce2db961" interface="DeprisaServiceBinding" operation="cumplirConEnvio"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="408d7a34-5d6e-4346-ab58-3d10bffe8822" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dep:cumplirConEnvioResponse>
+         <!--type: boolean-->
+         <cumplirConEnvioResult>?</cumplirConEnvioResult>
+      </dep:cumplirConEnvioResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/cumplirConEnvioResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="verificarEstadoEnvio" id="e7de2fa0-6dbc-46f5-b769-f59bd03f8934" interface="DeprisaServiceBinding" operation="verificarEstadoEnvio"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="b53af051-264d-4627-8230-e016d89b6119" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dep="http://deprisa.com.co/DeprisaService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dep:verificarEstadoEnvioResponse>
+         <!--type: string-->
+         <verificarEstadoEnvioResult>?</verificarEstadoEnvioResult>
+      </dep:verificarEstadoEnvioResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://deprisa.com.co/DeprisaServicePort/verificarEstadoEnvioResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

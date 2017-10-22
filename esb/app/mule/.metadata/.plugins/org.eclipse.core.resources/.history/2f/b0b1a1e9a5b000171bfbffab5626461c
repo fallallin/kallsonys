@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:cxf="http://www.mulesoft.org/schema/mule/cxf"
+	xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns:mulexml="http://www.mulesoft.org/schema/mule/xml" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:mule-ss="http://www.mulesoft.org/schema/mule/spring-security"
+	xmlns:ss="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/xml http://www.mulesoft.org/schema/mule/xml/current/mule-xml.xsd
+http://www.mulesoft.org/schema/mule/cxf http://www.mulesoft.org/schema/mule/cxf/current/mule-cxf.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/spring-security http://www.mulesoft.org/schema/mule/spring-security/3.1/mule-spring-security.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+	<cxf:configuration name="CXF_Configuration"
+		enableMuleSoapHeaders="true" initializeStaticBusInstance="true"
+		doc:name="CXF Configuration" />
+	<spring:beans>
+		<ss:authentication-manager alias="authenticationManager">
+			<ss:authentication-provider>
+				<ss:user-service id="userService">
+					<ss:user name="kallsonys" password="k4lls0ny5" authorities="ROLE_ADMIN" />
+				</ss:user-service>
+			</ss:authentication-provider>
+		</ss:authentication-manager>
+        <spring:bean id="BeanUtilHeaderFilterInterceptor" name="BeanUtilHeaderFilterInterceptor" class="co.com.kallsonys.esb.util.UtilHeaderFilterInterceptor" />
+	</spring:beans>
+	<mule-ss:security-manager>
+		<mule-ss:delegate-security-provider
+			name="memory-provider" delegate-ref="authenticationManager" />
+	</mule-ss:security-manager>
+	<flow name="esbpaymentFlow">
+		<http:listener config-ref="HTTP_Listener_Configuration"
+			path="/esb/payment" allowedMethods="POST" doc:name="HTTP" />
+		<logger level="INFO" message="## received" doc:name="Logger" />
+		<http:basic-security-filter realm="mule-realm" />
+		<logger level="INFO" message="## passed security" doc:name="Logger" />
+		<cxf:jaxws-service configuration-ref="CXF_Configuration"
+			serviceClass="co.com.kallsonys.esb.payment.CreditCardPortType"
+			doc:name="CXF" soapVersion="1.2">
+            <cxf:outInterceptors>
+                <spring:ref bean="BeanUtilHeaderFilterInterceptor"/>
+            </cxf:outInterceptors>
+		</cxf:jaxws-service>
+        <component class="co.com.kallsonys.esb.payment.CreditCardPortTypeImpl" doc:name="Java">
+        </component>
+	</flow>
+</mule>
