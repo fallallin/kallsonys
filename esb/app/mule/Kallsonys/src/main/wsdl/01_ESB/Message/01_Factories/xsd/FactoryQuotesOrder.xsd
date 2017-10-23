@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fact="http://www.kallsonys.com.co/cim/businessentities/factory" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:this="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
-	<import namespace="http://www.kallsonys.com.co/cim/businessentities/factory" schemaLocation="../../../BusinessEntities/Factory.xsd"/>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:this="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+	<import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="../../../BusinessEntities/ProductVendorCompany.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="../../../BusinessEntities/ProductVendorCompany.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="../../../BusinessEntities/Item.xsd"/>
+	<element name="headerRq" type="h:HeaderRqType"/>
+	<element name="headerRs" type="h:HeaderRsType"/>
 	<element name="FactoryQuotesOrderRq">
 		<complexType>
 			<complexContent>
-				<restriction base="order:Order">
+				<restriction base="order:Order_v1.0">
 					<sequence>
-						<element name="factoryId" type="fact:FactoryTypeEnum" maxOccurs="1"/>
-						<element name="orderId" type="string" maxOccurs="1"/>
-						<element name="items" type="this:ItemsType" maxOccurs="1"/>
+						<element name="orderInfo" type="order:OrderInfo_v1.0" minOccurs="0"/>
+						<element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
 					</sequence>
 				</restriction>
 			</complexContent>
@@ -19,9 +23,9 @@
 	<element name="FactoryQuotesOrderRs">
 		<complexType>
 			<complexContent>
-				<restriction base="order:Order">
+				<restriction base="order:OrderInfo_v1.0">
 					<sequence>
-						<element name="supplierPrice" type="decimal" minOccurs="1" maxOccurs="1"/>
+						<element name="orderPrice" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
 					</sequence>
 				</restriction>
 			</complexContent>
@@ -30,10 +34,10 @@
 	<element name="ValidateOrderQuoteRq">
 		<complexType>
 			<complexContent>
-				<restriction base="order:Order">
+				<restriction base="order:Order_v1.0">
 					<sequence>
-						<element name="factoryId" type="fact:FactoryTypeEnum" maxOccurs="1"/>
-						<element name="orderId" type="string" maxOccurs="1"/>
+						<element name="orderInfo" type="this:OrderInfoType" minOccurs="0"/>
+						<element name="productVendorCompanyInfo" type="this:ProductVendorCompanyType" minOccurs="0"/>
 					</sequence>
 				</restriction>
 			</complexContent>
@@ -41,20 +45,16 @@
 	</element>
 	<element name="ValidateOrderQuoteRs">
 		<complexType>
-			<complexContent>
-				<restriction base="order:Order">
-					<sequence>
-						<element name="result" type="boolean" maxOccurs="1"/>
-					</sequence>
-				</restriction>
-			</complexContent>
+			<sequence>
+				<element name="result" type="boolean" maxOccurs="1"/>
+			</sequence>
 		</complexType>
 	</element>
 	<complexType name="ItemsType">
 		<complexContent>
-			<restriction base="order:ItemsType">
+			<restriction base="order:OrderInfo_v1.0">
 				<sequence>
-					<element name="item" type="this:ItemType" maxOccurs="unbounded"/>
+					<element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
 				</sequence>
 			</restriction>
 		</complexContent>
@@ -63,8 +63,26 @@
 		<complexContent>
 			<restriction base="item:Item">
 				<sequence>
-					<element name="itemId" type="string" minOccurs="1" maxOccurs="1"/>
-					<element name="quantity" type="long" minOccurs="1" maxOccurs="1"/>
+					<element name="itemId" type="string" maxOccurs="1"/>
+					<element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="OrderInfoType">
+		<complexContent>
+			<restriction base="order:OrderInfo_v1.0">
+				<sequence>
+					<element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="ProductVendorCompanyType">
+		<complexContent>
+			<restriction base="pvc:ProductVendorCompany">
+				<sequence>
+					<element name="productVendorCompanyId" type="pvc:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
 				</sequence>
 			</restriction>
 		</complexContent>

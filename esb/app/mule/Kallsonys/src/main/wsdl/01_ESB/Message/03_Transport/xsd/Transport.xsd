@@ -15,13 +15,9 @@
 	</element>
 	<element name="PaymentRs">
 		<complexType>
-			<complexContent>
-				<restriction base="crecar:CreditCard">
-					<sequence>
-						<element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
-					</sequence>
-				</restriction>
-			</complexContent>
+			<sequence>
+				<element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
+			</sequence>
 		</complexType>
 	</element>
 </schema>

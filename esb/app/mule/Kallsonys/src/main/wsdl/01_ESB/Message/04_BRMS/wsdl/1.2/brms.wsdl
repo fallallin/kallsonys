@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1" xmlns:ns="http://www.kallsonys.com.co/cim/businessentities/company" xmlns:ns1="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:ns2="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:ns3="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:ns4="http://www.kallsonys.com.co/cim/businessentities/paymentcc" xmlns:ns5="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:ns6="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:ns7="http://www.kallsonys.com.co/cim/common/money" name="PaymentCreditCard" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/brms/v1" name="BRMS" targetNamespace="http://www.kallsonys.com.co/cim/message/brms/v1">
 	<wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
-	<wsdl:import namespace="http://www.kallsonys.com.co/cim/message/payment/v1" location="../../xsd/Payment.xsd"/>
+	<wsdl:import namespace="http://www.kallsonys.com.co/cim/message/payment/v1" location="../../xsd/brms.xsd"/>
 	<xsd:types>
-		<xsd:schema xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1">
-			<xsd:include schemaLocation="../../xsd/Payment.xsd"/>
+		<xsd:schema xmlns:tns="http://www.kallsonys.com.co/cim/message/brms/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/brms/v1">
+			<xsd:include schemaLocation="../../xsd/brms.xsd"/>
 		</xsd:schema>
 	</xsd:types>
 	<wsdl:message name="headerRq">
@@ -13,71 +13,71 @@
 	<wsdl:message name="headerRs">
 		<wsdl:part name="headerRs" element="tns:headerRs"/>
 	</wsdl:message>
-	<wsdl:message name="VerifyCreditCard_in">
-		<wsdl:part name="VerifyCreditCardRq" element="tns:VerifyCreditCardRq"/>
+	<wsdl:message name="DefineShipmentCompany_in">
+		<wsdl:part name="DefineShipmentCompanyRq" element="tns:DefineShipmentCompanyRq"/>
 	</wsdl:message>
-	<wsdl:message name="VerifyCreditCard_out">
-		<wsdl:part name="VerifyCreditCardRs" element="tns:VerifyCreditCardRs"/>
+	<wsdl:message name="DefineShipmentCompany_out">
+		<wsdl:part name="DefineShipmentCompanyRs" element="tns:DefineShipmentCompanyRs"/>
 	</wsdl:message>
-	<wsdl:message name="VerifyCreditCard_fault1">
+	<wsdl:message name="DefineShipmentCompany_fault1">
 		<wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
 	</wsdl:message>
-	<wsdl:message name="PaymentCreditCard_in">
-		<wsdl:part name="PaymentCreditCardRq" element="tns:PaymentCreditCardRq"/>
+	<wsdl:message name="ValidateAmountAccordingCustomerClass_in">
+		<wsdl:part name="ValidateAmountAccordingCustomerClassRq" element="tns:ValidateAmountAccordingCustomerClassRq"/>
 	</wsdl:message>
-	<wsdl:message name="PaymentCreditCard_out">
-		<wsdl:part name="PaymentCreditCardRs" element="tns:PaymentCreditCardRs"/>
+	<wsdl:message name="ValidateAmountAccordingCustomerClass_out">
+		<wsdl:part name="ValidateAmountAccordingCustomerClassRs" element="tns:ValidateAmountAccordingCustomerClassRs"/>
 	</wsdl:message>
-	<wsdl:message name="PaymentCreditCard_fault1">
+	<wsdl:message name="ValidateAmountAccordingCustomerClass_fault1">
 		<wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
 	</wsdl:message>
-	<wsdl:portType name="CreditCardPortType">
-		<wsdl:operation name="verifyCreditCard">
-			<wsdl:input name="VerifyCreditCard_Input" message="tns:VerifyCreditCard_in"/>
-			<wsdl:output name="VerifyCreditCard_Output" message="tns:VerifyCreditCard_out"/>
-			<wsdl:fault name="VerifyCreditCard_Fault" message="tns:VerifyCreditCard_fault1"/>
+	<wsdl:portType name="BRMSPortType">
+		<wsdl:operation name="defineShipmentCompany">
+			<wsdl:input name="DefineShipmentCompany_Input" message="tns:DefineShipmentCompany_in"/>
+			<wsdl:output name="DefineShipmentCompany_Output" message="tns:DefineShipmentCompany_out"/>
+			<wsdl:fault name="DefineShipmentCompany_Fault" message="tns:DefineShipmentCompany_fault1"/>
 		</wsdl:operation>
-		<wsdl:operation name="paymentCreditCard">
-			<wsdl:input name="PaymentCreditCard_Input" message="tns:PaymentCreditCard_in"/>
-			<wsdl:output name="PaymentCreditCard_Output" message="tns:PaymentCreditCard_out"/>
-			<wsdl:fault name="PaymentCreditCard_Fault" message="tns:PaymentCreditCard_fault1"/>
+		<wsdl:operation name="validateAmountAccordingCustomerClass">
+			<wsdl:input name="ValidateAmountAccordingCustomerClass_Input" message="tns:ValidateAmountAccordingCustomerClass_in"/>
+			<wsdl:output name="ValidateAmountAccordingCustomerClass_Output" message="tns:ValidateAmountAccordingCustomerClass_out"/>
+			<wsdl:fault name="ValidateAmountAccordingCustomerClass_Fault" message="tns:ValidateAmountAccordingCustomerClass_fault1"/>
 		</wsdl:operation>
 	</wsdl:portType>
-	<wsdl:binding name="CreditCardBinding" type="tns:CreditCardPortType">
+	<wsdl:binding name="BRMSBinding" type="tns:BRMSPortType">
 		<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<wsdl:operation name="verifyCreditCard">
-			<soap12:operation soapAction="verifyCreditCard"/>
-			<wsdl:input name="VerifyCreditCard_Input">
+		<wsdl:operation name="defineShipmentCompany">
+			<soap12:operation soapAction="defineShipmentCompany"/>
+			<wsdl:input name="DefineShipmentCompany_Input">
 				<soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
-				<soap12:body parts="VerifyCreditCardRq" use="literal"/>
+				<soap12:body parts="DefineShipmentCompanyRq" use="literal"/>
 			</wsdl:input>
-			<wsdl:output name="VerifyCreditCard_Output">
+			<wsdl:output name="DefineShipmentCompany_Output">
 				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
-				<soap12:body parts="VerifyCreditCardRs" use="literal"/>
+				<soap12:body parts="DefineShipmentCompanyRs" use="literal"/>
 			</wsdl:output>
-			<wsdl:fault name="VerifyCreditCard_Fault">
+			<wsdl:fault name="DefineShipmentCompany_Fault">
 				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
-				<soap12:fault name="VerifyCreditCard_Fault" use="literal"/>
+				<soap12:fault name="DefineShipmentCompany_Fault" use="literal"/>
 			</wsdl:fault>
 		</wsdl:operation>
-		<wsdl:operation name="paymentCreditCard">
-			<soap12:operation soapAction="paymentCreditCard"/>
-			<wsdl:input name="PaymentCreditCard_Input">
+		<wsdl:operation name="validateAmountAccordingCustomerClass">
+			<soap12:operation soapAction="validateAmountAccordingCustomerClass"/>
+			<wsdl:input name="ValidateAmountAccordingCustomerClass_Input">
 				<soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
-				<soap12:body parts="PaymentCreditCardRq" use="literal"/>
+				<soap12:body parts="ValidateAmountAccordingCustomerClassRq" use="literal"/>
 			</wsdl:input>
-			<wsdl:output name="PaymentCreditCard_Output">
+			<wsdl:output name="ValidateAmountAccordingCustomerClass_Output">
 				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
-				<soap12:body parts="PaymentCreditCardRs" use="literal"/>
+				<soap12:body parts="ValidateAmountAccordingCustomerClassRs" use="literal"/>
 			</wsdl:output>
-			<wsdl:fault name="PaymentCreditCard_Fault">
+			<wsdl:fault name="ValidateAmountAccordingCustomerClass_Fault">
 				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
-				<soap12:fault name="PaymentCreditCard_Fault" use="literal"/>
+				<soap12:fault name="ValidateAmountAccordingCustomerClass_Fault" use="literal"/>
 			</wsdl:fault>
 		</wsdl:operation>
 	</wsdl:binding>
-	<wsdl:service name="CreditCardService">
-		<wsdl:port name="CreditCardPort" binding="tns:CreditCardBinding">
+	<wsdl:service name="BRMSService">
+		<wsdl:port name="BRMSPort" binding="tns:BRMSBinding">
 			<soap12:address location="http://localhost:9191/soap"/>
 		</wsdl:port>
 	</wsdl:service>

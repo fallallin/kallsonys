@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/customer" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/customer" elementFormDefault="unqualified">
+	<complexType name="Customer">
+		<sequence>
+			<element name="customerClass" type="tns:CustomerClassTypeEnum" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	<simpleType name="CustomerClassTypeEnum">
+		<restriction base="string">
+			<enumeration value="PLATINO"/>
+			<enumeration value="DORADO"/>
+			<enumeration value="PLATEADO"/>
+		</restriction>
+	</simpleType>
+</schema>

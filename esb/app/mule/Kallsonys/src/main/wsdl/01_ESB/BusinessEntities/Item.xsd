@@ -3,13 +3,13 @@
 	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
 	<complexType name="Item">
 		<sequence>
-			<element name="itemId" type="string" maxOccurs="1"/>
+			<element name="itemId" type="string" minOccurs="0" maxOccurs="1"/>
 			<element name="itemName" type="string" minOccurs="0" maxOccurs="1"/>
-			<element name="prodID" type="string" minOccurs="1"/>
-			<element name="productName" type="string" minOccurs="1"/>
-			<element name="partNumber" type="string" minOccurs="1"/>
+			<element name="prodID" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="productName" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="partNumber" type="string" minOccurs="0" maxOccurs="1"/>
 			<element name="itemDescription" type="string" minOccurs="0" maxOccurs="1"/>
-			<element name="price" type="money:MoneyGeneric" minOccurs="1"/>
+			<element name="price" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
 			<element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
 		</sequence>
 	</complexType>

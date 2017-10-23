@@ -2572,3 +2572,44 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-21 16:36:57.176
 !MESSAGE Started WebLogic Server Monitor [base_domain@localhost:7001, Version:12.2.1.2.0]
+!SESSION 2017-10-22 19:02:47.673 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_CO
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-10-22 19:03:05.993
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ohuertas'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:03:06.796
+!MESSAGE Started WebLogic Server Monitor [base_domain@localhost:7001, Version:12.2.1.2.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:09.384
+!MESSAGE Server watcher[Oracle WebLogic Server 12c R2 (12.2.1.2) [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:12.477
+!MESSAGE JMX Connection created to WebLogic Server @:[service:jmx:t3://localhost:7001/jndi/weblogic.management.mbeanservers.domainruntime]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:17.922
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:17.923
+!MESSAGE Elapsed time 5361ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:17.924
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 12c R2 (12.2.1.2) [base_domain] t3://localhost:7001]@1042020586
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:18.122
+!MESSAGE Releasing deployment manager :[Oracle WebLogic Server 12c R2 (12.2.1.2) [base_domain]]@1042020586
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:19.981
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2017-10-22 19:04:20.067
+!MESSAGE Total deleted modules: 0

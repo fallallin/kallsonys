@@ -1,13 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/address" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/address" elementFormDefault="unqualified">
 	<complexType name="Address">
 		<sequence>
-			<element name="country" type="string" minOccurs="1"/>
-			<element name="state" type="string" minOccurs="1"/>
-			<element name="city" type="string" minOccurs="1"/>
-			<element name="neighborhood" type="string" minOccurs="1"/>
-			<element name="street" type="string" minOccurs="1"/>
-			<element name="zipcode" type="string" minOccurs="1"/>
+			<element name="country" type="tns:CountryTypeEnum" minOccurs="0"/>
+			<element name="state" type="string" minOccurs="0"/>
+			<element name="city" type="string" minOccurs="0"/>
+			<element name="neighborhood" type="string" minOccurs="0"/>
+			<element name="street" type="string" minOccurs="0"/>
+			<element name="zipcode" type="string" minOccurs="0"/>
 		</sequence>
 	</complexType>
+	<simpleType name="CountryTypeEnum">
+		<restriction base="string">
+			<enumeration value="AL"/>
+			<enumeration value="DZ"/>
+			<enumeration value="AR"/>
+			<enumeration value="AU"/>
+			<enumeration value="AT"/>
+			<enumeration value="BH"/>
+			<enumeration value="BY"/>
+			<enumeration value="BE"/>
+			<enumeration value="BO"/>
+			<enumeration value="BA"/>
+			<enumeration value="BR"/>
+			<enumeration value="BG"/>
+			<enumeration value="CA"/>
+			<enumeration value="CL"/>
+			<enumeration value="CN"/>
+			<enumeration value="CO"/>
+			<enumeration value="CR"/>
+			<enumeration value="HR"/>
+			<enumeration value="CY"/>
+			<enumeration value="CZ"/>
+			<enumeration value="DK"/>
+			<enumeration value="DO"/>
+			<enumeration value="EC"/>
+			<enumeration value="EG"/>
+			<enumeration value="SV"/>
+			<enumeration value="EE"/>
+			<enumeration value="FI"/>
+			<enumeration value="FR"/>
+			<enumeration value="DE"/>
+			<enumeration value="GR"/>
+			<enumeration value="GT"/>
+			<enumeration value="HN"/>
+			<enumeration value="HK"/>
+			<enumeration value="HU"/>
+			<enumeration value="IS"/>
+			<enumeration value="IN"/>
+			<enumeration value="ID"/>
+			<enumeration value="IQ"/>
+			<enumeration value="IE"/>
+			<enumeration value="IL"/>
+			<enumeration value="IT"/>
+			<enumeration value="JP"/>
+			<enumeration value="JO"/>
+			<enumeration value="KW"/>
+			<enumeration value="LV"/>
+			<enumeration value="LB"/>
+			<enumeration value="LT"/>
+			<enumeration value="LU"/>
+			<enumeration value="MK"/>
+			<enumeration value="MY"/>
+			<enumeration value="MT"/>
+			<enumeration value="MX"/>
+			<enumeration value="MA"/>
+			<enumeration value="NL"/>
+			<enumeration value="NZ"/>
+			<enumeration value="NI"/>
+			<enumeration value="NO"/>
+			<enumeration value="OM"/>
+			<enumeration value="PA"/>
+			<enumeration value="PY"/>
+			<enumeration value="PE"/>
+			<enumeration value="PH"/>
+			<enumeration value="PL"/>
+			<enumeration value="PT"/>
+			<enumeration value="PR"/>
+			<enumeration value="QA"/>
+			<enumeration value="RO"/>
+			<enumeration value="RU"/>
+			<enumeration value="SA"/>
+			<enumeration value="CS"/>
+			<enumeration value="SG"/>
+			<enumeration value="SK"/>
+			<enumeration value="SI"/>
+			<enumeration value="ZA"/>
+			<enumeration value="ES"/>
+			<enumeration value="SD"/>
+			<enumeration value="SE"/>
+			<enumeration value="CH"/>
+			<enumeration value="SY"/>
+			<enumeration value="TW"/>
+			<enumeration value="TH"/>
+			<enumeration value="TN"/>
+			<enumeration value="TR"/>
+			<enumeration value="UA"/>
+			<enumeration value="AE"/>
+			<enumeration value="GB"/>
+			<enumeration value="US"/>
+			<enumeration value="UY"/>
+			<enumeration value="VE"/>
+			<enumeration value="VN"/>
+			<enumeration value="YE"/>
+		</restriction>
+	</simpleType>
 </schema>

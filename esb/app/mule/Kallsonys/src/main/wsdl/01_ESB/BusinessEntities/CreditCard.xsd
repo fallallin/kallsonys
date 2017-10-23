@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/creditcard" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" elementFormDefault="unqualified">
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/creditcard" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" elementFormDefault="unqualified">
+	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
 	<complexType name="CreditCard">
 		<sequence>
 			<element name="cardType" type="tns:cardTypeEnum" minOccurs="0" maxOccurs="1"/>
 			<element name="cardNumber" type="string" minOccurs="0" maxOccurs="1"/>
+			<element name="priceToPay" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
 		</sequence>
 	</complexType>
 	<simpleType name="cardTypeEnum">

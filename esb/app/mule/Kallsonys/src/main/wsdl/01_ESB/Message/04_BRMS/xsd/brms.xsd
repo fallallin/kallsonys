@@ -1,58 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:c="http://www.kallsonys.com.co/cim/businessentities/company" xmlns:money="http://www.kallsonys.com.co/cim/common/money" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:cc="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:pcc="http://www.kallsonys.com.co/cim/businessentities/paymentcc" xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1" elementFormDefault="unqualified">
+<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:adr="http://www.kallsonys.com.co/cim/businessentities/address" xmlns:cus="http://www.kallsonys.com.co/cim/businessentities/customer" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:tns="http://www.kallsonys.com.co/cim/message/brms/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/brms/v1" elementFormDefault="unqualified">
 	<import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
-	<import namespace="http://www.kallsonys.com.co/cim/businessentities/company" schemaLocation="../../../BusinessEntities/Company.xsd"/>
-	<import namespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" schemaLocation="../../../BusinessEntities/CreditCard.xsd"/>
-	<import namespace="http://www.kallsonys.com.co/cim/businessentities/paymentcc" schemaLocation="../../../BusinessEntities/PaymentCC.xsd"/>
-	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="../../../BusinessEntities/ShipmentCompany.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="../../../BusinessEntities/ProductVendorCompany.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/address" schemaLocation="../../../BusinessEntities/Address.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/customer" schemaLocation="../../../BusinessEntities/Customer.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
 	<element name="headerRq" type="h:HeaderRqType"/>
 	<element name="headerRs" type="h:HeaderRsType"/>
-	<element name="VerifyCreditCardRq">
+	<element name="DefineShipmentCompanyRq">
 		<complexType>
-			<complexContent>
-				<restriction base="cc:CreditCard">
-					<sequence>
-						<element name="cardType" type="cc:cardTypeEnum" minOccurs="1" maxOccurs="1"/>
-						<element name="cardNumber" type="string" minOccurs="1" maxOccurs="1"/>
-					</sequence>
-				</restriction>
-			</complexContent>
+			<sequence>
+				<element name="localization" type="tns:LocalizationType" minOccurs="1" maxOccurs="1"/>
+				<element name="vendor" type="tns:VendorType" minOccurs="1" maxOccurs="1"/>
+			</sequence>
 		</complexType>
 	</element>
-	<element name="VerifyCreditCardRs">
+	<element name="DefineShipmentCompanyRs">
+		<complexType>
+			<sequence>
+				<element name="shipmentCompany" type="tns:ShipmentCompanyType" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ValidateAmountAccordingCustomerClassRq">
+		<complexType>
+			<sequence>
+				<element name="customer" type="tns:CustomerType" minOccurs="1" maxOccurs="1"/>
+				<element name="order" type="tns:OrderType" minOccurs="1" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ValidateAmountAccordingCustomerClassRs">
 		<complexType>
 			<sequence>
 				<element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
 			</sequence>
 		</complexType>
 	</element>
-	<element name="PaymentCreditCardRq">
-		<complexType>
-			<complexContent>
-				<restriction base="pcc:PaymentCC_v1.0">
-					<sequence>
-						<element name="customerInfo" type="c:Company" minOccurs="0"/>
-						<element name="orderInfo" type="tns:OrderInfoType" minOccurs="0"/>
-						<element name="creditCardInfo" type="cc:CreditCard" minOccurs="0"/>
-					</sequence>
-				</restriction>
-			</complexContent>
-		</complexType>
-	</element>
-	<element name="PaymentCreditCardRs">
-		<complexType>
-			<sequence>
-				<element name="isPaid" type="boolean" minOccurs="1" maxOccurs="1"/>
-			</sequence>
-		</complexType>
-	</element>
-	<complexType name="OrderInfoType">
+	<complexType name="LocalizationType">
+		<complexContent>
+			<restriction base="adr:Address">
+				<sequence>
+					<element name="country" type="adr:CountryTypeEnum" minOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="VendorType">
+		<complexContent>
+			<restriction base="pvc:ProductVendorCompany">
+				<sequence>
+					<element name="productVendorCompanyId" type="pvc:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="ShipmentCompanyType">
+		<complexContent>
+			<restriction base="sc:ShipmentCompany">
+				<sequence>
+					<element name="shipmentCompanyId" type="sc:ShipmentCompanyTypeEnum" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="CustomerType">
+		<complexContent>
+			<restriction base="cus:Customer">
+				<sequence>
+					<element name="customerClass" type="cus:CustomerClassTypeEnum" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="OrderType">
 		<complexContent>
 			<restriction base="order:OrderInfo_v1.0">
 				<sequence>
-					<element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
-					<element name="orderPrice" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+					<element name="orderPrice" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
 				</sequence>
 			</restriction>
 		</complexContent>

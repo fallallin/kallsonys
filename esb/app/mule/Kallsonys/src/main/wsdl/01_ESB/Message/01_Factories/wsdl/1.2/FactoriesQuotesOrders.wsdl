@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" name="FactoriesQuotesOrders" targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+	<wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
+	<wsdl:import namespace="http://www.kallsonys.com.co/cim/message/payment/v1" location="../../xsd/FactoryQuotesOrder.xsd"/>
 	<types>
 		<schema targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" xmlns="http://www.w3.org/2001/XMLSchema">
 			<include schemaLocation="../../xsd/FactoryQuotesOrder.xsd"/>
-			<import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" schemaLocation="../../../../Common/exceptiongeneric.xsd"/>
 		</schema>
 	</types>
+	<wsdl:message name="headerRq">
+		<wsdl:part name="headerRq" element="tns:headerRq"/>
+	</wsdl:message>
+	<wsdl:message name="headerRs">
+		<wsdl:part name="headerRs" element="tns:headerRs"/>
+	</wsdl:message>
 	<wsdl:message name="FactoryQuotesOrder_in">
 		<wsdl:part name="FactoryQuotesOrderRq" element="tns:FactoryQuotesOrderRq"/>
 	</wsdl:message>
@@ -41,31 +48,37 @@
 		<wsdl:operation name="factoryQuotesOrder">
 			<soap12:operation soapAction="factoryQuotesOrder"/>
 			<wsdl:input name="FactoryQuotesOrder_Input">
+				<soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
 				<soap12:body parts="FactoryQuotesOrderRq" use="literal"/>
 			</wsdl:input>
 			<wsdl:output name="FactoryQuotesOrder_Output">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
 				<soap12:body parts="FactoryQuotesOrderRs" use="literal"/>
 			</wsdl:output>
 			<wsdl:fault name="FactoryQuotesOrder_Fault">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
 				<soap12:fault name="FactoryQuotesOrder_Fault" use="literal"/>
 			</wsdl:fault>
 		</wsdl:operation>
 		<wsdl:operation name="validateOrderQuote">
 			<soap12:operation soapAction="validateOrderQuote"/>
 			<wsdl:input name="ValidateOrderQuote_Input">
+				<soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
 				<soap12:body parts="ValidateOrderQuoteRq" use="literal"/>
 			</wsdl:input>
 			<wsdl:output name="ValidateOrderQuote_Output">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
 				<soap12:body parts="ValidateOrderQuoteRs" use="literal"/>
 			</wsdl:output>
 			<wsdl:fault name="ValidateOrderQuote_Fault">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
 				<soap12:fault name="ValidateOrderQuote_Fault" use="literal"/>
 			</wsdl:fault>
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:service name="FactoriesQuotesOrdersService">
 		<wsdl:port name="FactoriesQuotesOrdersPort" binding="tns:FactoriesQuotesOrdersBinding">
-			<soap12:address location="http://localhost:8080/message/"/>
+			<soap12:address location="http://localhost:9191/soap"/>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>
