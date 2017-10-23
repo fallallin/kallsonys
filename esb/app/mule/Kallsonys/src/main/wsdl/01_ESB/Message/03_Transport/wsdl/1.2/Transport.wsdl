@@ -1,45 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/payment/v1" name="FactoriesQuotesOrders" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1" name="ShipmentCompany" targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1">
+	<wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
+	<wsdl:import namespace="http://www.kallsonys.com.co/cim/message/shipment/v1" location="../../xsd/Transport.xsd"/>
 	<types>
-		<schema targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1" xmlns="http://www.w3.org/2001/XMLSchema">
+		<schema targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1" xmlns="http://www.w3.org/2001/XMLSchema">
 			<include schemaLocation="../../xsd/Transport.xsd"/>
-			<import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" schemaLocation="../../../../Common/exceptiongeneric.xsd"/>
 		</schema>
 	</types>
-	<wsdl:message name="Payment_in">
-		<wsdl:part name="PaymentRq" element="tns:PaymentRq"/>
+	<wsdl:message name="headerRq">
+		<wsdl:part name="headerRq" element="tns:headerRq"/>
 	</wsdl:message>
-	<wsdl:message name="Payment_out">
-		<wsdl:part name="PaymentRs" element="tns:PaymentRs"/>
+	<wsdl:message name="headerRs">
+		<wsdl:part name="headerRs" element="tns:headerRs"/>
 	</wsdl:message>
-	<wsdl:message name="Payment_fault1">
+	<wsdl:message name="FulfillShipment_in">
+		<wsdl:part name="FulfillShipmentRq" element="tns:FulfillShipmentRq"/>
+	</wsdl:message>
+	<wsdl:message name="FulfillShipment_out">
+		<wsdl:part name="FulfillShipmentRs" element="tns:FulfillShipmentRs"/>
+	</wsdl:message>
+	<wsdl:message name="FulfillShipment_fault1">
 		<wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
 	</wsdl:message>
-	<wsdl:portType name="PaymentPortType">
-		<wsdl:operation name="payment">
-			<wsdl:input name="Payment_Input" message="tns:Payment_in"/>
-			<wsdl:output name="Payment_Output" message="tns:Payment_out"/>
-			<wsdl:fault name="Payment_Fault" message="tns:Payment_fault1"/>
+	<wsdl:message name="CheckShipmentStatus_in">
+		<wsdl:part name="CheckShipmentStatusRq" element="tns:CheckShipmentStatusRq"/>
+	</wsdl:message>
+	<wsdl:message name="CheckShipmentStatus_out">
+		<wsdl:part name="CheckShipmentStatusRs" element="tns:CheckShipmentStatusRs"/>
+	</wsdl:message>
+	<wsdl:message name="CheckShipmentStatus_fault1">
+		<wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+	</wsdl:message>
+	<wsdl:portType name="ShipmentCompanyPortType">
+		<wsdl:operation name="fulfillShipment">
+			<wsdl:input name="FulfillShipment_Input" message="tns:FulfillShipment_in"/>
+			<wsdl:output name="FulfillShipment_Output" message="tns:FulfillShipment_out"/>
+			<wsdl:fault name="FulfillShipment_Fault" message="tns:FulfillShipment_fault1"/>
+		</wsdl:operation>
+		<wsdl:operation name="checkShipmentStatus">
+			<wsdl:input name="CheckShipmentStatus_Input" message="tns:CheckShipmentStatus_in"/>
+			<wsdl:output name="CheckShipmentStatus_Output" message="tns:CheckShipmentStatus_out"/>
+			<wsdl:fault name="CheckShipmentStatus_Fault" message="tns:CheckShipmentStatus_fault1"/>
 		</wsdl:operation>
 	</wsdl:portType>
-	<wsdl:binding name="PaymentBinding" type="tns:PaymentPortType">
+	<wsdl:binding name="ShipmentCompanyBinding" type="tns:ShipmentCompanyPortType">
 		<soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<wsdl:operation name="payment">
-			<soap12:operation soapAction="payment"/>
-			<wsdl:input name="Payment_Input">
-				<soap12:body parts="PaymentRq" use="literal"/>
+		<wsdl:operation name="fulfillShipment">
+			<soap12:operation soapAction="fulfillShipment"/>
+			<wsdl:input name="FulfillShipment_Input">
+				<soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+				<soap12:body parts="FulfillShipmentRq" use="literal"/>
 			</wsdl:input>
-			<wsdl:output name="Payment_Output">
-				<soap12:body parts="PaymentRs" use="literal"/>
+			<wsdl:output name="FulfillShipment_Output">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+				<soap12:body parts="FulfillShipmentRs" use="literal"/>
 			</wsdl:output>
-			<wsdl:fault name="Payment_Fault">
-				<soap12:fault name="Payment_Fault" use="literal"/>
+			<wsdl:fault name="FulfillShipment_Fault">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+				<soap12:fault name="FulfillShipment_Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="checkShipmentStatus">
+			<soap12:operation soapAction="checkShipmentStatus"/>
+			<wsdl:input name="CheckShipmentStatus_Input">
+				<soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+				<soap12:body parts="CheckShipmentStatusRq" use="literal"/>
+			</wsdl:input>
+			<wsdl:output name="CheckShipmentStatus_Output">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+				<soap12:body parts="CheckShipmentStatusRs" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="CheckShipmentStatus_Fault">
+				<soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+				<soap12:fault name="CheckShipmentStatus_Fault" use="literal"/>
 			</wsdl:fault>
 		</wsdl:operation>
 	</wsdl:binding>
-	<wsdl:service name="PaymentService">
-		<wsdl:port name="PaymentPort" binding="tns:PaymentBinding">
-			<soap12:address location="http://localhost:8080/message/"/>
+	<wsdl:service name="ShipmentCompanyService">
+		<wsdl:port name="ShipmentCompanyPort" binding="tns:ShipmentCompanyBinding">
+			<soap12:address location="http://localhost:9191/soap"/>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>

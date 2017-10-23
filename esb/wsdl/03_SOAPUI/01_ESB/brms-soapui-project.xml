@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="93247fe3-4e2d-46ee-9737-85559f9bb1ee" activeEnvironment="Default" name="brms" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="935add87-a7d2-4e35-9471-4f6265ff725b" wsaVersion="NONE" name="BRMSBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/brms/v1}BRMSBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/app/mule/Kallsonys/src/main/wsdl/01_ESB/Message/04_BRMS/wsdl/1.2/brms.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\04_BRMS\wsdl\1.2\brms.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\04_BRMS\wsdl\1.2\brms.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="BRMS" targetNamespace="http://www.kallsonys.com.co/cim/message/brms/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/brms/v1">
+  <wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
+  <wsdl:import namespace="http://www.kallsonys.com.co/cim/message/payment/v1" location="../../xsd/brms.xsd"/>
+  <xsd:types>
+    <xsd:schema targetNamespace="http://www.kallsonys.com.co/cim/message/brms/v1">
+      <xsd:include schemaLocation="../../xsd/brms.xsd"/>
+    </xsd:schema>
+  </xsd:types>
+  <wsdl:message name="headerRq">
+    <wsdl:part name="headerRq" element="tns:headerRq"/>
+  </wsdl:message>
+  <wsdl:message name="headerRs">
+    <wsdl:part name="headerRs" element="tns:headerRs"/>
+  </wsdl:message>
+  <wsdl:message name="DefineShipmentCompany_in">
+    <wsdl:part name="DefineShipmentCompanyRq" element="tns:DefineShipmentCompanyRq"/>
+  </wsdl:message>
+  <wsdl:message name="DefineShipmentCompany_out">
+    <wsdl:part name="DefineShipmentCompanyRs" element="tns:DefineShipmentCompanyRs"/>
+  </wsdl:message>
+  <wsdl:message name="DefineShipmentCompany_fault1">
+    <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateAmountAccordingCustomerClass_in">
+    <wsdl:part name="ValidateAmountAccordingCustomerClassRq" element="tns:ValidateAmountAccordingCustomerClassRq"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateAmountAccordingCustomerClass_out">
+    <wsdl:part name="ValidateAmountAccordingCustomerClassRs" element="tns:ValidateAmountAccordingCustomerClassRs"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateAmountAccordingCustomerClass_fault1">
+    <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+  </wsdl:message>
+  <wsdl:portType name="BRMSPortType">
+    <wsdl:operation name="defineShipmentCompany">
+      <wsdl:input name="DefineShipmentCompany_Input" message="tns:DefineShipmentCompany_in"/>
+      <wsdl:output name="DefineShipmentCompany_Output" message="tns:DefineShipmentCompany_out"/>
+      <wsdl:fault name="DefineShipmentCompany_Fault" message="tns:DefineShipmentCompany_fault1"/>
+    </wsdl:operation>
+    <wsdl:operation name="validateAmountAccordingCustomerClass">
+      <wsdl:input name="ValidateAmountAccordingCustomerClass_Input" message="tns:ValidateAmountAccordingCustomerClass_in"/>
+      <wsdl:output name="ValidateAmountAccordingCustomerClass_Output" message="tns:ValidateAmountAccordingCustomerClass_out"/>
+      <wsdl:fault name="ValidateAmountAccordingCustomerClass_Fault" message="tns:ValidateAmountAccordingCustomerClass_fault1"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BRMSBinding" type="tns:BRMSPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="defineShipmentCompany">
+      <soap12:operation soapAction="defineShipmentCompany"/>
+      <wsdl:input name="DefineShipmentCompany_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+        <soap12:body parts="DefineShipmentCompanyRq" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DefineShipmentCompany_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:body parts="DefineShipmentCompanyRs" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DefineShipmentCompany_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:fault name="DefineShipmentCompany_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateAmountAccordingCustomerClass">
+      <soap12:operation soapAction="validateAmountAccordingCustomerClass"/>
+      <wsdl:input name="ValidateAmountAccordingCustomerClass_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+        <soap12:body parts="ValidateAmountAccordingCustomerClassRq" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ValidateAmountAccordingCustomerClass_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:body parts="ValidateAmountAccordingCustomerClassRs" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ValidateAmountAccordingCustomerClass_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:fault name="ValidateAmountAccordingCustomerClass_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BRMSService">
+    <wsdl:port name="BRMSPort" binding="tns:BRMSBinding">
+      <soap12:address location="http://localhost:9191/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\ExceptionGeneric.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/common/exceptiongeneric">
+  <element name="exceptionGeneric" type="tns:ExceptionGeneric"/>
+  <complexType name="ExceptionGeneric">
+    <sequence>
+      <element name="code" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="description" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="subCode" type="tns:ExceptionGeneric" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\04_BRMS\xsd\brms.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org)-->
+<schema targetNamespace="http://www.kallsonys.com.co/cim/message/brms/v1" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:adr="http://www.kallsonys.com.co/cim/businessentities/address" xmlns:cus="http://www.kallsonys.com.co/cim/businessentities/customer" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:tns="http://www.kallsonys.com.co/cim/message/brms/v1">
+  <import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="../../../BusinessEntities/ShipmentCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="../../../BusinessEntities/ProductVendorCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/address" schemaLocation="../../../BusinessEntities/Address.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/customer" schemaLocation="../../../BusinessEntities/Customer.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
+  <element name="headerRq" type="h:HeaderRqType"/>
+  <element name="headerRs" type="h:HeaderRsType"/>
+  <element name="DefineShipmentCompanyRq">
+    <complexType>
+      <sequence>
+        <element name="localization" type="tns:LocalizationType" minOccurs="1" maxOccurs="1"/>
+        <element name="vendor" type="tns:VendorType" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="DefineShipmentCompanyRs">
+    <complexType>
+      <sequence>
+        <element name="shipmentCompany" type="tns:ShipmentCompanyType" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ValidateAmountAccordingCustomerClassRq">
+    <complexType>
+      <sequence>
+        <element name="customer" type="tns:CustomerType" minOccurs="1" maxOccurs="1"/>
+        <element name="order" type="tns:OrderType" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ValidateAmountAccordingCustomerClassRs">
+    <complexType>
+      <sequence>
+        <element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+  </element>
+  <complexType name="LocalizationType">
+    <complexContent>
+      <restriction base="adr:Address">
+        <sequence>
+          <element name="country" type="adr:CountryTypeEnum" minOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="VendorType">
+    <complexContent>
+      <restriction base="pvc:ProductVendorCompany">
+        <sequence>
+          <element name="productVendorCompanyId" type="pvc:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ShipmentCompanyType">
+    <complexContent>
+      <restriction base="sc:ShipmentCompany">
+        <sequence>
+          <element name="shipmentCompanyId" type="sc:ShipmentCompanyTypeEnum" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="CustomerType">
+    <complexContent>
+      <restriction base="cus:Customer">
+        <sequence>
+          <element name="customerClass" type="cus:CustomerClassTypeEnum" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OrderType">
+    <complexContent>
+      <restriction base="order:OrderInfo_v1.0">
+        <sequence>
+          <element name="orderPrice" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\Headers.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/common/headers" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/common/headers">
+  <complexType name="HeaderType">
+    <sequence>
+      <element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+      <element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+      <element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="HeaderRqType">
+    <complexContent>
+      <restriction base="tns:HeaderType">
+        <sequence>
+          <element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+          <element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+          <element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="HeaderRsType">
+    <complexContent>
+      <restriction base="tns:HeaderType">
+        <sequence>
+          <element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\Money.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/money" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/common/money">
+  <element name="money" type="this:MoneyGeneric"/>
+  <simpleType name="MoneyGeneric">
+    <restriction base="decimal">
+      <fractionDigits value="2"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\ShipmentCompany.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org)-->
+<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany">
+  <complexType name="ShipmentCompany">
+    <sequence>
+      <element name="shipmentCompanyId" type="this:ShipmentCompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ShipmentCompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="DHL"/>
+      <enumeration value="SERVIENTREGA"/>
+      <enumeration value="DEPRISA"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\ProductVendorCompany.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany">
+  <complexType name="ProductVendorCompany">
+    <sequence>
+      <element name="productVendorCompanyId" type="tns:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ProductVendorCompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="SONY"/>
+      <enumeration value="RS"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Address.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org)-->
+<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/address" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/address">
+  <complexType name="Address">
+    <sequence>
+      <element name="country" type="tns:CountryTypeEnum" minOccurs="0"/>
+      <element name="state" type="string" minOccurs="0"/>
+      <element name="city" type="string" minOccurs="0"/>
+      <element name="neighborhood" type="string" minOccurs="0"/>
+      <element name="street" type="string" minOccurs="0"/>
+      <element name="zipcode" type="string" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <simpleType name="CountryTypeEnum">
+    <restriction base="string">
+      <enumeration value="AL"/>
+      <enumeration value="DZ"/>
+      <enumeration value="AR"/>
+      <enumeration value="AU"/>
+      <enumeration value="AT"/>
+      <enumeration value="BH"/>
+      <enumeration value="BY"/>
+      <enumeration value="BE"/>
+      <enumeration value="BO"/>
+      <enumeration value="BA"/>
+      <enumeration value="BR"/>
+      <enumeration value="BG"/>
+      <enumeration value="CA"/>
+      <enumeration value="CL"/>
+      <enumeration value="CN"/>
+      <enumeration value="CO"/>
+      <enumeration value="CR"/>
+      <enumeration value="HR"/>
+      <enumeration value="CY"/>
+      <enumeration value="CZ"/>
+      <enumeration value="DK"/>
+      <enumeration value="DO"/>
+      <enumeration value="EC"/>
+      <enumeration value="EG"/>
+      <enumeration value="SV"/>
+      <enumeration value="EE"/>
+      <enumeration value="FI"/>
+      <enumeration value="FR"/>
+      <enumeration value="DE"/>
+      <enumeration value="GR"/>
+      <enumeration value="GT"/>
+      <enumeration value="HN"/>
+      <enumeration value="HK"/>
+      <enumeration value="HU"/>
+      <enumeration value="IS"/>
+      <enumeration value="IN"/>
+      <enumeration value="ID"/>
+      <enumeration value="IQ"/>
+      <enumeration value="IE"/>
+      <enumeration value="IL"/>
+      <enumeration value="IT"/>
+      <enumeration value="JP"/>
+      <enumeration value="JO"/>
+      <enumeration value="KW"/>
+      <enumeration value="LV"/>
+      <enumeration value="LB"/>
+      <enumeration value="LT"/>
+      <enumeration value="LU"/>
+      <enumeration value="MK"/>
+      <enumeration value="MY"/>
+      <enumeration value="MT"/>
+      <enumeration value="MX"/>
+      <enumeration value="MA"/>
+      <enumeration value="NL"/>
+      <enumeration value="NZ"/>
+      <enumeration value="NI"/>
+      <enumeration value="NO"/>
+      <enumeration value="OM"/>
+      <enumeration value="PA"/>
+      <enumeration value="PY"/>
+      <enumeration value="PE"/>
+      <enumeration value="PH"/>
+      <enumeration value="PL"/>
+      <enumeration value="PT"/>
+      <enumeration value="PR"/>
+      <enumeration value="QA"/>
+      <enumeration value="RO"/>
+      <enumeration value="RU"/>
+      <enumeration value="SA"/>
+      <enumeration value="CS"/>
+      <enumeration value="SG"/>
+      <enumeration value="SK"/>
+      <enumeration value="SI"/>
+      <enumeration value="ZA"/>
+      <enumeration value="ES"/>
+      <enumeration value="SD"/>
+      <enumeration value="SE"/>
+      <enumeration value="CH"/>
+      <enumeration value="SY"/>
+      <enumeration value="TW"/>
+      <enumeration value="TH"/>
+      <enumeration value="TN"/>
+      <enumeration value="TR"/>
+      <enumeration value="UA"/>
+      <enumeration value="AE"/>
+      <enumeration value="GB"/>
+      <enumeration value="US"/>
+      <enumeration value="UY"/>
+      <enumeration value="VE"/>
+      <enumeration value="VN"/>
+      <enumeration value="YE"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Customer.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/customer" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/customer">
+  <complexType name="Customer">
+    <sequence>
+      <element name="name" type="string" minOccurs="0"/>
+      <element name="lastName" type="string" minOccurs="0"/>
+      <element name="customerClass" type="tns:CustomerClassTypeEnum" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <simpleType name="CustomerClassTypeEnum">
+    <restriction base="string">
+      <enumeration value="PLATINO"/>
+      <enumeration value="DORADO"/>
+      <enumeration value="PLATEADO"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Order.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/order" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:money="http://www.kallsonys.com.co/cim/common/money" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/order">
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="ProductVendorCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="ShipmentCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="Item.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
+  <!--Product Entity-->
+  <complexType name="Order_v1.0">
+    <sequence>
+      <element name="orderInfo" type="tns:OrderInfo_v1.0" minOccurs="0"/>
+      <element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
+      <element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="OrderInfo_v1.0">
+    <sequence>
+      <element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="orderPrice" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="ShipmentInfo_v1.0">
+    <sequence>
+      <element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Item.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/item" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:money="http://www.kallsonys.com.co/cim/common/money">
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
+  <complexType name="Item">
+    <sequence>
+      <element name="itemId" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="itemName" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="prodID" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="productName" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="partNumber" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="itemDescription" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="price" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+      <element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockBRMSBinding</con:endpoint><con:endpoint>http://localhost:9191/soap</con:endpoint></con:endpoints><con:operation id="16714b9b-ce0c-4e9e-9e73-58bba9b46c7b" isOneWay="false" action="defineShipmentCompany" name="defineShipmentCompany" bindingOperationName="defineShipmentCompany" type="Request-Response" outputName="DefineShipmentCompany_Output" inputName="DefineShipmentCompany_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1d1f6d50-2cb0-4564-a110-f22b82e8bb32" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9191/soap</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/brms/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:DefineShipmentCompanyRq>\r
+         <localization>\r
+            <!--type: CountryTypeEnum - enumeration: [AL,DZ,AR,AU,AT,BH,BY,BE,BO,BA,BR,BG,CA,CL,CN,CO,CR,HR,CY,CZ,DK,DO,EC,EG,SV,EE,FI,FR,DE,GR,GT,HN,HK,HU,IS,IN,ID,IQ,IE,IL,IT,JP,JO,KW,LV,LB,LT,LU,MK,MY,MT,MX,MA,NL,NZ,NI,NO,OM,PA,PY,PE,PH,PL,PT,PR,QA,RO,RU,SA,CS,SG,SK,SI,ZA,ES,SD,SE,CH,SY,TW,TH,TN,TR,UA,AE,GB,US,UY,VE,VN,YE]-->\r
+            <country>?</country>\r
+         </localization>\r
+         <vendor>\r
+            <!--type: ProductVendorCompanyTypeEnum - enumeration: [SONY,RS]-->\r
+            <productVendorCompanyId>?</productVendorCompanyId>\r
+         </vendor>\r
+      </v1:DefineShipmentCompanyRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/brms/v1/BRMSPortType/DefineShipmentCompany_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6c115bfc-477a-4b5d-8738-fb8272699781" isOneWay="false" action="validateAmountAccordingCustomerClass" name="validateAmountAccordingCustomerClass" bindingOperationName="validateAmountAccordingCustomerClass" type="Request-Response" outputName="ValidateAmountAccordingCustomerClass_Output" inputName="ValidateAmountAccordingCustomerClass_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="58a20424-213c-413e-ab8a-b199dbae2678" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9191/soap</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/brms/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:ValidateAmountAccordingCustomerClassRq>\r
+         <customer>\r
+            <!--type: CustomerClassTypeEnum - enumeration: [PLATINO,DORADO,PLATEADO]-->\r
+            <customerClass>?</customerClass>\r
+         </customer>\r
+         <order>\r
+            <!--Optional:-->\r
+            <!--type: MoneyGeneric-->\r
+            <orderPrice>?</orderPrice>\r
+         </order>\r
+      </v1:ValidateAmountAccordingCustomerClassRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/brms/v1/BRMSPortType/ValidateAmountAccordingCustomerClass_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="3e990fa7-6644-4acd-8e7c-08600f541a1d" port="8088" path="/mockBRMSBinding" host="ASW1817" name="BRMSBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="defineShipmentCompany" id="0510bc2a-83ef-4fbc-9b23-b527407aff9b" interface="BRMSBinding" operation="defineShipmentCompany"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3dc4de38-41e2-4f25-9f06-3b6c59e541be" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/brms/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
+   <soap:Body>
+      <v1:DefineShipmentCompanyRs>
+         <shipmentCompany>
+            <!--type: ShipmentCompanyTypeEnum - enumeration: [DHL,SERVIENTREGA,DEPRISA]-->
+            <shipmentCompanyId>?</shipmentCompanyId>
+         </shipmentCompany>
+      </v1:DefineShipmentCompanyRs>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/brms/v1/BRMSPortType/DefineShipmentCompany_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="validateAmountAccordingCustomerClass" id="e321d844-0354-4ecd-9cc8-e8f4f8b050c0" interface="BRMSBinding" operation="validateAmountAccordingCustomerClass"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="ce9a1ff2-03b2-4505-af06-2f991f6b6df1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/brms/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
+   <soap:Body>
+      <v1:ValidateAmountAccordingCustomerClassRs>
+         <!--type: boolean-->
+         <valid>?</valid>
+      </v1:ValidateAmountAccordingCustomerClassRs>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/brms/v1/BRMSPortType/ValidateAmountAccordingCustomerClass_Output"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

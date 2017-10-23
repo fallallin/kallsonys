@@ -1,23 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:crecar="http://www.kallsonys.com.co/cim/businessentities/creditcard" xmlns:this="http://www.kallsonys.com.co/cim/message/payment/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/payment/v1">
-	<import namespace="http://www.kallsonys.com.co/cim/businessentities/creditcard" schemaLocation="../../../BusinessEntities/CreditCard.xsd"/>
-	<element name="PaymentRq">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:shi="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1">
+	<import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/shipment" schemaLocation="../../../BusinessEntities/Shipment.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
+	<element name="headerRq" type="h:HeaderRqType"/>
+	<element name="headerRs" type="h:HeaderRsType"/>
+	<element name="FulfillShipmentRq">
 		<complexType>
 			<complexContent>
-				<restriction base="crecar:CreditCard">
+				<restriction base="shi:Shipment">
 					<sequence>
-						<element name="cardType" type="crecar:cardTypeEnum" minOccurs="1" maxOccurs="1"/>
-						<element name="cardNumber" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="partner" type="string" minOccurs="0"/>
+						<element name="order" type="tns:OrderType" minOccurs="0"/>
+						<element name="addresseeInfo" type="shi:AddresseeInfoType" minOccurs="0"/>
 					</sequence>
 				</restriction>
 			</complexContent>
 		</complexType>
 	</element>
-	<element name="PaymentRs">
+	<element name="FulfillShipmentRs">
 		<complexType>
 			<sequence>
-				<element name="valid" type="boolean" minOccurs="1" maxOccurs="1"/>
+				<element name="result" type="boolean" maxOccurs="1"/>
 			</sequence>
 		</complexType>
 	</element>
+	<element name="CheckShipmentStatusRq">
+		<complexType>
+			<complexContent>
+				<restriction base="shi:Shipment">
+					<sequence>
+						<element name="partner" type="string" minOccurs="0"/>
+						<element name="order" type="tns:CheckOrderType" minOccurs="0"/>
+					</sequence>
+				</restriction>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="CheckShipmentStatusRs">
+		<complexType>
+			<sequence>
+				<element name="sent" type="boolean" maxOccurs="1"/>
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="OrderType">
+		<complexContent>
+			<restriction base="shi:OrderType">
+				<sequence>
+					<element name="orderInfo" type="shi:OrderInfoType" minOccurs="0"/>
+					<element name="productVendorCompanyInfo" type="shi:ProductVendorCompanyType" minOccurs="0"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="CheckOrderType">
+		<complexContent>
+			<restriction base="shi:OrderType">
+				<sequence>
+					<element name="orderInfo" type="tns:CheckOrderInfoType" minOccurs="0"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="CheckOrderInfoType">
+		<complexContent>
+			<restriction base="shi:OrderInfoType">
+				<sequence>
+					<element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
 </schema>

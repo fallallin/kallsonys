@@ -3,7 +3,6 @@
   <con:settings/>
   <con:project name="RapidService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/01_Factories/RapidService-soapui-project.xml</con:project>
   <con:project name="SonyQuoteService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/01_Factories/SonyQuoteService-soapui-project.xml</con:project>
-  <con:project name="DHLService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/03_Transport/DHLService-soapui-project.xml</con:project>
   <con:project name="DeprisaService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/03_Transport/DeprisaService-soapui-project.xml</con:project>
   <con:project name="REST Project 1">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/03_Transport/ServientregaService-soapui-project.xml</con:project>
   <con:project name="PaymentService">D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/03_SOAPUI/02_BACKEND/02_Payment/PaymentService-soapui-project.xml</con:project>

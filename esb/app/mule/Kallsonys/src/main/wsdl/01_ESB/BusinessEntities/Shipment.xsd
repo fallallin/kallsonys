@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org) -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/shipment" elementFormDefault="unqualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:cus="http://www.kallsonys.com.co/cim/businessentities/customer" xmlns:adr="http://www.kallsonys.com.co/cim/businessentities/address" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/shipment" targetNamespace="http://www.kallsonys.com.co/cim/businessentities/shipment" elementFormDefault="unqualified">
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/address" schemaLocation="Address.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="Order.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="Item.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/customer" schemaLocation="Customer.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="ProductVendorCompany.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
 	<complexType name="Shipment">
 		<sequence>
-			<element name="orderId" type="string" minOccurs="1"/>
-			<element name="addresseeName" type="string" minOccurs="1"/>
-			<element name="addresseeLastName" type="string" minOccurs="1"/>
-			<element name="country" type="string" minOccurs="1"/>
-			<element name="state" type="string" minOccurs="1"/>
-			<element name="city" type="string" minOccurs="1"/>
-			<element name="neighborhood" type="string" minOccurs="1"/>
-			<element name="street" type="string" minOccurs="1"/>
-			<element name="zipcode" type="string" minOccurs="1"/>
-			<element name="items" type="this:ItemCollection" minOccurs="1"/>
+			<element name="partner" type="string" minOccurs="0"/>
+			<element name="order" type="tns:OrderType" minOccurs="0"/>
+			<element name="addresseeInfo" type="tns:AddresseeInfoType" minOccurs="0"/>
 		</sequence>
 	</complexType>
-	<complexType name="ItemCollection">
+	<complexType name="AddresseeInfoType">
 		<sequence>
-			<element name="item" type="item:Item" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="addressee" type="tns:AddresseeType" minOccurs="0"/>
+			<element name="addressToSend" type="tns:AddressToSendType" minOccurs="0"/>
 		</sequence>
+	</complexType>
+	<complexType name="AddresseeType">
+		<complexContent>
+			<restriction base="cus:Customer">
+				<sequence>
+					<element name="name" type="string" minOccurs="0"/>
+					<element name="lastName" type="string" minOccurs="0"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="AddressToSendType">
+		<complexContent>
+			<restriction base="adr:Address">
+				<sequence>
+					<element name="country" type="adr:CountryTypeEnum" minOccurs="0"/>
+					<element name="state" type="string" minOccurs="0"/>
+					<element name="city" type="string" minOccurs="0"/>
+					<element name="neighborhood" type="string" minOccurs="0"/>
+					<element name="street" type="string" minOccurs="0"/>
+					<element name="zipcode" type="string" minOccurs="0"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="OrderType">
+		<complexContent>
+			<restriction base="order:Order_v1.0">
+				<sequence>
+					<element name="orderInfo" type="tns:OrderInfoType" minOccurs="0"/>
+					<element name="productVendorCompanyInfo" type="tns:ProductVendorCompanyType" minOccurs="0"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="OrderInfoType">
+		<complexContent>
+			<restriction base="order:OrderInfo_v1.0">
+				<sequence>
+					<element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="items" type="tns:ItemType" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="ItemType">
+		<complexContent>
+			<restriction base="item:Item">
+				<sequence>
+					<element name="itemId" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="prodID" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="productName" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="partNumber" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="price" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+					<element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="ProductVendorCompanyType">
+		<complexContent>
+			<restriction base="pvc:ProductVendorCompany">
+				<sequence>
+					<element name="productVendorCompanyId" type="pvc:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
 	</complexType>
 </schema>
