@@ -3,39 +3,66 @@ package co.com.kallsonys.esb.payment;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
-import java.util.Map;
 
-import javax.annotation.Resource;
-import javax.xml.ws.WebServiceContext;
-import javax.xml.ws.handler.MessageContext;
-
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.input.SAXBuilder;
-
-import co.com.kallsonys.esb.util.UtilConstants;
+import co.com.kallsonys.esb.shipment.FulfillShipmentFault1;
 
 public class CreditCardPortTypeImpl implements CreditCardPortType {
-	
-	@Resource
-	WebServiceContext wsctx;
 
 	@Override
 	public VerifyCreditCardRs verifyCreditCard(VerifyCreditCardRq verifyCreditCardRq) throws VerifyCreditCardFault1 {
-		// TODO Auto-generated method stub
-		return null;
+		VerifyCreditCardRs resp = new VerifyCreditCardRs();
+		try {
+			URL url = new URL("http://localhost:9191/payment/verifyCC");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			String input = "{\"ccType\":\"" + verifyCreditCardRq.getCardType() + 
+					       "\",\"ccNum\":\"" + verifyCreditCardRq.getCardNumber() + "\"}";
+			
+			OutputStream os = conn.getOutputStream();
+			os.write(input.getBytes());
+			os.flush();
+
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("HTTP error code : "
+					+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(conn.getInputStream())));
+
+			String output;
+			StringBuffer xml = new StringBuffer();
+			while ((output = br.readLine()) != null) {
+				xml.append(output);
+			}
+			conn.disconnect();
+			
+			// Parseo
+			org.json.JSONObject jsonObject = new org.json.JSONObject(xml.toString());
+			if (!jsonObject.isNull("errorMessage")) {
+				throw new FulfillShipmentFault1(jsonObject.get("errorMessage").toString());
+			}
+			
+			// Respuesta
+			String[] nameRoot = org.json.JSONObject.getNames(jsonObject);
+			org.json.JSONObject jsonChild = (org.json.JSONObject) jsonObject.get(nameRoot[0]);
+			resp.setValid(Boolean.parseBoolean(jsonChild.get("$").toString()));
+		} catch (Exception e) {
+			throw new VerifyCreditCardFault1(e.getMessage());
+		}
+		return resp;
 	}
 
 	@Override
 	public PaymentCreditCardRs paymentCreditCard(PaymentCreditCardRq paymentCreditCardRq)
 			throws PaymentCreditCardFault1 {
-		PaymentCreditCardRs respuesta = new PaymentCreditCardRs();
+		PaymentCreditCardRs resp = new PaymentCreditCardRs();
 		try {
-			URL url = new URL("http://localhost:9090/payment");
+			URL url = new URL("http://localhost:9191/payment");
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
 			conn.setRequestMethod("POST");
@@ -66,23 +93,20 @@ public class CreditCardPortTypeImpl implements CreditCardPortType {
 			conn.disconnect();
 			
 			// Parseo
-			SAXBuilder saxBuilder = new SAXBuilder();
-			Document doc = saxBuilder.build(new StringReader(xml.toString()));
-			String message = doc.getRootElement().getText();
-			
-			if ("".equals(message)) {
-				List a = doc.getRootElement().getChildren();
-				String msgError = ((Element)a.get(0)).getText();
-				throw new PaymentCreditCardFault1(msgError);
+			org.json.JSONObject jsonObject = new org.json.JSONObject(xml.toString());
+			if (!jsonObject.isNull("errorMessage")) {
+				throw new FulfillShipmentFault1(jsonObject.get("errorMessage").toString());
 			}
 			
 			// Respuesta
-			respuesta.setIsPaid(Boolean.parseBoolean(message));
+			String[] nameRoot = org.json.JSONObject.getNames(jsonObject);
+			org.json.JSONObject jsonChild = (org.json.JSONObject) jsonObject.get(nameRoot[0]);
+			resp.setIsPaid(Boolean.parseBoolean(jsonChild.get("$").toString()));
 		} catch (Exception e) {
 			throw new PaymentCreditCardFault1(e.getMessage());
 		}
 		
-		return respuesta;
+		return resp;
 	}
 
 }

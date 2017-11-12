@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=Kallsonys/src\/main\/java&lt;co.com.kallsonys.esb.util{UtilHeaderFilterInterceptor.java[UtilHeaderFilterInterceptor" modifiers="1" timestamp="1507968149723"/>
+<typeInfo handle="=Kallsonys/src\/main\/java&lt;co.com.kallsonys.esb.shipment{ShipmentCompanyPortType.java[ShipmentCompanyPortType" modifiers="513" timestamp="1509206995201"/>
+<typeInfo handle="=Kallsonys/src\/main\/java&lt;co.com.kallsonys.esb.shipment{ShipmentCompanyPortTypeImpl.java[ShipmentCompanyPortTypeImpl" modifiers="1" timestamp="1509416440311"/>
+<typeInfo handle="=Kallsonys/src\/main\/java&lt;co.com.kallsonys.esb.brms{BRMSPortType.java[BRMSPortType" modifiers="513" timestamp="1509842455602"/>
+<typeInfo handle="=Kallsonys/src\/main\/java&lt;co.com.kallsonys.esb.util{UtilConstants.java[UtilConstants" modifiers="1" timestamp="1509922688513"/>
+<typeInfo handle="=Kallsonys/src\/main\/java&lt;co.com.kallsonys.esb.vendor{FactoriesQuotesOrdersPortType.java[FactoriesQuotesOrdersPortType" modifiers="513" timestamp="1509980882547"/>
 </typeInfoHistroy>

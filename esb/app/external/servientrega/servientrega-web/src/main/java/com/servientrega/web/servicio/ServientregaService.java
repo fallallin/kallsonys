@@ -14,9 +14,11 @@ import javax.ws.rs.QueryParam;
 
 import org.apache.log4j.Logger;
 
+import com.servientrega.modelo.dto.DTOCheckShipmentStatusResult;
+import com.servientrega.modelo.dto.DTOFullfillShipmentResult;
 import com.servientrega.modelo.dto.DTOServientregaShipment;
 import com.servientrega.negocio.NegocioEnvio;
-import com.servientrega.utils.excepciones.ExcepcionGenerica;
+import com.servientrega.utils.excepciones.GenericException;
 
 /**
  * Session Bean implementation class ServicioRegion
@@ -42,15 +44,19 @@ public class ServientregaService {
     @GET
     @Path("verificarEstadoEnvio")
     @Produces({APPLICATION_JSON})
-    public boolean verificarEstadoEnvio(@QueryParam("orderId") String orderId) throws ExcepcionGenerica {
-    	return negocioEnvio.estadoEnvio(orderId);
+    public DTOCheckShipmentStatusResult verificarEstadoEnvio(@QueryParam("orderId") String orderId) throws GenericException {
+    	DTOCheckShipmentStatusResult resp = new DTOCheckShipmentStatusResult();
+    	resp.setCheckShipmentStatusResult(negocioEnvio.estadoEnvio(orderId));
+    	return resp;
     }
 
 	@POST
     @Path("cumplirConEnvio")
     @Produces({APPLICATION_JSON})
-    public boolean cumplirConEnvio(DTOServientregaShipment dtoEnvio) throws IllegalAccessException, InvocationTargetException, ExcepcionGenerica {
-    	return negocioEnvio.crearEnvio(dtoEnvio) != null;
+    public DTOFullfillShipmentResult cumplirConEnvio(DTOServientregaShipment dtoEnvio) throws IllegalAccessException, InvocationTargetException, GenericException {
+		DTOFullfillShipmentResult resp = new DTOFullfillShipmentResult();
+		resp.setFullfillShipmentResult(negocioEnvio.crearEnvio(dtoEnvio) != null);
+    	return resp;
     }
     
     protected Logger getLogger() {

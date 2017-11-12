@@ -1,0 +1,16 @@
+<son:SonyQuoteServiceProcessRequest xmlns:son="http://sony.com.co/SonyQuoteService">
+   <orderId>#[json:orderId]</orderId>
+   #[
+org.json.JSONObject jsonObject = new org.json.JSONObject(payload.toString());
+org.json.JSONArray jsonArray = jsonObject.get("items");
+String items = "";
+for(int i = 0; i < jsonArray.length(); i++) {
+	org.json.JSONObject itemnJsonObject = jsonArray.getJSONObject(i);
+	items += "<items>";
+	items += "<itemId>" + itemnJsonObject.getString("itemId") + "</itemId>";
+	items += "<quantity>" + itemnJsonObject.getString("quantity") + "</quantity>";
+	items += "</item>";
+}
+items;   
+      ]
+</son:SonyQuoteServiceProcessRequest>

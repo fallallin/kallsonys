@@ -1,0 +1,619 @@
+<metadata__catalog__entry>
+  <version>5.2.0.0</version>
+  <types class="tree-map">
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>SonyQuoteServiceProcessRequest</id>
+        <displayName>SonyQuoteServiceProcessRequest</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey" reference="../../../../../org.mule.common.metadata.DefaultMetaDataKey"/>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>orderId</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName>
+                      <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                      <localPart>string</localPart>
+                      <prefix></prefix>
+                    </typeQName>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>orderId</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>items</name>
+            <model class="org.mule.common.metadata.DefaultListMetaDataModel">
+              <dataType>LIST</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName>
+                      <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+                      <localPart>Item</localPart>
+                      <prefix></prefix>
+                    </typeQName>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                  <org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                    <maxOccurs>2147483647</maxOccurs>
+                    <minOccurs>0</minOccurs>
+                  </org.mule.common.metadata.property.xml.UnboundMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+              <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+                <dataType>XML</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+                <fields>
+                  <org.mule.common.metadata.DefaultMetaDataField>
+                    <name>itemId</name>
+                    <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                      <dataType>STRING</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties>
+                          <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                            <typeQName reference="../../../../../../../../../../org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                          </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        </properties>
+                      </metaDataModelPropertiesManager>
+                    </model>
+                    <accessType>READ_WRITE</accessType>
+                    <metaDataFieldPropertyManager>
+                      <properties>
+                        <org.mule.common.metadata.property.QNameMetaDataProperty>
+                          <name>
+                            <namespaceURI></namespaceURI>
+                            <localPart>itemId</localPart>
+                            <prefix></prefix>
+                          </name>
+                        </org.mule.common.metadata.property.QNameMetaDataProperty>
+                      </properties>
+                    </metaDataFieldPropertyManager>
+                  </org.mule.common.metadata.DefaultMetaDataField>
+                  <org.mule.common.metadata.DefaultMetaDataField>
+                    <name>quantity</name>
+                    <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                      <dataType>LONG</dataType>
+                      <metaDataModelPropertiesManager>
+                        <properties>
+                          <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                            <typeQName>
+                              <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                              <localPart>long</localPart>
+                              <prefix></prefix>
+                            </typeQName>
+                          </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                        </properties>
+                      </metaDataModelPropertiesManager>
+                    </model>
+                    <accessType>READ_WRITE</accessType>
+                    <metaDataFieldPropertyManager>
+                      <properties>
+                        <org.mule.common.metadata.property.QNameMetaDataProperty>
+                          <name>
+                            <namespaceURI></namespaceURI>
+                            <localPart>quantity</localPart>
+                            <prefix></prefix>
+                          </name>
+                        </org.mule.common.metadata.property.QNameMetaDataProperty>
+                      </properties>
+                    </metaDataFieldPropertyManager>
+                  </org.mule.common.metadata.DefaultMetaDataField>
+                </fields>
+                <rootElement>
+                  <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+                  <localPart>SonyQuoteServiceProcessRequest</localPart>
+                  <prefix>ns0</prefix>
+                </rootElement>
+                <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+                  <schemas>
+                    <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;schema xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:tns=&quot;http://sony.com.co/&quot; xmlns:xsd1=&quot;http://sony.com.co/SonyQuoteService&quot; targetNamespace=&quot;http://sony.com.co/SonyQuoteService&quot;&gt;&#xd;
+			&lt;complexType name=&quot;Item&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;itemId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;element name=&quot;quantity&quot; type=&quot;long&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;complexType name=&quot;Quote&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;supplierPrice&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessRequest&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+						&lt;element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;items&quot; nillable=&quot;true&quot; type=&quot;xsd1:Item&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessResponse&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; nillable=&quot;true&quot; type=&quot;xsd1:Quote&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteResponseElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; type=&quot;boolean&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+		&lt;/schema&gt;</string>
+                  </schemas>
+                  <encoding>windows-1252</encoding>
+                  <baseUri>http://localhost:7001/Sony/SonyQuoteService?WSDL</baseUri>
+                </schemas>
+                <namespaceManager>
+                  <namespacePrefix>
+                    <entry>
+                      <string>http://sony.com.co/SonyQuoteService</string>
+                      <string>ns0</string>
+                    </entry>
+                  </namespacePrefix>
+                </namespaceManager>
+              </model>
+              <isArray>false</isArray>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>items</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+          <localPart>SonyQuoteServiceProcessRequest</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas reference="../../fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/schemas/schemas"/>
+          <encoding reference="../../fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/schemas/encoding"/>
+          <baseUri>http://localhost:7001/Sony/SonyQuoteService?WSDL</baseUri>
+        </schemas>
+        <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/namespaceManager"/>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>SonyQuoteServiceProcessResponse</id>
+        <displayName>SonyQuoteServiceProcessResponse</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey" reference="../../../../../org.mule.common.metadata.DefaultMetaDataKey"/>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>result</name>
+            <model class="org.mule.common.metadata.DefaultXmlMetaDataModel">
+              <dataType>XML</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName>
+                      <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+                      <localPart>Quote</localPart>
+                      <prefix></prefix>
+                    </typeQName>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+              <fields>
+                <org.mule.common.metadata.DefaultMetaDataField>
+                  <name>supplierPrice</name>
+                  <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                    <dataType>STRING</dataType>
+                    <metaDataModelPropertiesManager>
+                      <properties>
+                        <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                          <typeQName reference="../../../../../../../../../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                        </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                      </properties>
+                    </metaDataModelPropertiesManager>
+                  </model>
+                  <accessType>READ_WRITE</accessType>
+                  <metaDataFieldPropertyManager>
+                    <properties>
+                      <org.mule.common.metadata.property.QNameMetaDataProperty>
+                        <name>
+                          <namespaceURI></namespaceURI>
+                          <localPart>supplierPrice</localPart>
+                          <prefix></prefix>
+                        </name>
+                      </org.mule.common.metadata.property.QNameMetaDataProperty>
+                    </properties>
+                  </metaDataFieldPropertyManager>
+                </org.mule.common.metadata.DefaultMetaDataField>
+              </fields>
+              <rootElement>
+                <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+                <localPart>SonyQuoteServiceProcessResponse</localPart>
+                <prefix>ns0</prefix>
+              </rootElement>
+              <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+                <schemas>
+                  <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;schema xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:tns=&quot;http://sony.com.co/&quot; xmlns:xsd1=&quot;http://sony.com.co/SonyQuoteService&quot; targetNamespace=&quot;http://sony.com.co/SonyQuoteService&quot;&gt;&#xd;
+			&lt;complexType name=&quot;Item&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;itemId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;element name=&quot;quantity&quot; type=&quot;long&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;complexType name=&quot;Quote&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;supplierPrice&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessRequest&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+						&lt;element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;items&quot; nillable=&quot;true&quot; type=&quot;xsd1:Item&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessResponse&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; nillable=&quot;true&quot; type=&quot;xsd1:Quote&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteResponseElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; type=&quot;boolean&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+		&lt;/schema&gt;</string>
+                </schemas>
+                <encoding reference="../../../../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/schemas/encoding"/>
+                <baseUri>http://localhost:7001/Sony/SonyQuoteService?WSDL</baseUri>
+              </schemas>
+              <namespaceManager>
+                <namespacePrefix>
+                  <entry>
+                    <string>http://sony.com.co/SonyQuoteService</string>
+                    <string>ns0</string>
+                  </entry>
+                </namespacePrefix>
+              </namespaceManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>result</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+          <localPart>SonyQuoteServiceProcessResponse</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas reference="../../fields/org.mule.common.metadata.DefaultMetaDataField/model/schemas/schemas"/>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/schemas/encoding"/>
+          <baseUri>http://localhost:7001/Sony/SonyQuoteService?WSDL</baseUri>
+        </schemas>
+        <namespaceManager reference="../fields/org.mule.common.metadata.DefaultMetaDataField/model/namespaceManager"/>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>orderQuouteElement</id>
+        <displayName>orderQuouteElement</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey" reference="../../../../../org.mule.common.metadata.DefaultMetaDataKey"/>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>orderId</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>STRING</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName reference="../../../../../../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField/model/metaDataModelPropertiesManager/properties/org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/typeQName"/>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>orderId</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+          <localPart>orderQuouteElement</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;schema xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:tns=&quot;http://sony.com.co/&quot; xmlns:xsd1=&quot;http://sony.com.co/SonyQuoteService&quot; targetNamespace=&quot;http://sony.com.co/SonyQuoteService&quot;&gt;&#xd;
+			&lt;complexType name=&quot;Item&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;itemId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;element name=&quot;quantity&quot; type=&quot;long&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;complexType name=&quot;Quote&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;supplierPrice&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessRequest&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+						&lt;element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;items&quot; nillable=&quot;true&quot; type=&quot;xsd1:Item&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessResponse&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; nillable=&quot;true&quot; type=&quot;xsd1:Quote&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteResponseElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; type=&quot;boolean&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+		&lt;/schema&gt;</string>
+          </schemas>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/schemas/encoding"/>
+          <baseUri>http://localhost:7001/Sony/SonyQuoteService?WSDL</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http://sony.com.co/SonyQuoteService</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+    <entry>
+      <org.mule.common.metadata.DefaultMetaDataKey>
+        <id>orderQuouteResponseElement</id>
+        <displayName>orderQuouteResponseElement</displayName>
+        <category>DEFAULT</category>
+        <metaDataKeyPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.key.property.dsql.DsqlFromMetaDataKeyProperty/>
+          </properties>
+        </metaDataKeyPropertiesManager>
+      </org.mule.common.metadata.DefaultMetaDataKey>
+      <org.mule.common.metadata.DefaultXmlMetaDataModel>
+        <dataType>XML</dataType>
+        <metaDataModelPropertiesManager>
+          <properties>
+            <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty/>
+            <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty/>
+            <org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+              <metaDataKey class="org.mule.common.metadata.DefaultMetaDataKey" reference="../../../../../org.mule.common.metadata.DefaultMetaDataKey"/>
+              <derivedStructure>false</derivedStructure>
+              <generatedStructure>false</generatedStructure>
+            </org.mule.common.metadata.property.StructureIdentifierMetaDataModelProperty>
+          </properties>
+        </metaDataModelPropertiesManager>
+        <fields>
+          <org.mule.common.metadata.DefaultMetaDataField>
+            <name>result</name>
+            <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+              <dataType>BOOLEAN</dataType>
+              <metaDataModelPropertiesManager>
+                <properties>
+                  <org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                    <typeQName>
+                      <namespaceURI>http://www.w3.org/2001/XMLSchema</namespaceURI>
+                      <localPart>boolean</localPart>
+                      <prefix></prefix>
+                    </typeQName>
+                  </org.mule.common.metadata.property.xml.SchemaTypeMetaDataProperty>
+                </properties>
+              </metaDataModelPropertiesManager>
+            </model>
+            <accessType>READ_WRITE</accessType>
+            <metaDataFieldPropertyManager>
+              <properties>
+                <org.mule.common.metadata.property.QNameMetaDataProperty>
+                  <name>
+                    <namespaceURI></namespaceURI>
+                    <localPart>result</localPart>
+                    <prefix></prefix>
+                  </name>
+                </org.mule.common.metadata.property.QNameMetaDataProperty>
+              </properties>
+            </metaDataFieldPropertyManager>
+          </org.mule.common.metadata.DefaultMetaDataField>
+        </fields>
+        <rootElement>
+          <namespaceURI>http://sony.com.co/SonyQuoteService</namespaceURI>
+          <localPart>orderQuouteResponseElement</localPart>
+          <prefix>ns0</prefix>
+        </rootElement>
+        <schemas class="org.mule.common.metadata.StringBasedSchemaProvider">
+          <schemas>
+            <string>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;schema xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:soapenc=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:tns=&quot;http://sony.com.co/&quot; xmlns:xsd1=&quot;http://sony.com.co/SonyQuoteService&quot; targetNamespace=&quot;http://sony.com.co/SonyQuoteService&quot;&gt;&#xd;
+			&lt;complexType name=&quot;Item&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;itemId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;element name=&quot;quantity&quot; type=&quot;long&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;complexType name=&quot;Quote&quot;&gt;&#xd;
+				&lt;sequence&gt;&#xd;
+					&lt;element name=&quot;supplierPrice&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+				&lt;/sequence&gt;&#xd;
+			&lt;/complexType&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessRequest&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+						&lt;element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;items&quot; nillable=&quot;true&quot; type=&quot;xsd1:Item&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;SonyQuoteServiceProcessResponse&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; nillable=&quot;true&quot; type=&quot;xsd1:Quote&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;orderId&quot; nillable=&quot;true&quot; type=&quot;string&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+			&lt;element name=&quot;orderQuouteResponseElement&quot;&gt;&#xd;
+				&lt;complexType&gt;&#xd;
+					&lt;sequence&gt;&#xd;
+						&lt;element name=&quot;result&quot; type=&quot;boolean&quot;/&gt;&#xd;
+					&lt;/sequence&gt;&#xd;
+				&lt;/complexType&gt;&#xd;
+			&lt;/element&gt;&#xd;
+		&lt;/schema&gt;</string>
+          </schemas>
+          <encoding reference="../../../../entry/org.mule.common.metadata.DefaultXmlMetaDataModel/fields/org.mule.common.metadata.DefaultMetaDataField[2]/model/model/schemas/encoding"/>
+          <baseUri>http://localhost:7001/Sony/SonyQuoteService?WSDL</baseUri>
+        </schemas>
+        <namespaceManager>
+          <namespacePrefix>
+            <entry>
+              <string>http://sony.com.co/SonyQuoteService</string>
+              <string>ns0</string>
+            </entry>
+          </namespacePrefix>
+        </namespaceManager>
+      </org.mule.common.metadata.DefaultXmlMetaDataModel>
+    </entry>
+  </types>
+  <connectorName>WSCSony</connectorName>
+</metadata__catalog__entry>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ws="http://www.mulesoft.org/schema/mule/ws"
+	xmlns:json="http://www.mulesoft.org/schema/mule/json"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" version="CE-3.8.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd 
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+ <ws:consumer-config name="WSCDHL" service="DHLShipmentService" port="DHLShipmentServicePort" serviceAddress="http://localhost:7001/DHL/DHLShipmentService" wsdlLocation="http://localhost:7001/DHL/DHLShipmentService?WSDL" doc:name="Web Service Consumer"/>
+    <flow name="shipmentdhlfulfillFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration_back" path="/shipment/dhl/fulfillshipment" allowedMethods="POST" doc:name="HTTP"/>
+        <logger message="Antes de Parseo:  #[message.payloadAs(java.lang.String)]" level="INFO" doc:name="Logger"/>
+        <parse-template location="shipmentDHLFulfillRq" doc:name="Parse Template"/>
+        <logger message="Despues de Parseo:  #[message.payloadAs(java.lang.String)]" level="INFO" doc:name="Logger"/>
+        <ws:consumer config-ref="WSCDHL" operation="fullfillShipment" doc:name="WSCDHL"/>
+        <json:xml-to-json-transformer doc:name="XML to JSON"/>
+        <catch-exception-strategy doc:name="Catch Exception Strategy">
+            <set-payload value="{&quot;errorCode&quot;:&quot;400&quot;, &quot;errorMessage&quot;:&quot;#[exception.message]&quot;}" doc:name="Set Payload"/>
+            <json:object-to-json-transformer doc:name="Object to JSON"/>
+        </catch-exception-strategy>
+    </flow>
+</mule>

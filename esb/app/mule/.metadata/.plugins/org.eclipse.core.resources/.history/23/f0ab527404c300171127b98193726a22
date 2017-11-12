@@ -1,0 +1,26 @@
+package co.com.kallsonys.esb.vendor;
+
+public class FactoriesQuotesOrdersPortTypeImpl implements FactoriesQuotesOrdersPortType {
+
+	@Override
+	public ValidateOrderQuoteRs validateOrderQuote(ValidateOrderQuoteRq validateOrderQuoteRq)
+			throws ValidateOrderQuoteFault1 {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FactorysQuotesOrdersRs factorysQuotesOrders(FactorysQuotesOrdersRq factorysQuotesOrdersRq)
+			throws FactorysQuotesOrdersFault1 {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FactoryQuotesOrderRs factoryQuotesOrder(FactoryQuotesOrderRq factoryQuotesOrderRq)
+			throws FactoryQuotesOrderFault1 {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

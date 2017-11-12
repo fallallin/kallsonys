@@ -1,0 +1,7 @@
+package co.com.kallsonys.esb.vendor;
+
+import co.com.kallsonys.esb.shipment.ShipmentCompanyPortType;
+
+public class FactoriesQuotesOrdersPortTypeImpl implements FactoriesQuotesOrdersPortType {
+
+}

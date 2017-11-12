@@ -288,7 +288,7 @@
       <fractionDigits value="2"/>
     </restriction>
   </simpleType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockCreditCardBinding</con:endpoint><con:endpoint>http://localhost:9191/soap</con:endpoint></con:endpoints><con:operation id="f4b07bce-ce31-430e-918b-6fb566aa0c42" isOneWay="false" action="paymentCreditCard" name="paymentCreditCard" bindingOperationName="paymentCreditCard" type="Request-Response" outputName="PaymentCreditCard_Output" inputName="PaymentCreditCard_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="704a2cbd-26c6-40cc-881f-17c5e6111539" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/payment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockCreditCardBinding</con:endpoint><con:endpoint>http://localhost:9191/soap</con:endpoint></con:endpoints><con:operation id="f4b07bce-ce31-430e-918b-6fb566aa0c42" isOneWay="false" action="paymentCreditCard" name="paymentCreditCard" bindingOperationName="paymentCreditCard" type="Request-Response" outputName="PaymentCreditCard_Output" inputName="PaymentCreditCard_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="704a2cbd-26c6-40cc-881f-17c5e6111539" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/payment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
    <soap:Header>\r
       <v1:headerRq>\r
          <!--Optional:-->\r
@@ -313,7 +313,7 @@
          <orderInfo>
             <!--Optional:-->
             <!--type: string-->
-            <orderId>25</orderId>
+            <orderId>27</orderId>
             <!--Optional:-->
             <!--type: MoneyGeneric-->
             <orderPrice>10</orderPrice>
@@ -329,7 +329,70 @@
          </creditCardInfo>
       </v1:PaymentCreditCardRq>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/PaymentCreditCard_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="96a471c9-a118-4e2d-9394-ae7a01cac99a" isOneWay="false" action="verifyCreditCard" name="verifyCreditCard" bindingOperationName="verifyCreditCard" type="Request-Response" outputName="VerifyCreditCard_Output" inputName="VerifyCreditCard_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5df11aac-c088-455f-811a-850697455307" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9191/soap</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/PaymentCreditCard_Input"/><con:wsrmConfig version="1.2"/></con:call><con:call id="eafb1c23-ab11-4611-9d4c-65412a093d31" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ASW1817:8088/mockCreditCardBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:PaymentCreditCardRq>\r
+         <!--Optional:-->\r
+         <customerInfo>\r
+            <!--type: CompanyTypeEnum - enumeration: [KALLSONYS]-->\r
+            <companyId>?</companyId>\r
+         </customerInfo>\r
+         <!--Optional:-->\r
+         <orderInfo>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <orderId>?</orderId>\r
+            <!--Optional:-->\r
+            <!--type: MoneyGeneric-->\r
+            <orderPrice>?</orderPrice>\r
+         </orderInfo>\r
+         <!--Optional:-->\r
+         <creditCardInfo>\r
+            <!--Optional:-->\r
+            <!--type: cardTypeEnum - enumeration: [DISCOVER,VISA,MASTERCARD,AMERICANEXPRESS]-->\r
+            <cardType>?</cardType>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <cardNumber>?</cardNumber>\r
+         </creditCardInfo>\r
+      </v1:PaymentCreditCardRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/PaymentCreditCard_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="96a471c9-a118-4e2d-9394-ae7a01cac99a" isOneWay="false" action="verifyCreditCard" name="verifyCreditCard" bindingOperationName="verifyCreditCard" type="Request-Response" outputName="VerifyCreditCard_Output" inputName="VerifyCreditCard_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5df11aac-c088-455f-811a-850697455307" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/payment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:VerifyCreditCardRq>\r
+         <!--type: cardTypeEnum - enumeration: [DISCOVER,VISA,MASTERCARD,AMERICANEXPRESS]-->\r
+         <cardType>VISA</cardType>\r
+         <!--type: string-->\r
+         <cardNumber>1003</cardNumber>\r
+      </v1:VerifyCreditCardRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/payment/v1/CreditCardPortType/VerifyCreditCard_Input"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b8bc37b6-fc47-461b-8108-8a8dd4ad3ad9" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ASW1817:8088/mockCreditCardBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/payment/v1">\r
    <soap:Header>\r
       <v1:headerRq>\r
          <!--Optional:-->\r

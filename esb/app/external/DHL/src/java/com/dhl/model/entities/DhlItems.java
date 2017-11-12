@@ -46,7 +46,7 @@ public class DhlItems implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "prodID")
-    private long prodID;
+    private String prodID;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 50)
@@ -79,7 +79,7 @@ public class DhlItems implements Serializable {
         this.dhlItemsPK = dhlItemsPK;
     }
 
-    public DhlItems(DhlItemsPK dhlItemsPK, long prodID, String productName, String partNumber, BigDecimal price, int quantity) {
+    public DhlItems(DhlItemsPK dhlItemsPK, String prodID, String productName, String partNumber, BigDecimal price, int quantity) {
         this.dhlItemsPK = dhlItemsPK;
         this.prodID = prodID;
         this.productName = productName;
@@ -100,11 +100,11 @@ public class DhlItems implements Serializable {
         this.dhlItemsPK = dhlItemsPK;
     }
 
-    public long getProdID() {
+    public String getProdID() {
         return prodID;
     }
 
-    public void setProdID(long prodID) {
+    public void setProdID(String prodID) {
         this.prodID = prodID;
     }
 

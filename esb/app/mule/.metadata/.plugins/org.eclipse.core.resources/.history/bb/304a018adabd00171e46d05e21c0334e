@@ -1,0 +1,8 @@
+package co.com.kallsonys.esb.servientrega;
+
+public class ServientregaService {
+	public DTOCheckShipmentStatusResult checkShipmentCompanyServientrega(DTOServientregaShipment dto) {
+		
+		return null;
+	}
+}

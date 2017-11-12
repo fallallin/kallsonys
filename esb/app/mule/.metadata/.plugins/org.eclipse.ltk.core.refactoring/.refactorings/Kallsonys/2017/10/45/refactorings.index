@@ -1,0 +1,8 @@
+1509328000112	Rename method 'empresaEnvioDHL'
+1509328024001	Rename method 'empresaEnvioServientrega'
+1509328046280	Rename method 'empresaEnvioDeprisa'
+1509328077415	Rename type 'EmpresasEnvios'
+1509387727527	Rename method 'checkCompanyDHL'
+1509387775849	Rename method 'checkCompanyDeprisa'
+1509387791977	Rename method 'checkCompanyServientrega'
+1509413197497	Delete element

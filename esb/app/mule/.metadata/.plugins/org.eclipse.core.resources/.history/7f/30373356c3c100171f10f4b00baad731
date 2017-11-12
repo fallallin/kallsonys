@@ -1,0 +1,4 @@
+<def:ValidacionTarjeta>
+	<def:monto>?</def:monto>
+   	<def:tipoTarjeta>?</def:tipoTarjeta>
+</def:ValidacionTarjeta>

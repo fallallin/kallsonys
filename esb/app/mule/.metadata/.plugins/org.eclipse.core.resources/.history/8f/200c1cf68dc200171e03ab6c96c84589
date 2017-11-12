@@ -1,0 +1,17 @@
+#[
+org.json.JSONObject jsonObject = new org.json.JSONObject(payload.toString());
+org.json.JSONArray jsonArray = jsonObject.get("deprisaItems");
+String items = "";
+for(int i = 0; i < jsonArray.length(); i++) {
+	org.json.JSONObject itemnJsonObject = jsonArray.getJSONObject(i);
+	items += "<item>";
+	items += "<itemID>" + itemnJsonObject.getString("itemID") + "</itemID>";
+	items += "<prodID>" + itemnJsonObject.getString("prodID") + "</prodID>";
+	items += "<productName>" + itemnJsonObject.getString("productName") + "</productName>";
+    items += "<partNumber>" + itemnJsonObject.getInt("partNumber") + "</partNumber>";
+    items += "<price>" + itemnJsonObject.getInt("price") + "</price>";
+    items += "<quantity>" + itemnJsonObject.getInt("quantity") + "</quantity>";
+	items += "</item>";
+}
+items;   
+      ]

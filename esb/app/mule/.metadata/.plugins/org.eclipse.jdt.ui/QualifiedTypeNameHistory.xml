@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="org.jdom.input.SAXBuilder"/>
 <fullyQualifiedTypeName name="java.io.StringReader"/>
 <fullyQualifiedTypeName name="org.jdom.Document"/>
@@ -35,7 +34,18 @@
 <fullyQualifiedTypeName name="org.apache.cxf.message.MessageContentsList"/>
 <fullyQualifiedTypeName name="javax.xml.namespace.QName"/>
 <fullyQualifiedTypeName name="javax.xml.soap.Node"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.apache.cxf.phase.Phase"/>
 <fullyQualifiedTypeName name="co.com.kallsonys.esb.util.UtilHeaderFilter"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.util.MethodType"/>
+<fullyQualifiedTypeName name="java.lang.invoke.MethodType"/>
+<fullyQualifiedTypeName name="javax.validation.metadata.MethodType"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="co.com.kallsonys.esb.brms.ShipmentCompanyType"/>
+<fullyQualifiedTypeName name="co.com.kallsonys.esb.vendor.ProductVendorCompanyType"/>
+<fullyQualifiedTypeName name="co.com.kallsonys.esb.vendor.ProductVendorCompanyTypeEnum"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="co.com.kallsonys.esb.vendor.OrderInfoV10"/>
+<fullyQualifiedTypeName name="co.com.kallsonys.esb.vendor.ProductVendorCompany"/>
 </qualifiedTypeNameHistroy>

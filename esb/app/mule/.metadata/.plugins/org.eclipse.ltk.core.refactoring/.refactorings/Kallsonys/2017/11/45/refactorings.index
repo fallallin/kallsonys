@@ -1,0 +1,7 @@
+1509839436151	Rename local variable 'shipmentCompany'
+1509843846624	Rename resource 'esb_04_brms.xml'
+1509843896950	Rename resource 'esb_01_vendor.xml'
+1509843913276	Rename resource 'esb_02_payment.xml'
+1509843922296	Rename resource 'esb_03_shipment.xml'
+1509903899525	Rename type 'ShipmentCompanies'
+1509922684999	Encapsulate field 'pathDeprisa'

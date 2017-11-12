@@ -104,7 +104,7 @@
          <purchaseValue>20.12</purchaseValue>\r
       </val:Payment>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PaymentAction"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bf1a1496-0555-4d7e-9370-960ac7655b87" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8989/Payment/ValidateCreditCard?wsdl</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PaymentAction"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bf1a1496-0555-4d7e-9370-960ac7655b87" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/Payment/ValidateCreditCard</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\r
    <soap:Header>\r
       <mule:header xmlns:mule="http://www.muleumo.org/providers/soap/1.0">\r
          <mule:MULE_CORRELATION_ID>95c57960-a8c5-11e7-af82-904820524153</mule:MULE_CORRELATION_ID>\r
@@ -116,7 +116,7 @@
       <val:Payment xmlns:val="http://payment.com/ValidateCreditCard">\r
          <idOrder>1</idOrder>\r
          <CreditCard>\r
-            <ccType>VISA</ccType>\r
+            <ccType>VISAS</ccType>\r
             <ccNum>1001</ccNum>\r
          </CreditCard>\r
          <idCustomer>KALLSONYS</idCustomer>\r
@@ -130,7 +130,7 @@
          <!--type: string-->\r
          <ccType>VISA</ccType>\r
          <!--type: string-->\r
-         <ccNum>1005</ccNum>\r
+         <ccNum>1003</ccNum>\r
       </val:CreditCard>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="VerifyCC"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="3f962ed8-b6a8-4319-89c3-91ca9cebbdac" port="8088" path="/mockValidateCreditCardBinding" host="ASW1817" name="ValidateCreditCardBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="Payment" id="20703708-25b2-4a5a-a988-3959d8f24331" interface="ValidateCreditCardBinding" operation="Payment"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7768dbd6-348e-4022-bfdd-dbeee4ef1e66" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:val="http://payment.com/ValidateCreditCard">

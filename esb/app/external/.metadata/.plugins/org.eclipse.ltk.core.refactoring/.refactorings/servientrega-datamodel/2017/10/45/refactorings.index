@@ -1,0 +1,6 @@
+1509386638831	Rename field 'codigoExcepcion'
+1509386658098	Rename field 'mensajeExcepcion'
+1509386680045	Rename local variable 'codigoExcepcion'
+1509386691481	Rename local variable 'mensajeExcepcion'
+1509386751366	Rename type 'DTOExcepcionGenerica'
+1509387006871	Rename field 'CODIGO_EXCEPCION'

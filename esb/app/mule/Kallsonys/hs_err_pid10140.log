@@ -1,0 +1,597 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000054c35f02, pid=10140, tid=13416
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_91-b14) (build 1.8.0_91-b14)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.91-b14 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x75f02]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001f09d800):  JavaThread "[Kallsonys].HTTP_Listener_Configuration_back.worker.01" daemon [_thread_in_vm, id=13416, stack(0x0000000024160000,0x0000000024260000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xffffffffffffffff
+
+Registers:
+RAX=0x000000000216cce0, RBX=0x020000001afd3af8, RCX=0x000000000215f310, RDX=0x0000000000000ca6
+RSP=0x0000000024253330, RBP=0x0000000002537830, RSI=0x0000000024253430, RDI=0x0000000000000006
+R8 =0x00000000187c1914, R9 =0x0000000000000005, R10=0x0000000000000028, R11=0x0000000002537830
+R12=0x0000000000000005, R13=0x00000000187c1914, R14=0x000000000215f310, R15=0x00000000187c1914
+RIP=0x0000000054c35f02, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x0000000024253330)
+0x0000000024253330:   0000000024253470 00000000242534f0
+0x0000000024253340:   00000000242534b0 ffffffffffffffe0
+0x0000000024253350:   0000000000000351 0000000000000351
+0x0000000024253360:   0000000024253b50 0000000054c35ff4
+0x0000000024253370:   0000000000000005 00000000242534b0
+0x0000000024253380:   0000000024253430 00000000187c1914
+0x0000000024253390:   0000000002537830 0000000000000005
+0x00000000242533a0:   0000000000000005 0000000054c141f9
+0x00000000242533b0:   0000000000000005 000000001f09d800
+0x00000000242533c0:   00000000242534b0 000000001f09d800
+0x00000000242533d0:   00000000242534f0 00000000242534b0
+0x00000000242533e0:   00000000242534d0 000000001f09d800
+0x00000000242533f0:   0000000028000500 0000064000000007
+0x0000000024253400:   0000000000004905 00000000187bf500
+0x0000000024253410:   00000000187ce1b2 00000000187c1919
+0x0000000024253420:   0000000024253f10 0000000024254401 
+
+Instructions: (pc=0x0000000054c35f02)
+0x0000000054c35ee2:   48 63 d2 33 ff 48 8b 1c d0 45 8b e1 4d 8b e8 4c
+0x0000000054c35ef2:   8b f1 48 85 db 74 4a 8b 6c 24 60 0f 1f 00 ff c7
+0x0000000054c35f02:   39 2b 75 16 48 8b 73 10 45 8b c4 49 8b d5 48 8b
+0x0000000054c35f12:   ce e8 b8 3e 0c 00 84 c0 75 48 48 8b 5b 08 48 83 
+
+
+Register to memory mapping:
+
+RAX=0x000000000216cce0 is an unknown value
+RBX=0x020000001afd3af8 is an unknown value
+RCX=0x000000000215f310 is an unknown value
+RDX=0x0000000000000ca6 is an unknown value
+RSP=0x0000000024253330 is pointing into the stack for thread: 0x000000001f09d800
+RBP=0x0000000002537830 is an unknown value
+RSI=0x0000000024253430 is pointing into the stack for thread: 0x000000001f09d800
+RDI=0x0000000000000006 is an unknown value
+R8 =0x00000000187c1914 is an unknown value
+R9 =0x0000000000000005 is an unknown value
+R10=0x0000000000000028 is an unknown value
+R11=0x0000000002537830 is an unknown value
+R12=0x0000000000000005 is an unknown value
+R13=0x00000000187c1914 is an unknown value
+R14=0x000000000215f310 is an unknown value
+R15=0x00000000187c1914 is an unknown value
+
+
+Stack: [0x0000000024160000,0x0000000024260000],  sp=0x0000000024253330,  free space=972k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x75f02]
+V  [jvm.dll+0x75ff4]
+V  [jvm.dll+0x541f9]
+V  [jvm.dll+0x545f9]
+V  [jvm.dll+0x5c857]
+V  [jvm.dll+0x7b725]
+V  [jvm.dll+0x191331]
+V  [jvm.dll+0x1916cb]
+C  [java.dll+0x1e58]
+C  0x000000000297f65d
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 779  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x000000000297f5df [0x000000000297f540+0x9f]
+J 3844 C2 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x000000000345a3f8 [0x0000000003459e40+0x5b8]
+J 430 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00000000028947e4 [0x0000000002892c80+0x1b64]
+J 3806 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033fee94 [0x00000000033febe0+0x2b4]
+J 3580 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x000000000278e7bc [0x000000000278e740+0x7c]
+v  ~StubRoutines::call_stub
+J 383  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x0000000002872f26 [0x0000000002872ec0+0x66]
+J 1679 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x0000000002ca92e8 [0x0000000002ca8660+0xc88]
+J 3614 C2 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x0000000003320a88 [0x00000000033208a0+0x1e8]
+J 2729 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x000000000304e6c0 [0x000000000304e680+0x40]
+v  ~StubRoutines::call_stub
+J 779  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x000000000297f5df [0x000000000297f540+0x9f]
+J 3844 C2 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x000000000345a3f8 [0x0000000003459e40+0x5b8]
+J 430 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00000000028947e4 [0x0000000002892c80+0x1b64]
+J 3806 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033fee94 [0x00000000033febe0+0x2b4]
+J 3580 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x000000000278e7bc [0x000000000278e740+0x7c]
+v  ~StubRoutines::call_stub
+J 383  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x0000000002872f26 [0x0000000002872ec0+0x66]
+J 1679 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x0000000002ca92e8 [0x0000000002ca8660+0xc88]
+J 3614 C2 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x0000000003320a88 [0x00000000033208a0+0x1e8]
+J 2729 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x000000000304e6c0 [0x000000000304e680+0x40]
+v  ~StubRoutines::call_stub
+J 779  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x000000000297f5df [0x000000000297f540+0x9f]
+J 3844 C2 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x000000000345a3f8 [0x0000000003459e40+0x5b8]
+J 430 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00000000028947e4 [0x0000000002892c80+0x1b64]
+J 3806 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00000000033fee94 [0x00000000033febe0+0x2b4]
+J 3580 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x000000000278e7bc [0x000000000278e740+0x7c]
+v  ~StubRoutines::call_stub
+J 383  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x0000000002872f26 [0x0000000002872ec0+0x66]
+J 1679 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x0000000002ca92e8 [0x0000000002ca8660+0xc88]
+J 3614 C2 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x0000000003320a88 [0x00000000033208a0+0x1e8]
+J 2729 C2 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x000000000304e6c0 [0x000000000304e680+0x40]
+v  ~StubRoutines::call_stub
+j  com.ctc.wstx.stax.WstxInputFactory.doCreateSR(Lcom/ctc/wstx/api/ReaderConfig;Lcom/ctc/wstx/io/SystemId;Lcom/ctc/wstx/io/InputBootstrapper;ZZ)Lorg/codehaus/stax2/XMLStreamReader2;+67
+j  com.ctc.wstx.stax.WstxInputFactory.createSR(Lcom/ctc/wstx/api/ReaderConfig;Lcom/ctc/wstx/io/SystemId;Lcom/ctc/wstx/io/InputBootstrapper;ZZ)Lorg/codehaus/stax2/XMLStreamReader2;+8
+j  com.ctc.wstx.stax.WstxInputFactory.createSR(Lcom/ctc/wstx/io/SystemId;Ljava/io/Reader;ZZ)Lorg/codehaus/stax2/XMLStreamReader2;+16
+j  com.ctc.wstx.stax.WstxInputFactory.createXMLStreamReader(Ljava/io/Reader;)Ljavax/xml/stream/XMLStreamReader;+5
+j  org.mule.module.xml.util.XMLUtils.toXMLStreamReader(Ljavax/xml/stream/XMLInputFactory;Lorg/mule/api/MuleEvent;Ljava/lang/Object;)Ljavax/xml/stream/XMLStreamReader;+157
+j  org.mule.module.xml.util.XMLUtils.toXMLStreamReader(Ljavax/xml/stream/XMLInputFactory;Ljava/lang/Object;)Ljavax/xml/stream/XMLStreamReader;+5
+j  org.mule.module.xml.transformer.XmlToXMLStreamReader.transformMessage(Lorg/mule/api/MuleMessage;Ljava/lang/String;)Ljava/lang/Object;+12
+j  org.mule.transformer.AbstractMessageTransformer.transform(Ljava/lang/Object;Ljava/lang/String;Lorg/mule/api/MuleEvent;)Ljava/lang/Object;+242
+j  org.mule.transformer.AbstractMessageTransformer.transform(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;+4
+j  org.mule.DefaultMuleMessage.getPayload(Lorg/mule/api/transformer/DataType;Ljava/lang/String;)Ljava/lang/Object;+80
+j  org.mule.DefaultMuleMessage.getPayload(Lorg/mule/api/transformer/DataType;)Ljava/lang/Object;+6
+j  org.mule.module.cxf.support.OutputPayloadInterceptor.handleMessage(Lorg/apache/cxf/message/Message;)V+148
+j  org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(Lorg/apache/cxf/message/Message;)Z+137
+j  org.apache.cxf.endpoint.ClientImpl.doInvoke(Lorg/apache/cxf/endpoint/ClientCallback;Lorg/apache/cxf/service/model/BindingOperationInfo;[Ljava/lang/Object;Ljava/util/Map;Lorg/apache/cxf/message/Exchange;)[Ljava/lang/Object;+412
+j  org.apache.cxf.endpoint.ClientImpl.invoke(Lorg/apache/cxf/service/model/BindingOperationInfo;[Ljava/lang/Object;Ljava/util/Map;Lorg/apache/cxf/message/Exchange;)[Ljava/lang/Object;+7
+j  org.mule.module.cxf.CxfOutboundMessageProcessor.doSendWithClient(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+244
+j  org.mule.module.cxf.CxfOutboundMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+9
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.processBlocking(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+9
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+16
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.module.ws.consumer.WSConsumer$1.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.processBlocking(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+9
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+16
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+62
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.chain.DefaultMessageProcessorChain.doProcess(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+54
+j  org.mule.processor.chain.AbstractMessageProcessorChain.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+46
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper.doProcess(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+5
+j  org.mule.processor.chain.AbstractMessageProcessorChain.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+46
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper.access$001(Lorg/mule/processor/chain/InterceptingChainLifecycleWrapper;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper$1.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+5
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+19
+j  org.mule.module.ws.consumer.WSConsumer.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+5
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+62
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.chain.DefaultMessageProcessorChain.doProcess(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+54
+j  org.mule.processor.chain.AbstractMessageProcessorChain.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+46
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.processor.AsyncInterceptingMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+28
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.construct.DynamicPipelineMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+62
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.chain.DefaultMessageProcessorChain.doProcess(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+54
+j  org.mule.processor.chain.AbstractMessageProcessorChain.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+46
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.interceptor.AbstractEnvelopeInterceptor.processBlocking(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+26
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+16
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.processor.AbstractFilteringMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+23
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+92
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.AbstractInterceptingMessageProcessorBase.processNext(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+177
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.processBlocking(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+9
+j  org.mule.processor.AbstractRequestResponseMessageProcessor.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+16
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.BlockingProcessorExecutor.executeNext()Lorg/mule/api/MuleEvent;+62
+j  org.mule.processor.BlockingProcessorExecutor.execute()Lorg/mule/api/MuleEvent;+24
+j  org.mule.processor.chain.DefaultMessageProcessorChain.doProcess(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+54
+j  org.mule.processor.chain.AbstractMessageProcessorChain.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+46
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper.doProcess(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+5
+j  org.mule.processor.chain.AbstractMessageProcessorChain.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+46
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper.access$001(Lorg/mule/processor/chain/InterceptingChainLifecycleWrapper;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper$1.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+5
+j  org.mule.execution.ExceptionToMessagingExceptionExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+2
+j  org.mule.execution.MessageProcessorNotificationExecutionInterceptor.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+173
+j  org.mule.execution.MessageProcessorExecutionTemplate.execute(Lorg/mule/api/processor/MessageProcessor;Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.processor.chain.InterceptingChainLifecycleWrapper.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+19
+j  org.mule.construct.AbstractPipeline$3.process(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+8
+j  org.mule.module.http.internal.listener.HttpMessageProcessorTemplate.routeEvent(Lorg/mule/api/MuleEvent;)Lorg/mule/api/MuleEvent;+5
+j  org.mule.execution.AsyncResponseFlowProcessingPhase$1.process()Lorg/mule/api/MuleEvent;+93
+j  org.mule.execution.AsyncResponseFlowProcessingPhase$1.process()Ljava/lang/Object;+1
+j  org.mule.execution.ExecuteCallbackInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+1
+j  org.mule.execution.CommitTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.execution.CommitTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+3
+j  org.mule.execution.HandleExceptionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.execution.HandleExceptionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+3
+j  org.mule.execution.BeginAndResolveTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+149
+j  org.mule.execution.ResolvePreviousTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+90
+j  org.mule.execution.SuspendXaTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+115
+j  org.mule.execution.ValidateTransactionalStateInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+73
+j  org.mule.execution.IsolateCurrentTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+43
+j  org.mule.execution.ExternalTransactionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+88
+j  org.mule.execution.RethrowExceptionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Lorg/mule/api/MuleEvent;+6
+j  org.mule.execution.RethrowExceptionInterceptor.execute(Lorg/mule/api/execution/ExecutionCallback;Lorg/mule/execution/ExecutionContext;)Ljava/lang/Object;+3
+j  org.mule.execution.TransactionalErrorHandlingExecutionTemplate.execute(Lorg/mule/api/execution/ExecutionCallback;)Lorg/mule/api/MuleEvent;+12
+j  org.mule.execution.AsyncResponseFlowProcessingPhase.runPhase(Lorg/mule/execution/AsyncResponseFlowProcessingPhaseTemplate;Lorg/mule/execution/MessageProcessContext;Lorg/mule/execution/PhaseResultNotifier;)V+71
+j  org.mule.execution.AsyncResponseFlowProcessingPhase.runPhase(Lorg/mule/execution/MessageProcessTemplate;Lorg/mule/execution/MessageProcessContext;Lorg/mule/execution/PhaseResultNotifier;)V+7
+j  org.mule.execution.PhaseExecutionEngine$InternalPhaseExecutionEngine.process()V+79
+j  org.mule.execution.PhaseExecutionEngine.process(Lorg/mule/execution/MessageProcessTemplate;Lorg/mule/execution/MessageProcessContext;)V+12
+j  org.mule.execution.MuleMessageProcessingManager.processMessage(Lorg/mule/execution/MessageProcessTemplate;Lorg/mule/execution/MessageProcessContext;)V+6
+j  org.mule.module.http.internal.listener.DefaultHttpListener$1.handleRequest(Lorg/mule/module/http/internal/domain/request/HttpRequestContext;Lorg/mule/module/http/internal/listener/async/HttpResponseReadyCallback;)V+90
+j  org.mule.module.http.internal.listener.grizzly.GrizzlyRequestDispatcherFilter.handleRead(Lorg/glassfish/grizzly/filterchain/FilterChainContext;)Lorg/glassfish/grizzly/filterchain/NextAction;+234
+j  org.glassfish.grizzly.filterchain.ExecutorResolver$9.execute(Lorg/glassfish/grizzly/filterchain/Filter;Lorg/glassfish/grizzly/filterchain/FilterChainContext;)Lorg/glassfish/grizzly/filterchain/NextAction;+2
+j  org.glassfish.grizzly.filterchain.DefaultFilterChain.executeFilter(Lorg/glassfish/grizzly/filterchain/FilterExecutor;Lorg/glassfish/grizzly/filterchain/Filter;Lorg/glassfish/grizzly/filterchain/FilterChainContext;)Lorg/glassfish/grizzly/filterchain/NextAction;+38
+j  org.glassfish.grizzly.filterchain.DefaultFilterChain.executeChainPart(Lorg/glassfish/grizzly/filterchain/FilterChainContext;Lorg/glassfish/grizzly/filterchain/FilterExecutor;IILorg/glassfish/grizzly/filterchain/DefaultFilterChain$FiltersState;)Lorg/glassfish/grizzly/filterchain/DefaultFilterChain$FilterExecution;+48
+j  org.glassfish.grizzly.filterchain.DefaultFilterChain.execute(Lorg/glassfish/grizzly/filterchain/FilterChainContext;)Lorg/glassfish/grizzly/ProcessorResult;+50
+j  org.glassfish.grizzly.filterchain.DefaultFilterChain.process(Lorg/glassfish/grizzly/Context;)Lorg/glassfish/grizzly/ProcessorResult;+103
+j  org.glassfish.grizzly.ProcessorExecutor.execute(Lorg/glassfish/grizzly/Context;)V+53
+j  org.glassfish.grizzly.nio.transport.TCPNIOTransport.fireIOEvent(Lorg/glassfish/grizzly/IOEvent;Lorg/glassfish/grizzly/Connection;Lorg/glassfish/grizzly/IOEventLifeCycleListener;)V+69
+j  org.glassfish.grizzly.strategies.AbstractIOStrategy.fireIOEvent(Lorg/glassfish/grizzly/Connection;Lorg/glassfish/grizzly/IOEvent;Lorg/glassfish/grizzly/IOEventLifeCycleListener;Ljava/util/logging/Logger;)V+9
+j  org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy.run0(Lorg/glassfish/grizzly/Connection;Lorg/glassfish/grizzly/IOEvent;Lorg/glassfish/grizzly/IOEventLifeCycleListener;)V+6
+j  org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy.access$100(Lorg/glassfish/grizzly/Connection;Lorg/glassfish/grizzly/IOEvent;Lorg/glassfish/grizzly/IOEventLifeCycleListener;)V+3
+j  org.mule.module.http.internal.listener.grizzly.ExecutorPerServerAddressIOStrategy$WorkerThreadRunnable.run()V+12
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+95
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x000000001f09d800 JavaThread "[Kallsonys].HTTP_Listener_Configuration_back.worker.01" daemon [_thread_in_vm, id=13416, stack(0x0000000024160000,0x0000000024260000)]
+  0x000000001dddd800 JavaThread "DestroyJavaVM" [_thread_blocked, id=12276, stack(0x00000000022a0000,0x00000000023a0000)]
+  0x000000001dddd000 JavaThread "Mule.app.deployer.monitor.1.thread.1" [_thread_blocked, id=8036, stack(0x0000000022f80000,0x0000000023080000)]
+  0x000000001dddc000 JavaThread "[Kallsonys].processing.time.monitor" daemon [_thread_blocked, id=7492, stack(0x0000000024de0000,0x0000000024ee0000)]
+  0x000000001dddb800 JavaThread "[Kallsonys].shipmentservientregafulfillFlow.stage1.01" [_thread_blocked, id=10520, stack(0x0000000024c90000,0x0000000024d90000)]
+  0x000000001ddda800 JavaThread "[Kallsonys].shipmentservientregacheckFlow.stage1.01" [_thread_blocked, id=12120, stack(0x0000000024a80000,0x0000000024b80000)]
+  0x000000001f0a3800 JavaThread "[Kallsonys].shipmentdhlfulfillFlow.stage1.01" [_thread_blocked, id=14148, stack(0x0000000024380000,0x0000000024480000)]
+  0x000000001f0a2800 JavaThread "[Kallsonys].shipmentdhlcheckFlow.stage1.01" [_thread_blocked, id=9252, stack(0x0000000024930000,0x0000000024a30000)]
+  0x000000001f0a2000 JavaThread "[Kallsonys].shipmentdeprisafulfillFlow.stage1.01" [_thread_blocked, id=13808, stack(0x00000000247b0000,0x00000000248b0000)]
+  0x000000001f0a1000 JavaThread "[Kallsonys].shipmentdeprisacheckFlow.stage1.01" [_thread_blocked, id=14184, stack(0x0000000024660000,0x0000000024760000)]
+  0x000000001f0a0800 JavaThread "[Kallsonys].esb_03_transportFlow.stage1.01" [_thread_blocked, id=13984, stack(0x0000000024490000,0x0000000024590000)]
+  0x000000001f09f800 JavaThread "[Kallsonys].paymentcheckFlow.stage1.01" [_thread_blocked, id=9296, stack(0x0000000024270000,0x0000000024370000)]
+  0x000000001f09f000 JavaThread "[Kallsonys].paymentFlow.stage1.01" [_thread_blocked, id=2472, stack(0x0000000023ed0000,0x0000000023fd0000)]
+  0x000000001f09e000 JavaThread "[Kallsonys].esbpaymentFlow.stage1.01" [_thread_blocked, id=13164, stack(0x0000000024040000,0x0000000024140000)]
+  0x000000001b240000 JavaThread "[Kallsonys].http.listener.HttpIdleConnectionCloser.01" [_thread_blocked, id=10680, stack(0x0000000023590000,0x0000000023690000)]
+  0x000000001b23f800 JavaThread "[Kallsonys].http.listener.worker(8)" daemon [_thread_blocked, id=8400, stack(0x0000000022e80000,0x0000000022f80000)]
+  0x000000001b23e800 JavaThread "[Kallsonys].http.listener.worker(7)" daemon [_thread_blocked, id=7376, stack(0x0000000022cd0000,0x0000000022dd0000)]
+  0x000000001b23e000 JavaThread "[Kallsonys].http.listener.worker(6)" daemon [_thread_blocked, id=12112, stack(0x0000000022a30000,0x0000000022b30000)]
+  0x000000001b23d000 JavaThread "[Kallsonys].http.listener.worker(5)" daemon [_thread_blocked, id=11228, stack(0x00000000227b0000,0x00000000228b0000)]
+  0x000000001b23c800 JavaThread "[Kallsonys].http.listener.worker(4)" daemon [_thread_blocked, id=12292, stack(0x00000000228d0000,0x00000000229d0000)]
+  0x000000001b23b800 JavaThread "[Kallsonys].http.listener.worker(3)" daemon [_thread_blocked, id=12960, stack(0x0000000020fc0000,0x00000000210c0000)]
+  0x000000001b23b000 JavaThread "[Kallsonys].http.listener.worker(2)" daemon [_thread_blocked, id=2564, stack(0x0000000022670000,0x0000000022770000)]
+  0x000000001b23a000 JavaThread "[Kallsonys].http.listener.worker(1)" daemon [_thread_blocked, id=11396, stack(0x00000000214e0000,0x00000000215e0000)]
+  0x000000001b239800 JavaThread "[Kallsonys].http.listener(5) SelectorRunner" daemon [_thread_in_native, id=12532, stack(0x0000000021310000,0x0000000021410000)]
+  0x000000001b238800 JavaThread "[Kallsonys].http.listener(4) SelectorRunner" daemon [_thread_in_native, id=13528, stack(0x0000000021120000,0x0000000021220000)]
+  0x000000001b238000 JavaThread "[Kallsonys].http.listener(3) SelectorRunner" daemon [_thread_in_native, id=6992, stack(0x000000001ccc0000,0x000000001cdc0000)]
+  0x000000001b237000 JavaThread "[Kallsonys].http.listener(2) SelectorRunner" daemon [_thread_in_native, id=13552, stack(0x000000001fe20000,0x000000001ff20000)]
+  0x000000001b236800 JavaThread "[Kallsonys].http.listener(1) SelectorRunner" daemon [_thread_in_native, id=9200, stack(0x000000001be60000,0x000000001bf60000)]
+  0x000000001b233800 JavaThread "GC Daemon" daemon [_thread_blocked, id=10440, stack(0x000000001e4e0000,0x000000001e5e0000)]
+  0x000000001b232800 JavaThread "[Kallsonys].Mule.01" [_thread_blocked, id=13100, stack(0x000000001cde0000,0x000000001cee0000)]
+  0x000000001b232000 JavaThread "Log4j2-AsyncLoggerConfig-3" daemon [_thread_blocked, id=13236, stack(0x000000001c530000,0x000000001c630000)]
+  0x000000001b231000 JavaThread "Log4j2-AsyncLoggerConfig-2" daemon [_thread_blocked, id=11364, stack(0x000000001c090000,0x000000001c190000)]
+  0x000000001b020800 JavaThread "Log4j2-AsyncLoggerConfig-1" daemon [_thread_blocked, id=10936, stack(0x000000001c6e0000,0x000000001c7e0000)]
+  0x00000000187cf800 JavaThread "Service Thread" daemon [_thread_blocked, id=12712, stack(0x00000000195a0000,0x00000000196a0000)]
+  0x0000000017372800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=13916, stack(0x00000000192b0000,0x00000000193b0000)]
+  0x0000000017369800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=10396, stack(0x0000000019140000,0x0000000019240000)]
+  0x0000000017364000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=13740, stack(0x0000000018b40000,0x0000000018c40000)]
+  0x0000000017360000 JavaThread "Attach Listener" daemon [_thread_blocked, id=10752, stack(0x0000000018ff0000,0x00000000190f0000)]
+  0x000000001735f000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=12848, stack(0x0000000018e40000,0x0000000018f40000)]
+  0x0000000018750800 JavaThread "Finalizer" daemon [_thread_blocked, id=11840, stack(0x0000000018c60000,0x0000000018d60000)]
+  0x0000000017339800 JavaThread "Reference Handler" daemon [_thread_blocked, id=11612, stack(0x0000000018610000,0x0000000018710000)]
+
+Other Threads:
+  0x0000000017333800 VMThread [stack: 0x00000000183b0000,0x00000000184b0000] [id=13604]
+  0x0000000018879000 WatcherThread [stack: 0x0000000019410000,0x0000000019510000] [id=12440]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 230400K, used 120075K [0x00000000d5f00000, 0x00000000e8200000, 0x0000000100000000)
+  eden space 210944K, 52% used [0x00000000d5f00000,0x00000000dcaaa6c8,0x00000000e2d00000)
+  from space 19456K, 50% used [0x00000000e2d00000,0x00000000e36988e8,0x00000000e4000000)
+  to   space 18944K, 0% used [0x00000000e6f80000,0x00000000e6f80000,0x00000000e8200000)
+ ParOldGen       total 137728K, used 38427K [0x0000000081c00000, 0x000000008a280000, 0x00000000d5f00000)
+  object space 137728K, 27% used [0x0000000081c00000,0x0000000084186c98,0x000000008a280000)
+ Metaspace       used 47608K, capacity 48049K, committed 48512K, reserved 1091584K
+  class space    used 6391K, capacity 6513K, committed 6528K, reserved 1048576K
+
+Card table byte_map: [0x0000000011a30000,0x0000000011e30000] byte_map_base: 0x0000000011622000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000553d2f70
+ Begin Bits: [0x0000000012660000, 0x00000000145f0000)
+ End Bits:   [0x00000000145f0000, 0x0000000016580000)
+
+Polling page: 0x00000000001c0000
+
+CodeCache: size=245760Kb used=13549Kb max_used=14837Kb free=232210Kb
+ bounds [0x0000000002670000, 0x0000000003510000, 0x0000000011670000]
+ total_blobs=4400 nmethods=3899 adapters=413
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 18.282 Thread 0x0000000017372800 nmethod 4451 0x0000000002c83d50 code [0x0000000002c83f40, 0x0000000002c84a18]
+Event: 18.282 Thread 0x0000000017372800 4450       3       java.util.ComparableTimSort::countRunAndMakeAscending (123 bytes)
+Event: 18.282 Thread 0x0000000017372800 nmethod 4450 0x0000000002dfbf50 code [0x0000000002dfc160, 0x0000000002dfcf08]
+Event: 18.286 Thread 0x0000000017372800 4452       3       java.lang.Integer::equals (29 bytes)
+Event: 18.286 Thread 0x0000000017372800 nmethod 4452 0x0000000002c26550 code [0x0000000002c266c0, 0x0000000002c26b30]
+Event: 18.299 Thread 0x0000000017369800 nmethod 4414 0x00000000027b41d0 code [0x00000000027b4540, 0x00000000027b61b8]
+Event: 18.302 Thread 0x0000000017372800 4453       1       org.apache.cxf.bus.extension.Extension::getNamespaces (5 bytes)
+Event: 18.302 Thread 0x0000000017372800 nmethod 4453 0x0000000002c0d0d0 code [0x0000000002c0d220, 0x0000000002c0d330]
+Event: 18.312 Thread 0x0000000017364000 4454       4       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)
+Event: 18.315 Thread 0x0000000017364000 nmethod 4454 0x0000000002ca3890 code [0x0000000002ca3a00, 0x0000000002ca3c18]
+
+GC Heap History (10 events):
+Event: 4.042 GC heap before
+{Heap before GC invocations=9 (full 1):
+ PSYoungGen      total 156160K, used 140142K [0x00000000d5f00000, 0x00000000e3880000, 0x0000000100000000)
+  eden space 133120K, 100% used [0x00000000d5f00000,0x00000000de100000,0x00000000de100000)
+  from space 23040K, 30% used [0x00000000de100000,0x00000000de7dbb00,0x00000000df780000)
+  to   space 22016K, 0% used [0x00000000e2300000,0x00000000e2300000,0x00000000e3880000)
+ ParOldGen       total 104960K, used 33891K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d18fb0,0x0000000088280000)
+ Metaspace       used 28145K, capacity 28405K, committed 28672K, reserved 1075200K
+  class space    used 3733K, capacity 3829K, committed 3840K, reserved 1048576K
+Event: 4.072 GC heap after
+Heap after GC invocations=9 (full 1):
+ PSYoungGen      total 197632K, used 7545K [0x00000000d5f00000, 0x00000000e3680000, 0x0000000100000000)
+  eden space 177664K, 0% used [0x00000000d5f00000,0x00000000d5f00000,0x00000000e0c80000)
+  from space 19968K, 37% used [0x00000000e2300000,0x00000000e2a5e680,0x00000000e3680000)
+  to   space 21504K, 0% used [0x00000000e0c80000,0x00000000e0c80000,0x00000000e2180000)
+ ParOldGen       total 104960K, used 33899K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d1afb0,0x0000000088280000)
+ Metaspace       used 28145K, capacity 28405K, committed 28672K, reserved 1075200K
+  class space    used 3733K, capacity 3829K, committed 3840K, reserved 1048576K
+}
+Event: 4.979 GC heap before
+{Heap before GC invocations=10 (full 1):
+ PSYoungGen      total 197632K, used 185209K [0x00000000d5f00000, 0x00000000e3680000, 0x0000000100000000)
+  eden space 177664K, 100% used [0x00000000d5f00000,0x00000000e0c80000,0x00000000e0c80000)
+  from space 19968K, 37% used [0x00000000e2300000,0x00000000e2a5e680,0x00000000e3680000)
+  to   space 21504K, 0% used [0x00000000e0c80000,0x00000000e0c80000,0x00000000e2180000)
+ ParOldGen       total 104960K, used 33899K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d1afb0,0x0000000088280000)
+ Metaspace       used 32996K, capacity 33397K, committed 33792K, reserved 1079296K
+  class space    used 4373K, capacity 4487K, committed 4608K, reserved 1048576K
+Event: 4.994 GC heap after
+Heap after GC invocations=10 (full 1):
+ PSYoungGen      total 199168K, used 10697K [0x00000000d5f00000, 0x00000000e5400000, 0x0000000100000000)
+  eden space 177664K, 0% used [0x00000000d5f00000,0x00000000d5f00000,0x00000000e0c80000)
+  from space 21504K, 49% used [0x00000000e0c80000,0x00000000e16f25f0,0x00000000e2180000)
+  to   space 20480K, 0% used [0x00000000e4000000,0x00000000e4000000,0x00000000e5400000)
+ ParOldGen       total 104960K, used 33907K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d1cfb0,0x0000000088280000)
+ Metaspace       used 32996K, capacity 33397K, committed 33792K, reserved 1079296K
+  class space    used 4373K, capacity 4487K, committed 4608K, reserved 1048576K
+}
+Event: 5.229 GC heap before
+{Heap before GC invocations=11 (full 1):
+ PSYoungGen      total 199168K, used 51099K [0x00000000d5f00000, 0x00000000e5400000, 0x0000000100000000)
+  eden space 177664K, 22% used [0x00000000d5f00000,0x00000000d8674750,0x00000000e0c80000)
+  from space 21504K, 49% used [0x00000000e0c80000,0x00000000e16f25f0,0x00000000e2180000)
+  to   space 20480K, 0% used [0x00000000e4000000,0x00000000e4000000,0x00000000e5400000)
+ ParOldGen       total 104960K, used 33907K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d1cfb0,0x0000000088280000)
+ Metaspace       used 34740K, capacity 35105K, committed 35496K, reserved 1079296K
+  class space    used 4626K, capacity 4777K, committed 4864K, reserved 1048576K
+Event: 5.257 GC heap after
+Heap after GC invocations=11 (full 1):
+ PSYoungGen      total 231424K, used 9372K [0x00000000d5f00000, 0x00000000e5b80000, 0x0000000100000000)
+  eden space 210944K, 0% used [0x00000000d5f00000,0x00000000d5f00000,0x00000000e2d00000)
+  from space 20480K, 45% used [0x00000000e4000000,0x00000000e4927018,0x00000000e5400000)
+  to   space 19456K, 0% used [0x00000000e2d00000,0x00000000e2d00000,0x00000000e4000000)
+ ParOldGen       total 104960K, used 33915K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d1efb0,0x0000000088280000)
+ Metaspace       used 34740K, capacity 35105K, committed 35496K, reserved 1079296K
+  class space    used 4626K, capacity 4777K, committed 4864K, reserved 1048576K
+}
+Event: 5.257 GC heap before
+{Heap before GC invocations=12 (full 2):
+ PSYoungGen      total 231424K, used 9372K [0x00000000d5f00000, 0x00000000e5b80000, 0x0000000100000000)
+  eden space 210944K, 0% used [0x00000000d5f00000,0x00000000d5f00000,0x00000000e2d00000)
+  from space 20480K, 45% used [0x00000000e4000000,0x00000000e4927018,0x00000000e5400000)
+  to   space 19456K, 0% used [0x00000000e2d00000,0x00000000e2d00000,0x00000000e4000000)
+ ParOldGen       total 104960K, used 33915K [0x0000000081c00000, 0x0000000088280000, 0x00000000d5f00000)
+  object space 104960K, 32% used [0x0000000081c00000,0x0000000083d1efb0,0x0000000088280000)
+ Metaspace       used 34740K, capacity 35105K, committed 35496K, reserved 1079296K
+  class space    used 4626K, capacity 4777K, committed 4864K, reserved 1048576K
+Event: 5.397 GC heap after
+Heap after GC invocations=12 (full 2):
+ PSYoungGen      total 231424K, used 0K [0x00000000d5f00000, 0x00000000e5b80000, 0x0000000100000000)
+  eden space 210944K, 0% used [0x00000000d5f00000,0x00000000d5f00000,0x00000000e2d00000)
+  from space 20480K, 0% used [0x00000000e4000000,0x00000000e4000000,0x00000000e5400000)
+  to   space 19456K, 0% used [0x00000000e2d00000,0x00000000e2d00000,0x00000000e4000000)
+ ParOldGen       total 137728K, used 38419K [0x0000000081c00000, 0x000000008a280000, 0x00000000d5f00000)
+  object space 137728K, 27% used [0x0000000081c00000,0x0000000084184c98,0x000000008a280000)
+ Metaspace       used 34740K, capacity 35105K, committed 35496K, reserved 1079296K
+  class space    used 4626K, capacity 4777K, committed 4864K, reserved 1048576K
+}
+Event: 6.710 GC heap before
+{Heap before GC invocations=13 (full 2):
+ PSYoungGen      total 231424K, used 210944K [0x00000000d5f00000, 0x00000000e5b80000, 0x0000000100000000)
+  eden space 210944K, 100% used [0x00000000d5f00000,0x00000000e2d00000,0x00000000e2d00000)
+  from space 20480K, 0% used [0x00000000e4000000,0x00000000e4000000,0x00000000e5400000)
+  to   space 19456K, 0% used [0x00000000e2d00000,0x00000000e2d00000,0x00000000e4000000)
+ ParOldGen       total 137728K, used 38419K [0x0000000081c00000, 0x000000008a280000, 0x00000000d5f00000)
+  object space 137728K, 27% used [0x0000000081c00000,0x0000000084184c98,0x000000008a280000)
+ Metaspace       used 43487K, capacity 43897K, committed 44160K, reserved 1087488K
+  class space    used 5847K, capacity 5965K, committed 6016K, reserved 1048576K
+Event: 6.720 GC heap after
+Heap after GC invocations=13 (full 2):
+ PSYoungGen      total 230400K, used 9826K [0x00000000d5f00000, 0x00000000e8200000, 0x0000000100000000)
+  eden space 210944K, 0% used [0x00000000d5f00000,0x00000000d5f00000,0x00000000e2d00000)
+  from space 19456K, 50% used [0x00000000e2d00000,0x00000000e36988e8,0x00000000e4000000)
+  to   space 18944K, 0% used [0x00000000e6f80000,0x00000000e6f80000,0x00000000e8200000)
+ ParOldGen       total 137728K, used 38427K [0x0000000081c00000, 0x000000008a280000, 0x00000000d5f00000)
+  object space 137728K, 27% used [0x0000000081c00000,0x0000000084186c98,0x000000008a280000)
+ Metaspace       used 43487K, capacity 43897K, committed 44160K, reserved 1087488K
+  class space    used 5847K, capacity 5965K, committed 6016K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 6.648 Thread 0x000000000214d800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00000000027d8338 method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 49
+Event: 6.690 Thread 0x000000000214d800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000002b8199c method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 6.690 Thread 0x000000000214d800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000002b8199c method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 6.691 Thread 0x000000000214d800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000002b8199c method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 6.691 Thread 0x000000000214d800 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000002b8199c method=java.util.AbstractCollection.toArray([Ljava/lang/Object;)[Ljava/lang/Object; @ 119
+Event: 7.009 Thread 0x000000001dddd000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003212e64 method=java.util.concurrent.ConcurrentHashMap.putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object; @ 98
+Event: 18.208 Thread 0x000000001f09d800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000029ee744 method=java.util.regex.Pattern.append(II)V @ 6
+Event: 18.252 Thread 0x000000001f09d800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000342c5c8 method=java.lang.Integer.equals(Ljava/lang/Object;)Z @ 18
+Event: 18.287 Thread 0x000000001f09d800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00000000032e6b30 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 253
+Event: 18.287 Thread 0x000000001f09d800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00000000032e6b30 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 253
+
+Internal exceptions (10 events):
+Event: 7.011 Thread 0x000000000214d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/launcher/artifact/ArtifactWrapperCustomizer> (0x00000000da0de7c8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, lxj˛ã∆@
+Event: 7.011 Thread 0x000000001dddd000 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/launcher/artifact/ArtifactWrapperCustomizer> (0x00000000da0508e0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, l`Ê$›5@
+Event: 7.013 Thread 0x000000000214d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/launcher/application/ApplicationWrapperCustomizer> (0x00000000da13e348) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.MrıXx@
+Event: 7.013 Thread 0x000000001dddd000 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/launcher/domain/DomainWrapperCustomizer> (0x00000000da4ad538) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, line @^ù22@
+Event: 18.198 Thread 0x000000001f09d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/json/transformers/JsonMapperResolverBeanInfo> (0x00000000db7e89a8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cpp, ±mÑÙ¡22@
+Event: 18.198 Thread 0x000000001f09d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/config/transformer/AbstractAnnotatedTransformerArgumentResolverBeanInfo> (0x00000000db84f0b0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\sy
+Event: 18.199 Thread 0x000000001f09d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/config/transformer/AbstractAnnotatedTransformerArgumentResolverCustomizer> (0x00000000db8b5800) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\ˇÀ å:32@
+Event: 18.200 Thread 0x000000001f09d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/json/transformers/JsonMapperResolverCustomizer> (0x00000000db911230) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.cppøˆ™∂42@
+Event: 18.203 Thread 0x000000001f09d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/xml/transformer/jaxb/JAXBContextResolverBeanInfo> (0x00000000db99b2c0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionary.c—Ì˘ü042@
+Event: 18.204 Thread 0x000000001f09d800 Exception <a 'java/lang/ClassNotFoundException': org/mule/module/xml/transformer/jaxb/JAXBContextResolverCustomizer> (0x00000000db9f1ee0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u91\6644\hotspot\src\share\vm\classfile\systemDictionaryÈ2˜,*@
+
+Events (10 events):
+Event: 18.316 loading class com/ctc/wstx/io/BranchingReaderSource
+Event: 18.316 loading class com/ctc/wstx/io/BranchingReaderSource done
+Event: 18.316 loading class com/ctc/wstx/io/ReaderSource
+Event: 18.316 loading class com/ctc/wstx/io/ReaderSource done
+Event: 18.317 loading class com/ctc/wstx/sr/ValidatingStreamReader
+Event: 18.317 loading class com/ctc/wstx/sr/ValidatingStreamReader done
+Event: 18.317 loading class com/ctc/wstx/sr/TypedStreamReader
+Event: 18.317 loading class com/ctc/wstx/sr/TypedStreamReader done
+Event: 18.318 loading class com/ctc/wstx/sr/BasicStreamReader
+Event: 18.318 loading class com/ctc/wstx/sr/BasicStreamReader done
+
+
+Dynamic libraries:
+0x000000013fdd0000 - 0x000000013fe07000 	C:\Program Files\Java\jdk1.8.0_91\bin\javaw.exe
+0x0000000076f60000 - 0x000000007710a000 	C:\windows\SYSTEM32\ntdll.dll
+0x0000000076d40000 - 0x0000000076e5f000 	C:\windows\system32\kernel32.dll
+0x000007fefcee0000 - 0x000007fefcf4a000 	C:\windows\system32\KERNELBASE.dll
+0x000007fefd030000 - 0x000007fefd10b000 	C:\windows\system32\ADVAPI32.dll
+0x000007fefec90000 - 0x000007fefed2f000 	C:\windows\system32\msvcrt.dll
+0x000007fefd010000 - 0x000007fefd02f000 	C:\windows\SYSTEM32\sechost.dll
+0x000007fefe320000 - 0x000007fefe44d000 	C:\windows\system32\RPCRT4.dll
+0x0000000076e60000 - 0x0000000076f5a000 	C:\windows\system32\USER32.dll
+0x000007fefee80000 - 0x000007fefeee7000 	C:\windows\system32\GDI32.dll
+0x000007fefe450000 - 0x000007fefe45e000 	C:\windows\system32\LPK.dll
+0x000007fefedb0000 - 0x000007fefee7b000 	C:\windows\system32\USP10.dll
+0x000007fefaef0000 - 0x000007fefb0e4000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007fefe460000 - 0x000007fefe4d1000 	C:\windows\system32\SHLWAPI.dll
+0x000007fefe1e0000 - 0x000007fefe20e000 	C:\windows\system32\IMM32.DLL
+0x000007fefe210000 - 0x000007fefe319000 	C:\windows\system32\MSCTF.dll
+0x0000000056320000 - 0x00000000563f2000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\msvcr100.dll
+0x0000000054bc0000 - 0x0000000055453000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\server\jvm.dll
+0x000007feee230000 - 0x000007feee239000 	C:\windows\system32\WSOCK32.dll
+0x000007fefe4e0000 - 0x000007fefe52d000 	C:\windows\system32\WS2_32.dll
+0x000007feff260000 - 0x000007feff268000 	C:\windows\system32\NSI.dll
+0x000007fef8840000 - 0x000007fef887b000 	C:\windows\system32\WINMM.dll
+0x000007fefbcc0000 - 0x000007fefbccc000 	C:\windows\system32\VERSION.dll
+0x0000000077130000 - 0x0000000077137000 	C:\windows\system32\PSAPI.DLL
+0x0000000058110000 - 0x000000005811f000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\verify.dll
+0x00000000580e0000 - 0x0000000058109000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\java.dll
+0x00000000580c0000 - 0x00000000580d6000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\zip.dll
+0x000007fefd170000 - 0x000007fefdefb000 	C:\windows\system32\SHELL32.dll
+0x000007fefe9f0000 - 0x000007fefebec000 	C:\windows\system32\ole32.dll
+0x000007fefcc50000 - 0x000007fefcc5f000 	C:\windows\system32\profapi.dll
+0x0000000069c60000 - 0x0000000069c6d000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\management.dll
+0x000007fefc480000 - 0x000007fefc498000 	C:\windows\system32\CRYPTSP.dll
+0x000007fefc180000 - 0x000007fefc1c7000 	C:\windows\system32\rsaenh.dll
+0x000007fefcfb0000 - 0x000007fefcfce000 	C:\windows\system32\USERENV.dll
+0x000007fefcaf0000 - 0x000007fefcaff000 	C:\windows\system32\CRYPTBASE.dll
+0x00000000580a0000 - 0x00000000580ba000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\net.dll
+0x000007fefc420000 - 0x000007fefc475000 	C:\windows\system32\mswsock.dll
+0x000007fefc410000 - 0x000007fefc417000 	C:\windows\System32\wship6.dll
+0x000007fefa190000 - 0x000007fefa1b7000 	C:\windows\system32\IPHLPAPI.DLL
+0x000007fefa170000 - 0x000007fefa17b000 	C:\windows\system32\WINNSI.DLL
+0x000007fefa020000 - 0x000007fefa038000 	C:\windows\system32\dhcpcsvc.DLL
+0x000007fef9650000 - 0x000007fef9661000 	C:\windows\system32\dhcpcsvc6.DLL
+0x0000000058080000 - 0x0000000058091000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\nio.dll
+0x000007fee2b50000 - 0x000007fee2b5a000 	C:\Users\ohuertas\AppData\Local\Temp\jansi-64-1596968317975259574.dll
+0x000007fefb3a0000 - 0x000007fefb3b5000 	C:\windows\system32\NLAapi.dll
+0x000007fee6000000 - 0x000007fee6015000 	C:\windows\system32\napinsp.dll
+0x000007fee5fe0000 - 0x000007fee5ff9000 	C:\windows\system32\pnrpnsp.dll
+0x000007fefc2a0000 - 0x000007fefc2fb000 	C:\windows\system32\DNSAPI.dll
+0x000007fee5fd0000 - 0x000007fee5fdb000 	C:\windows\System32\winrnr.dll
+0x000007fee5fc0000 - 0x000007fee5fd0000 	C:\windows\system32\wshbth.dll
+0x000007fef9e40000 - 0x000007fef9e93000 	C:\windows\System32\fwpuclnt.dll
+0x000007feeb010000 - 0x000007feeb018000 	C:\windows\system32\rasadhlp.dll
+0x0000000058020000 - 0x0000000058044000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\sunec.dll
+0x00000000562a0000 - 0x00000000562ab000 	C:\Program Files\Java\jdk1.8.0_91\jre\bin\sunmscapi.dll
+0x000007fefcd50000 - 0x000007fefcebd000 	C:\windows\system32\CRYPT32.dll
+0x000007fefcc60000 - 0x000007fefcc6f000 	C:\windows\system32\MSASN1.dll
+0x000007fefbe00000 - 0x000007fefbe07000 	C:\windows\System32\wshtcpip.dll
+0x000007fee6040000 - 0x000007fee6165000 	C:\windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -XX:PermSize=128M -XX:MaxPermSize=256M -Dmule.home=D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\.mule -Djava.endorsed.dirs=D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\endorsed -Djava.net.preferIPv4Stack=TRUE -Dmvel2.disable.jit=TRUE -Dosgi.dev=true -Dmule.verbose.exceptions=true -Dmule.agent.enabled=false -Dmule.forceConsoleLog -Dlog4j.debug=true -Danypoint.platform.gatekeeper=false -Dosgi.instance.area=file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule -Dfile.encoding=Cp1252 
+java_command: org.mule.tooling.server.application.ApplicationDeployer
+java_class_path (initial): D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\tooling\tooling-support-3.8.0.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\commons-cli-1.2.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\disruptor-3.3.0.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\jcl-over-slf4j-1.7.7.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\log4j-1.2-api-2.5.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\log4j-api-2.5.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\log4j-core-2.5.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\log4j-jcl-2.5.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\log4j-jul-2.5.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\log4j-slf4j-impl-2.5.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\mule-module-boot-3.8.0.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\mule-module-reboot-3.8.0.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\slf4j-api-1.7.7.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\boot\wrapper-3.2.3.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\user\js-engine-1.1-jdk14.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\user\junit-4.11.jar;D:\app\AnypointStudio\plugins\org.mule.tooling.server.3.8.0_6.0.0.201605131329\mule\lib\user\mule-tests-functional-3.8.0.jar;D:\app\Anypoint
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_91
+JRE_HOME=C:\Program Files\Java\jdk1.8.0_91\jre
+CLASSPATH=.;C:\PROGRA~1\IBM\SQLLIB\java\db2java.zip;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc.jar;C:\PROGRA~1\IBM\SQLLIB\java\sqlj.zip;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc_license_cu.jar;C:\PROGRA~1\IBM\SQLLIB\bin;C:\PROGRA~1\IBM\SQLLIB\java\common.jar;C:\Program Files (x86)\IBM\WebSphere MQ\java\lib\com.ibm.mqjms.jar;C:\Program Files (x86)\IBM\WebSphere MQ\java\lib\com.ibm.mq.jar
+USERNAME=ohuertas
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 78 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23807)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 78 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8268844k(905028k free), swap 16535828k(3121892k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.91-b14) for windows-amd64 JRE (1.8.0_91-b14), built on Apr  1 2016 00:58:32 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Sun Oct 29 17:53:57 2017
+elapsed time: 18 seconds (0d 0h 0m 18s)
+

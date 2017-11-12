@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <spring:beans>
+        <spring:bean id="BeanUtilConstantsDeprisa" name="BeanUtilConstantsDeprisa" class="co.com.kallsonys.esb.util.UtilConstants" parent="BeanUtilConstants" scope="global session"/>
+    </spring:beans>
+    <flow name="shipmentdeprisafulfillFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration_back" path="/shipment/deprisa/fulfillshipment" allowedMethods="POST" doc:name="HTTP"/>
+        <logger message="#[message.payloadAs(java.lang.String)]" level="INFO" doc:name="Logger"/>
+        <set-variable variableName="jsonIn" value="#[payload]" doc:name="Variable JSON"/>
+        <db:select config-ref="MySQL_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[SELECT propertyValue FROM kallsonys_backend.kallsonys_properties where propertyId = "PATH_DEPRISA";]]></db:parameterized-query>
+        </db:select>
+        <set-variable variableName="pathDeprisa" value="#[message.payload[0].propertyValue]" doc:name="Variable Path Directory"/>
+        <set-payload value="#[flowVars.jsonIn]" doc:name="Set Payload"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <parse-template location="shipmentDeprisaFulfillOrder" doc:name="Parse Template"/>
+        <file:outbound-endpoint path="#[flowVars.pathDeprisa]" outputPattern="kallsonys_orden#[flowVars.orderId].csv" responseTimeout="10000" doc:name="File Order"/>
+        <set-payload value="#[flowVars.jsonIn]" doc:name="Set Payload"/>
+        <json:json-to-object-transformer doc:name="JSON to Object"/>
+        <parse-template location="shipmentDeprisaFulfillItem" doc:name="Parse Template"/>
+        <file:outbound-endpoint path="#[flowVars.pathDeprisa]" outputPattern="kallsonys_items#[flowVars.orderId].csv" responseTimeout="10000" doc:name="File Item"/>
+        <logger message="Vamos por los archivos" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>

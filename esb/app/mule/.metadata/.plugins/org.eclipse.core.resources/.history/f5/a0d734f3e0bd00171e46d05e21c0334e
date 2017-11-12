@@ -1,0 +1,329 @@
+package co.com.kallsonys.esb.shipment;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.StringReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
+import org.json.JSONArray;
+
+import co.com.kallsonys.esb.payment.PaymentCreditCardFault1;
+import co.com.kallsonys.esb.payment.VerifyCreditCardFault1;
+import co.com.kallsonys.esb.payment.VerifyCreditCardRs;
+
+public class ShipmentCompanyPortTypeImpl implements ShipmentCompanyPortType {
+	private static final String _KALLSONYS_ = "KALLSONYS";
+	
+	enum ShipmentCompanies {
+		DHL,
+		SERVIENTREGA,
+		DEPRISA
+	}
+
+	@Override
+	public FulfillShipmentRs fulfillShipment(FulfillShipmentRq fulfillShipmentRq) throws FulfillShipmentFault1 {
+		FulfillShipmentRs resp = new FulfillShipmentRs();
+		String shipmentCompany = fulfillShipmentRq.getPartner();
+
+		switch (ShipmentCompanies.valueOf( shipmentCompany )) {
+		case DHL:
+			resp = shipmentCompanyDHL(fulfillShipmentRq);
+			break;
+		case SERVIENTREGA:
+			resp = shipmentCompanyServientrega(fulfillShipmentRq);
+			break;
+		case DEPRISA:
+			resp = shipmentCompanyDeprisa(fulfillShipmentRq);
+			break;
+		default:
+			throw new FulfillShipmentFault1("No existe un convenio con la empresa de envios " + shipmentCompany);
+		}
+
+		return resp;
+	}
+	
+	private FulfillShipmentRs shipmentCompanyDHL(FulfillShipmentRq fulfillShipmentRq) throws FulfillShipmentFault1 {
+		FulfillShipmentRs resp = new FulfillShipmentRs();
+		try {
+			URL url = new URL("http://localhost:9191/shipment/dhl/fulfillshipment");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			
+			StringBuffer input = new StringBuffer();
+			input.append("{");
+			input.append("\"partner\":\"" + _KALLSONYS_ + "\",");					
+			input.append("\"supplier\":\"" + fulfillShipmentRq.getOrder().getProductVendorCompanyInfo().getProductVendorCompanyId() + "\",");
+			input.append("\"orderId\":\"" + fulfillShipmentRq.getOrder().getOrderInfo().getOrderId() + "\",");
+			input.append("\"addresseeName\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressee().getName() + "\",");
+			input.append("\"addresseeLastName\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressee().getLastName() + "\",");
+			input.append("\"country\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressToSend().getCountry() + "\",");
+			input.append("\"city\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressToSend().getCity() + "\",");
+			input.append("\"street\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressToSend().getStreet() + "\",");
+			input.append("\"state\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressToSend().getState() + "\",");
+			input.append("\"zipcode\":\"" + fulfillShipmentRq.getAddresseeInfo().getAddressToSend().getZipcode() + "\",");
+			input.append("\"items\": [ ");
+
+			for (Item item : fulfillShipmentRq.getOrder().getOrderInfo().getItems()) {
+				input.append("{ ");
+				input.append("\"itemID\":\"" + item.getItemId() + "\",");
+				input.append("\"prodID\":\"" + item.getProdID() + "\",");
+				input.append("\"productName\":\"" + item.getProductName() + "\",");
+				input.append("\"partNumber\":\"" + item.getPartNumber() + "\",");
+				input.append("\"price\":" + item.getPrice() + ",");
+				input.append("\"quantity\":" + item.getQuantity());
+				input.append("},");
+			}
+			
+			if (input.lastIndexOf(",") == input.length()-1) {
+				input.replace(input.length()-1, input.length(), "]");
+			} else {
+				input.append("]");
+			}
+			
+			input.append("}");
+							
+			OutputStream os = conn.getOutputStream();
+			os.write(input.toString().getBytes());
+			os.flush();
+			
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("HTTP error code : "
+					+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(conn.getInputStream())));
+
+			String output;
+			StringBuffer xml = new StringBuffer();
+			while ((output = br.readLine()) != null) {
+				xml.append(output);
+			}
+			conn.disconnect();
+			
+			// Parseo
+			org.json.JSONObject jsonObject = new org.json.JSONObject(xml.toString());
+			if (!jsonObject.isNull("errorMessage")) {
+				throw new FulfillShipmentFault1(jsonObject.get("errorMessage").toString());
+			}
+			
+			// Respuesta
+			String[] nameRoot = org.json.JSONObject.getNames(jsonObject);
+			org.json.JSONObject jsonChild = (org.json.JSONObject) jsonObject.get(nameRoot[0]);
+			resp.setResult(Boolean.parseBoolean(jsonChild.get("fullfillShipmentResult").toString()));
+		} catch (Exception e) {
+			throw new FulfillShipmentFault1(e.getMessage());
+		}
+		return resp;
+	}
+	
+	private FulfillShipmentRs shipmentCompanyServientrega(FulfillShipmentRq fulfillShipmentRq)
+			throws FulfillShipmentFault1 {
+		FulfillShipmentRs resp = new FulfillShipmentRs();
+		try {
+			URL url = new URL("http://localhost:9191/shipment/servientrega/fulfillshipment");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			
+			StringBuffer input = new StringBuffer();
+			input.append("{");
+			input.append("\"orderid\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"city\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"fname\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"lname\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"state\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"street\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"zipcode\":\"" + fulfillShipmentRq + "\",");
+			input.append("\"servientregaItems\": [");
+			
+			for (Item item : fulfillShipmentRq.getOrder().getOrderInfo().getItems()) {
+				input.append("{ ");
+				input.append("\"itemid\":\"" + item.getItemId() + "\",");
+				input.append("\"price\":" + item.getPrice() + ",");
+				input.append("\"prodid\":\"" + item.getProdID() + "\",");
+				input.append("\"productname\":\"" + item.getProductName() + "\",");
+				input.append("\"productnum\":\"" + item.getPartNumber() + "\",");
+				input.append("\"quantity\":" + item.getQuantity());
+				input.append("},");
+			}
+			
+			if (input.lastIndexOf(",") == input.length()-1) {
+				input.replace(input.length()-1, input.length(), "]");
+			} else {
+				input.append("]");
+			}
+			
+			input.append("}");
+							
+			OutputStream os = conn.getOutputStream();
+			os.write(input.toString().getBytes());
+			os.flush();
+			
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("HTTP error code : "
+					+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(conn.getInputStream())));
+
+			String output;
+			StringBuffer xml = new StringBuffer();
+			while ((output = br.readLine()) != null) {
+				xml.append(output);
+			}
+			conn.disconnect();
+			
+			// Parseo
+			org.json.JSONObject jsonObject = new org.json.JSONObject(xml.toString());
+			if (!jsonObject.isNull("errorMessage")) {
+				throw new FulfillShipmentFault1(jsonObject.get("errorMessage").toString());
+			}
+			
+			// Respuesta
+			resp.setSent(Boolean.parseBoolean(jsonObject.get("checkShipmentStatusResult").toString()));
+		} catch (Exception e) {
+			throw new CheckShipmentStatusFault1(e.getMessage());
+		}
+		return resp;
+	}
+
+	private FulfillShipmentRs shipmentCompanyDeprisa(FulfillShipmentRq fulfillShipmentRq) throws FulfillShipmentFault1 {
+		throw new FulfillShipmentFault1("Metodo aun no implementado deprisa");
+	}
+
+	@Override
+	public CheckShipmentStatusRs checkShipmentStatus(CheckShipmentStatusRq checkShipmentStatusRq)
+			throws CheckShipmentStatusFault1 {
+		CheckShipmentStatusRs resp = new CheckShipmentStatusRs();
+		String shipmentCompany = checkShipmentStatusRq.getPartner();
+
+		switch (ShipmentCompanies.valueOf( shipmentCompany )) {
+		case DHL:
+			resp = checkShipmentCompanyDHL(checkShipmentStatusRq);
+			break;
+		case SERVIENTREGA:
+			resp = checkShipmentCompanyServientrega(checkShipmentStatusRq);
+			break;
+		case DEPRISA:
+			resp = checkShipmentCompanyDeprisa(checkShipmentStatusRq);
+			break;
+		default:
+			throw new CheckShipmentStatusFault1("No existe un convenio con la empresa de envios " + shipmentCompany);
+		}
+
+		return resp;
+	}
+	
+	private CheckShipmentStatusRs checkShipmentCompanyDHL(CheckShipmentStatusRq checkShipmentStatusRq) throws CheckShipmentStatusFault1 {
+		CheckShipmentStatusRs resp = new CheckShipmentStatusRs();
+		try {
+			URL url = new URL("http://localhost:9191/shipment/dhl/checkshipment");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			
+			StringBuffer input = new StringBuffer();
+			input.append("{");
+			input.append("\"partner\":\"" + _KALLSONYS_ + "\",");					
+			input.append("\"orderId\":\"" + checkShipmentStatusRq.getOrder().getOrderInfo().getOrderId() + "\"");
+			input.append("}");
+							
+			OutputStream os = conn.getOutputStream();
+			os.write(input.toString().getBytes());
+			os.flush();
+			
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("HTTP error code : "
+					+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(conn.getInputStream())));
+
+			String output;
+			StringBuffer xml = new StringBuffer();
+			while ((output = br.readLine()) != null) {
+				xml.append(output);
+			}
+			conn.disconnect();
+			
+			// Parseo
+			org.json.JSONObject jsonObject = new org.json.JSONObject(xml.toString());
+			if (!jsonObject.isNull("errorMessage")) {
+				throw new FulfillShipmentFault1(jsonObject.get("errorMessage").toString());
+			}
+			
+			// Respuesta
+			String[] nameRoot = org.json.JSONObject.getNames(jsonObject);
+			org.json.JSONObject jsonChild = (org.json.JSONObject) jsonObject.get(nameRoot[0]);
+			resp.setSent(Boolean.parseBoolean(jsonChild.get("checkShipmentStatusResult").toString()));
+		} catch (Exception e) {
+			throw new CheckShipmentStatusFault1(e.getMessage());
+		}
+		return resp;
+	}
+
+	private CheckShipmentStatusRs checkShipmentCompanyDeprisa(CheckShipmentStatusRq checkShipmentStatusRq) throws CheckShipmentStatusFault1 {
+		// TODO Auto-generated method stub
+		throw new CheckShipmentStatusFault1("Metodo aun no implementado Deprisa check");
+	}
+
+	private CheckShipmentStatusRs checkShipmentCompanyServientrega(CheckShipmentStatusRq checkShipmentStatusRq) throws CheckShipmentStatusFault1 {
+		CheckShipmentStatusRs resp = new CheckShipmentStatusRs();
+		try {
+			URL url = new URL("http://localhost:9191/shipment/servientrega/checkshipment");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setDoOutput(true);
+			conn.setRequestMethod("POST");
+			conn.setRequestProperty("Content-Type", "application/json");
+			
+			StringBuffer input = new StringBuffer();
+			input.append("{");
+			input.append("\"orderId\":\"" + checkShipmentStatusRq.getOrder().getOrderInfo().getOrderId() + "\"");
+			input.append("}");
+							
+			OutputStream os = conn.getOutputStream();
+			os.write(input.toString().getBytes());
+			os.flush();
+			
+			if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("HTTP error code : "
+					+ conn.getResponseCode());
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					(conn.getInputStream())));
+
+			String output;
+			StringBuffer xml = new StringBuffer();
+			while ((output = br.readLine()) != null) {
+				xml.append(output);
+			}
+			conn.disconnect();
+			
+			// Parseo
+			org.json.JSONObject jsonObject = new org.json.JSONObject(xml.toString());
+			if (!jsonObject.isNull("errorMessage")) {
+				throw new FulfillShipmentFault1(jsonObject.get("errorMessage").toString());
+			}
+			
+			// Respuesta
+			resp.setSent(Boolean.parseBoolean(jsonObject.get("checkShipmentStatusResult").toString()));
+		} catch (Exception e) {
+			throw new CheckShipmentStatusFault1(e.getMessage());
+		}
+		return resp;
+	}
+}

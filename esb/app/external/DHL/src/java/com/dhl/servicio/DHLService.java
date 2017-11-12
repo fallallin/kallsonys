@@ -7,7 +7,6 @@ package com.dhl.servicio;
 
 import com.dhl.negocio.NegocioEnvio;
 import com.dhl.utils.excepciones.ExcepcionGenerica;
-import java.lang.reflect.InvocationTargetException;
 import javax.ejb.EJB;
 import javax.jws.WebService;
 
@@ -20,8 +19,12 @@ public class DHLService {
     @EJB
     private NegocioEnvio negocioEnvio;
     
-    public boolean fullfillShipment(co.com.dhl.dhlshipmentservice.Shipment shipment) throws IllegalAccessException, InvocationTargetException, ExcepcionGenerica {
-        return negocioEnvio.crearEnvio(shipment) != null;
+    public boolean fullfillShipment(co.com.dhl.dhlshipmentservice.Shipment shipment) throws ExcepcionGenerica {
+        try {
+            return negocioEnvio.crearEnvio(shipment) != null;
+        } catch (Exception ex) {
+            throw new ExcepcionGenerica(ex.getMessage());
+        }
     }
 
     public java.lang.String checkShipmentStatus(java.lang.String partner, java.lang.String orderId) throws ExcepcionGenerica {

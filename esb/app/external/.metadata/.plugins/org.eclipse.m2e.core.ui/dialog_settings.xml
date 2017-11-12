@@ -43,6 +43,7 @@
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
 			<item value="D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega"/>
+			<item value="D:\workspacePUJ\GitHub\kallsonys\esb\app\external\DHL"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

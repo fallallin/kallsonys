@@ -1,0 +1,4 @@
+<dhl:checkShipmentStatus xmlns:dhl="http://dhl.com.co/DHLShipmentService">
+   <partner>#[json:partner]</partner>
+   <orderId>#[json:orderId]</orderId>
+</dhl:checkShipmentStatus>

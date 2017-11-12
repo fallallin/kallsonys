@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="322cb32c-e808-4d8c-9e18-50b127ae4400" activeEnvironment="Default" name="DHLService" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f9259063-8f96-4572-9037-be6ff679e1e9" wsaVersion="NONE" name="DHLShipmentServiceBinding" type="wsdl" bindingName="{http://dhl.com.co/}DHLShipmentServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/02_BACKEND/03_Transport/DHLService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\02_BACKEND\03_Transport\DHLService.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\02_BACKEND\03_Transport\DHLService.wsdl</con:url><con:content><![CDATA[<definitions name="DHLShipmentService" targetNamespace="http://dhl.com.co/" xmlns:tns="http://dhl.com.co/" xmlns:xsd1="http://dhl.com.co/DHLShipmentService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<con:soapui-project id="322cb32c-e808-4d8c-9e18-50b127ae4400" activeEnvironment="Default" name="DHLService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f9259063-8f96-4572-9037-be6ff679e1e9" wsaVersion="NONE" name="DHLShipmentServiceBinding" type="wsdl" bindingName="{http://dhl.com.co/}DHLShipmentServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/02_BACKEND/03_Transport/DHLService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\02_BACKEND\03_Transport\DHLService.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\02_BACKEND\03_Transport\DHLService.wsdl</con:url><con:content><![CDATA[<definitions name="DHLShipmentService" targetNamespace="http://dhl.com.co/" xmlns:tns="http://dhl.com.co/" xmlns:xsd1="http://dhl.com.co/DHLShipmentService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <schema targetNamespace="http://dhl.com.co/DHLShipmentService" xmlns="http://www.w3.org/2001/XMLSchema">
       <element name="fullfillShipment">
@@ -112,7 +112,7 @@
       <soap:address location="http://localhost:8080/DHLApp/DHLShipmentService"/>
     </port>
   </service>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockDHLShipmentServiceBinding</con:endpoint><con:endpoint>http://localhost:8080/DHLApp/DHLShipmentService</con:endpoint></con:endpoints><con:operation id="9080cbae-93b3-480c-9ee9-e1b89ed07f69" isOneWay="false" action="" name="checkShipmentStatus" bindingOperationName="checkShipmentStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4ee56083-e2ed-46e1-86cb-6fddd32512e9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DHLApp/DHLShipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dhl="http://dhl.com.co/DHLShipmentService">\r
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockDHLShipmentServiceBinding</con:endpoint><con:endpoint>http://localhost:7001/DHL/DHLShipmentService</con:endpoint></con:endpoints><con:operation id="9080cbae-93b3-480c-9ee9-e1b89ed07f69" isOneWay="false" action="" name="checkShipmentStatus" bindingOperationName="checkShipmentStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4ee56083-e2ed-46e1-86cb-6fddd32512e9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/DHL/DHLShipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dhl="http://dhl.com.co/DHLShipmentService">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <dhl:checkShipmentStatus>\r
@@ -122,7 +122,7 @@
          <orderId>?</orderId>\r
       </dhl:checkShipmentStatus>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dhl.com.co/DHLShipmentServicePort/checkShipmentStatusRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cd10138d-6a93-4c60-bada-513d663692bd" isOneWay="false" action="" name="fullfillShipment" bindingOperationName="fullfillShipment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="46fd6a10-dfe6-4198-abe7-29d514915067" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/DHLApp/DHLShipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dhl="http://dhl.com.co/DHLShipmentService">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dhl.com.co/DHLShipmentServicePort/checkShipmentStatusRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cd10138d-6a93-4c60-bada-513d663692bd" isOneWay="false" action="" name="fullfillShipment" bindingOperationName="fullfillShipment" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="46fd6a10-dfe6-4198-abe7-29d514915067" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/DHL/DHLShipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dhl="http://dhl.com.co/DHLShipmentService">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <dhl:fullfillShipment>\r
@@ -165,6 +165,42 @@
                </item>\r
             </items>\r
          </shipment>\r
+      </dhl:fullfillShipment>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dhl.com.co/DHLShipmentServicePort/fullfillShipmentRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4fbc2221-8e5d-4bd6-99e7-08a361930fe4" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/DHL/DHLShipmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dhl="http://dhl.com.co/DHLShipmentService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dhl:fullfillShipment>\r
+         <shipment>
+    <partner>DHL</partner>
+    <supplier>RS</supplier>
+    <orderId>4</orderId>
+    <addresseeName>8</addresseeName>
+    <addresseeLastName>9</addresseeLastName>
+    <country>AR</country>
+    <city>11</city>
+    <street>13</street>
+    <state>10</state>
+    <zipcode>14</zipcode>
+    <items>
+      <item>
+        <itemID>2</itemID>
+        <prodID>3</prodID>
+        <productName>4</productName>
+        <partNumber>5</partNumber>
+        <price>6</price>
+        <quantity>7</quantity>
+      </item>
+      <item>
+        <itemID>12</itemID>
+        <prodID>13</prodID>
+        <productName>14</productName>
+        <partNumber>15</partNumber>
+        <price>16</price>
+        <quantity>17</quantity>
+      </item>
+    </items>
+  </shipment>
       </dhl:fullfillShipment>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://dhl.com.co/DHLShipmentServicePort/fullfillShipmentRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="7b00ad44-abf4-45b5-b023-5068d2c3198e" port="8088" path="/mockDHLShipmentServiceBinding" host="ASW1817" name="DHLShipmentServiceBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="checkShipmentStatus" id="ec31f332-ee8e-4198-bd47-ae03e6f79f80" interface="DHLShipmentServiceBinding" operation="checkShipmentStatus"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c3fefe37-9664-4628-ab1e-9535c4c137a1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dhl="http://dhl.com.co/DHLShipmentService">

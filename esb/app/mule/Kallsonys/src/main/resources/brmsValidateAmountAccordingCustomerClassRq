@@ -1,0 +1,4 @@
+<def:ValidacionTarjeta xmlns:def="http://DefaultNamespace">
+	<def:monto>#[json:orderPrice]</def:monto>
+   	<def:tipoTarjeta>#[json:customerClass]</def:tipoTarjeta>
+</def:ValidacionTarjeta>

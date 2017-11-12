@@ -3,7 +3,6 @@ package com.servientrega.modelo.entidad;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 
 /**
@@ -21,7 +20,7 @@ public class ServientregaItem implements Serializable {
 
 	private BigDecimal price;
 
-	private BigInteger prodid;
+	private String prodid;
 
 	private String productname;
 
@@ -53,11 +52,11 @@ public class ServientregaItem implements Serializable {
 		this.price = price;
 	}
 
-	public BigInteger getProdid() {
+	public String getProdid() {
 		return this.prodid;
 	}
 
-	public void setProdid(BigInteger prodid) {
+	public void setProdid(String prodid) {
 		this.prodid = prodid;
 	}
 

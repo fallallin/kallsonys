@@ -1,0 +1,79 @@
+package co.com.kallsonys.esb.servientrega;
+
+import java.math.BigDecimal;
+
+public class DTOServientregaItem  {
+
+	private String itemid;
+
+	private BigDecimal price;
+
+	private String prodid;
+
+	private String productname;
+
+	private String productnum;
+
+	private int quantity;
+
+	private DTOServientregaShipment servientregaShipment;
+
+	public DTOServientregaItem() {
+	}
+	
+	public String getItemid() {
+		return this.itemid;
+	}
+	
+	public void setItemid(String itemid) {
+		this.itemid = itemid;
+	}
+
+	public BigDecimal getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(BigDecimal price) {
+		this.price = price;
+	}
+
+	public String getProdid() {
+		return this.prodid;
+	}
+
+	public void setProdid(String prodid) {
+		this.prodid = prodid;
+	}
+
+	public String getProductname() {
+		return this.productname;
+	}
+
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
+
+	public String getProductnum() {
+		return this.productnum;
+	}
+
+	public void setProductnum(String productnum) {
+		this.productnum = productnum;
+	}
+
+	public int getQuantity() {
+		return this.quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public DTOServientregaShipment getServientregaShipment() {
+		return this.servientregaShipment;
+	}
+
+	public void setServientregaShipment(DTOServientregaShipment servientregaShipment) {
+		this.servientregaShipment = servientregaShipment;
+	}
+}

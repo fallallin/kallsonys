@@ -6,6 +6,9 @@
         <dependent-module archiveName="servientrega-ejb-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/servientrega-ejb/servientrega-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="servientrega-datamodel-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/servientrega-datamodel/servientrega-datamodel">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/hrn-web/target/classes"/>
         <property name="context-root" value="servientrega-web"/>
     </wb-module>

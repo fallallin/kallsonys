@@ -1,0 +1,7 @@
+<rap:processQuoteElement xmlns:rap="http://RapidService.com.co/RapidServiceQuoteService">
+   <orderId>gero et</orderId>
+   <items>
+      <itemId>sonoras imperio</itemId>
+      <quantity>10</quantity>
+   </items>
+</rap:processQuoteElement>

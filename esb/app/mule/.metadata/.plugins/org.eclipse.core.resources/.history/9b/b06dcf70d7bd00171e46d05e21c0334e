@@ -1,0 +1,14 @@
+package co.com.kallsonys.esb.servientrega;
+
+
+public class DTOCheckShipmentStatusResult {
+	private boolean checkShipmentStatusResult;
+
+	public boolean isCheckShipmentStatusResult() {
+		return checkShipmentStatusResult;
+	}
+
+	public void setCheckShipmentStatusResult(boolean checkShipmentStatusResult) {
+		this.checkShipmentStatusResult = checkShipmentStatusResult;
+	}
+}

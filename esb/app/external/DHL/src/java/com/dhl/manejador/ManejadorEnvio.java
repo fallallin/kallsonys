@@ -28,7 +28,7 @@ public class ManejadorEnvio {
     public DhlShipment crearEnvio(DhlShipment envio) {
     	em.persist(envio);
     	em.flush();
-		return envio;
+        return envio;
     }
     
     public DhlShipment estadoEnvio(DhlShipmentPK id) {
@@ -37,5 +37,9 @@ public class ManejadorEnvio {
             em.refresh(resp);
         }
     	return resp;
+    }
+    
+    public boolean existeEnvio(DhlShipmentPK id) {
+        return estadoEnvio(id) != null;
     }
 }

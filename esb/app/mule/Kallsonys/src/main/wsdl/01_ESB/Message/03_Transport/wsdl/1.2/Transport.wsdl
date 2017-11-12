@@ -78,7 +78,7 @@
 	</wsdl:binding>
 	<wsdl:service name="ShipmentCompanyService">
 		<wsdl:port name="ShipmentCompanyPort" binding="tns:ShipmentCompanyBinding">
-			<soap12:address location="http://localhost:9191/soap"/>
+			<soap12:address location="http://localhost:9090/esb/soap/shipment"/>
 		</wsdl:port>
 	</wsdl:service>
 </wsdl:definitions>

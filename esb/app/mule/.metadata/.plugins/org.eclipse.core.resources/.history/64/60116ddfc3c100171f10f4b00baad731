@@ -1,0 +1,4 @@
+<def:ValidacionTarjeta>
+	<def:monto>#[json:monto]</def:monto>
+   	<def:tipoTarjeta>#[json:tipoTarjeta]</def:tipoTarjeta>
+</def:ValidacionTarjeta>

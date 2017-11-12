@@ -8,12 +8,30 @@
 	<import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="../../../BusinessEntities/Item.xsd"/>
 	<element name="headerRq" type="h:HeaderRqType"/>
 	<element name="headerRs" type="h:HeaderRsType"/>
+	<element name="FactorysQuotesOrdersRq">
+		<complexType>
+			<complexContent>
+				<restriction base="order:Order_v1.0">
+					<sequence>
+						<element name="orderInfo" type="order:OrderInfoWithoutPrice_v1.0" minOccurs="0"/>
+					</sequence>
+				</restriction>
+			</complexContent>
+		</complexType>
+	</element>
+	<element name="FactorysQuotesOrdersRs">
+		<complexType>
+			<sequence>
+				<element name="quotesOrdersByFactory" type="this:QuotesOrdersByFactoryType" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
 	<element name="FactoryQuotesOrderRq">
 		<complexType>
 			<complexContent>
 				<restriction base="order:Order_v1.0">
 					<sequence>
-						<element name="orderInfo" type="order:OrderInfo_v1.0" minOccurs="0"/>
+						<element name="orderInfo" type="order:OrderInfoWithoutPrice_v1.0" minOccurs="0"/>
 						<element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
 					</sequence>
 				</restriction>
@@ -50,6 +68,16 @@
 			</sequence>
 		</complexType>
 	</element>
+	<complexType name="QuotesOrdersByFactoryType">
+		<complexContent>
+			<restriction base="order:Order_v1.0">
+				<sequence>
+					<element name="orderInfo" type="this:OrderInfoPriceType" minOccurs="0"/>
+					<element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
 	<complexType name="ItemsType">
 		<complexContent>
 			<restriction base="order:OrderInfo_v1.0">
@@ -74,6 +102,15 @@
 			<restriction base="order:OrderInfo_v1.0">
 				<sequence>
 					<element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<complexType name="OrderInfoPriceType">
+		<complexContent>
+			<restriction base="order:OrderInfo_v1.0">
+				<sequence>
+					<element name="orderPrice" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
 				</sequence>
 			</restriction>
 		</complexContent>

@@ -16,7 +16,7 @@ import com.servientrega.modelo.dto.DTOServientregaShipment;
 import com.servientrega.modelo.entidad.ServientregaItem;
 import com.servientrega.modelo.entidad.ServientregaItemPK;
 import com.servientrega.modelo.entidad.ServientregaShipment;
-import com.servientrega.utils.excepciones.ExcepcionGenerica;
+import com.servientrega.utils.excepciones.GenericException;
 
 
 /**
@@ -39,8 +39,12 @@ public class NegocioEnvio extends NegocioAbstracto<ServientregaShipment, DTOServ
     	super();
     }
     
-    public DTOServientregaShipment crearEnvio(DTOServientregaShipment dtoEnvio) throws IllegalAccessException, InvocationTargetException, ExcepcionGenerica {
+    public DTOServientregaShipment crearEnvio(DTOServientregaShipment dtoEnvio) throws IllegalAccessException, InvocationTargetException, GenericException {
     	logService(this.getClass().getName(), "crear", dtoEnvio);
+    	
+    	if (manejadorEnvio.existeEnvio(dtoEnvio.getOrderid())) {
+            throw new GenericException("La orden " + dtoEnvio.getOrderid() + ", ya existe en Servientrega");
+        }
     	
     	ServientregaShipment envio = new ServientregaShipment();
     	copiarPropiedades(envio, dtoEnvio);
@@ -59,7 +63,7 @@ public class NegocioEnvio extends NegocioAbstracto<ServientregaShipment, DTOServ
 	            lstServientregaItem.add(servientregaItem);
 	    	}
     	} else {
-    		throw new ExcepcionGenerica("Seleccione por lo menos un item para ser enviado por Servientrega");
+    		throw new GenericException("Seleccione por lo menos un item para ser enviado por Servientrega");
     	}
     	
     	envio.setServientregaItems(lstServientregaItem);
@@ -68,7 +72,7 @@ public class NegocioEnvio extends NegocioAbstracto<ServientregaShipment, DTOServ
     }
     
     
-    public boolean estadoEnvio(String orderId) throws ExcepcionGenerica {
+    public boolean estadoEnvio(String orderId) throws GenericException {
     	ServientregaShipment envio;
     	boolean resp = false;
     	
@@ -76,7 +80,7 @@ public class NegocioEnvio extends NegocioAbstracto<ServientregaShipment, DTOServ
     	if (envio != null) {
     		resp = "1".equals(envio.getStatus());
     	} else {
-    		throw new ExcepcionGenerica("El número de la orden " + orderId + ", no existe");
+    		throw new GenericException("El número de la orden " + orderId + ", no existe en Servientrega");
     	}
 		
     	return resp;

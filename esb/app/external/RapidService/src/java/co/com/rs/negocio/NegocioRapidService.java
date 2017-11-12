@@ -25,8 +25,8 @@ public class NegocioRapidService {
     public static final String _PROPERTY_DECISOR_FACTORY_ = "DECISOR_FACTORY";
     public static final String _PROPERTY_RANDOM_ = "RANDOM";
     public static final String _PROPERTY_RS_ = "RS";
-    public static final BigDecimal _PRICE_FACTOR_MIN_ = new BigDecimal(200000);
-    public static final BigDecimal _PRICE_FACTOR_MAX_ = new BigDecimal(500000);
+    public static final BigDecimal _PRICE_FACTOR_MIN_ = new BigDecimal(20000);
+    public static final BigDecimal _PRICE_FACTOR_MAX_ = new BigDecimal(50000);
     
     @EJB
     private ManejadorRapidService manejadorRS;

@@ -19,6 +19,16 @@
 			<element name="orderPrice" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
 		</sequence>
 	</complexType>
+	<complexType name="OrderInfoWithoutPrice_v1.0">
+		<complexContent>
+			<restriction base="tns:OrderInfo_v1.0">
+				<sequence>
+					<element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+					<element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
 	<complexType name="ShipmentInfo_v1.0">
 		<sequence>
 			<element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>

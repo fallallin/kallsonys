@@ -1,0 +1,40 @@
+package co.com.kallsonys.esb.vendor;
+
+import co.com.kallsonys.esb.shipment.FulfillShipmentFault1;
+import co.com.kallsonys.esb.shipment.FulfillShipmentRs;
+import co.com.kallsonys.esb.shipment.ShipmentCompanyPortTypeImpl.ShipmentCompanies;
+
+public class FactoriesQuotesOrdersPortTypeImpl implements FactoriesQuotesOrdersPortType {
+	
+	enum ShipmentCompanies {
+		SONY,
+		RS
+	}
+
+	@Override
+	public ValidateOrderQuoteRs validateOrderQuote(ValidateOrderQuoteRq validateOrderQuoteRq)
+			throws ValidateOrderQuoteFault1 {
+		ValidateOrderQuoteRs resp = new ValidateOrderQuoteRs();
+		String vendor = validateOrderQuoteRq.getProductVendorCompanyInfo().getProductVendorCompanyId().value();
+
+		switch (ShipmentCompanies.valueOf( vendor )) {
+		case SONY:
+			resp = vendorCompanySony(validateOrderQuoteRq);
+			break;
+		case RS:
+			resp = vendorCompanyRapidService(validateOrderQuoteRq);
+			break;
+		default:
+			throw new ValidateOrderQuoteFault1("No existe un convenio con el proveedor " + vendor);
+		}
+		return resp;
+	}
+
+	@Override
+	public FactoryQuotesOrderRs factoryQuotesOrder(FactoryQuotesOrderRq factoryQuotesOrderRq)
+			throws FactoryQuotesOrderFault1 {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

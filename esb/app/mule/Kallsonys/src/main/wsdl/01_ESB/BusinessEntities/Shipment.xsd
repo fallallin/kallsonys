@@ -9,7 +9,7 @@
 	<complexType name="Shipment">
 		<sequence>
 			<element name="partner" type="string" minOccurs="0"/>
-			<element name="order" type="tns:OrderType" minOccurs="0"/>
+			<element name="order" type="tns:ShipmentOrderType" minOccurs="0"/>
 			<element name="addresseeInfo" type="tns:AddresseeInfoType" minOccurs="0"/>
 		</sequence>
 	</complexType>
@@ -43,7 +43,7 @@
 			</restriction>
 		</complexContent>
 	</complexType>
-	<complexType name="OrderType">
+	<complexType name="ShipmentOrderType">
 		<complexContent>
 			<restriction base="order:Order_v1.0">
 				<sequence>

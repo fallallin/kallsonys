@@ -1,0 +1,4 @@
+<def:ReglaMensajeria xmlns:def="http://DefaultNamespace">
+	<def:pais>?</def:pais>
+	<def:proveedor>?</def:proveedor>
+</def:ReglaMensajeria>

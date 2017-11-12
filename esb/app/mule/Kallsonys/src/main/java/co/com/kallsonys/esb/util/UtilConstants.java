@@ -4,4 +4,13 @@ public class UtilConstants {
 	public final static String _USER_BASIC_ = "kallsonys";
 	public final static String _PWS_BASIC_ = "k4lls0ny5";
 	public final static String _MSG_INVALID_CREDENTIAL_ = "Credenciales invalidas";
+	private String pathDeprisa;
+	
+	public String getPathDeprisa() {
+		return pathDeprisa;
+	}
+	public void setPathDeprisa(String pathDeprisa) {
+		this.pathDeprisa = pathDeprisa;
+	}
+	
 }

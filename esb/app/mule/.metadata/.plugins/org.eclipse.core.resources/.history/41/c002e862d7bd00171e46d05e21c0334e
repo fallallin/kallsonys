@@ -1,0 +1,16 @@
+package com.servientrega.modelo.dto;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class DTOFullfillShipmentResult {
+	private boolean fullfillShipmentResult;
+
+	public boolean isFullfillShipmentResult() {
+		return fullfillShipmentResult;
+	}
+
+	public void setFullfillShipmentResult(boolean fullfillShipmentResult) {
+		this.fullfillShipmentResult = fullfillShipmentResult;
+	}
+}

@@ -1,0 +1,7 @@
+<son:SonyQuoteServiceProcessRequest>
+   <orderId>?</orderId>
+   <items>
+      <itemId>?</itemId>
+      <quantity>?</quantity>
+   </items>
+</son:SonyQuoteServiceProcessRequest>

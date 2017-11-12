@@ -1,0 +1,4 @@
+<val:CreditCard xmlns:val="http://payment.com/ValidateCreditCard">
+   <ccType>#[json:ccType]</ccType>
+   <ccNum>#[json:ccNum]</ccNum>
+</val:CreditCard>

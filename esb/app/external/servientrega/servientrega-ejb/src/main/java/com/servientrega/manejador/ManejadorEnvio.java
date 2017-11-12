@@ -38,4 +38,8 @@ public class ManejadorEnvio {
     	}
     	return resp;
     }
+    
+    public boolean existeEnvio(String orderId) {
+        return estadoEnvio(orderId) != null;
+    }
 }

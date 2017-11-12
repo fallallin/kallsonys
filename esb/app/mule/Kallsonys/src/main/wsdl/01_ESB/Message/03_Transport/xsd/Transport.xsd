@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:shi="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:shi="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1" targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1">
 	<import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/businessentities/shipment" schemaLocation="../../../BusinessEntities/Shipment.xsd"/>
+	<import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="../../../BusinessEntities/ShipmentCompany.xsd"/>
 	<import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
 	<element name="headerRq" type="h:HeaderRqType"/>
 	<element name="headerRs" type="h:HeaderRsType"/>
@@ -11,7 +12,7 @@
 			<complexContent>
 				<restriction base="shi:Shipment">
 					<sequence>
-						<element name="partner" type="string" minOccurs="0"/>
+						<element name="partner" type="sc:ShipmentCompanyTypeEnum" minOccurs="0"/>
 						<element name="order" type="tns:OrderType" minOccurs="0"/>
 						<element name="addresseeInfo" type="shi:AddresseeInfoType" minOccurs="0"/>
 					</sequence>
@@ -31,7 +32,7 @@
 			<complexContent>
 				<restriction base="shi:Shipment">
 					<sequence>
-						<element name="partner" type="string" minOccurs="0"/>
+						<element name="partner" type="sc:ShipmentCompanyTypeEnum" minOccurs="0"/>
 						<element name="order" type="tns:CheckOrderType" minOccurs="0"/>
 					</sequence>
 				</restriction>
@@ -47,7 +48,7 @@
 	</element>
 	<complexType name="OrderType">
 		<complexContent>
-			<restriction base="shi:OrderType">
+			<restriction base="shi:ShipmentOrderType">
 				<sequence>
 					<element name="orderInfo" type="shi:OrderInfoType" minOccurs="0"/>
 					<element name="productVendorCompanyInfo" type="shi:ProductVendorCompanyType" minOccurs="0"/>
@@ -57,7 +58,7 @@
 	</complexType>
 	<complexType name="CheckOrderType">
 		<complexContent>
-			<restriction base="shi:OrderType">
+			<restriction base="shi:ShipmentOrderType">
 				<sequence>
 					<element name="orderInfo" type="tns:CheckOrderInfoType" minOccurs="0"/>
 				</sequence>

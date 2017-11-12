@@ -1,0 +1,6 @@
+#** GENERATED CONTENT ** Mule Application Deployment Descriptor
+#Sat Nov 04 19:32:20 COT 2017
+redeployment.enabled=true
+encoding=UTF-8
+domain=default
+config.resources=esb_01_vendor.xml,esb_02_payment.xml,esb_03_shipment.xml,payment.xml,paymentverifycc.xml,shipmentdeprisacheck.xml,shipmentdeprisafulfill.xml,shipmentdhlcheck.xml,shipmentdhlfulfill.xml,shipmentservientregacheck.xml,shipmentservientregafulfill.xml,vendorrsquotesorder.xml,vendorrsvalidateorderquote.xml,vendorsonyquotesorderrq.xml,vendorsonyvalidateorderquote.xml

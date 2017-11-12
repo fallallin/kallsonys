@@ -1,0 +1,7 @@
+<son:SonyQuoteServiceProcessRequest xmlns:son="http://sony.com.co/SonyQuoteService">
+   <orderId>#[json:orderId]</orderId>
+   <items>
+      <itemId>#[json:itemId]</itemId>
+      <quantity>#[json:quantity]</quantity>
+   </items>
+</son:SonyQuoteServiceProcessRequest>

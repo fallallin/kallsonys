@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="56bb4d14-bbf1-48c5-b7f3-3d020dbdb35f" activeEnvironment="Default" name="Transport" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="94f3d56e-5fdb-4322-9dbe-38e0beff10fb" wsaVersion="NONE" name="ShipmentCompanyBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/shipment/v1}ShipmentCompanyBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/app/mule/Kallsonys/src/main/wsdl/01_ESB/Message/03_Transport/wsdl/1.2/Transport.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\03_Transport\wsdl\1.2\Transport.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\03_Transport\wsdl\1.2\Transport.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ShipmentCompany" targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1">
+<con:soapui-project id="1c9e255a-cfae-4b51-9191-70d1cc505e89" activeEnvironment="Default" name="Transport" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="443cd1d3-b7f5-4918-a44c-9f0925243fc8" wsaVersion="NONE" name="ShipmentCompanyBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/shipment/v1}ShipmentCompanyBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/app/mule/Kallsonys/src/main/wsdl/01_ESB/Message/03_Transport/wsdl/1.2/Transport.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\03_Transport\wsdl\1.2\Transport.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\03_Transport\wsdl\1.2\Transport.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ShipmentCompany" targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1">
   <wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
   <wsdl:import namespace="http://www.kallsonys.com.co/cim/message/shipment/v1" location="../../xsd/Transport.xsd"/>
   <types>
@@ -78,7 +78,7 @@
   </wsdl:binding>
   <wsdl:service name="ShipmentCompanyService">
     <wsdl:port name="ShipmentCompanyPort" binding="tns:ShipmentCompanyBinding">
-      <soap12:address location="http://localhost:9191/soap"/>
+      <soap12:address location="http://localhost:9090/esb/soap/shipment"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\ExceptionGeneric.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/common/exceptiongeneric">
@@ -90,10 +90,11 @@
       <element name="subCode" type="tns:ExceptionGeneric" minOccurs="0" maxOccurs="1"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\03_Transport\xsd\Transport.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:shi="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1">
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\03_Transport\xsd\Transport.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/message/shipment/v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:shi="http://www.kallsonys.com.co/cim/businessentities/shipment" xmlns:tns="http://www.kallsonys.com.co/cim/message/shipment/v1">
   <import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
   <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
   <import namespace="http://www.kallsonys.com.co/cim/businessentities/shipment" schemaLocation="../../../BusinessEntities/Shipment.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="../../../BusinessEntities/ShipmentCompany.xsd"/>
   <import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
   <element name="headerRq" type="h:HeaderRqType"/>
   <element name="headerRs" type="h:HeaderRsType"/>
@@ -102,7 +103,7 @@
       <complexContent>
         <restriction base="shi:Shipment">
           <sequence>
-            <element name="partner" type="string" minOccurs="0"/>
+            <element name="partner" type="sc:ShipmentCompanyTypeEnum" minOccurs="0"/>
             <element name="order" type="tns:OrderType" minOccurs="0"/>
             <element name="addresseeInfo" type="shi:AddresseeInfoType" minOccurs="0"/>
           </sequence>
@@ -122,7 +123,7 @@
       <complexContent>
         <restriction base="shi:Shipment">
           <sequence>
-            <element name="partner" type="string" minOccurs="0"/>
+            <element name="partner" type="sc:ShipmentCompanyTypeEnum" minOccurs="0"/>
             <element name="order" type="tns:CheckOrderType" minOccurs="0"/>
           </sequence>
         </restriction>
@@ -476,7 +477,7 @@
       <enumeration value="PLATEADO"/>
     </restriction>
   </simpleType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockShipmentCompanyBinding</con:endpoint><con:endpoint>http://localhost:9191/soap</con:endpoint></con:endpoints><con:operation id="eee91312-1261-4a60-aa93-c4e43f4e014f" isOneWay="false" action="checkShipmentStatus" name="checkShipmentStatus" bindingOperationName="checkShipmentStatus" type="Request-Response" outputName="CheckShipmentStatus_Output" inputName="CheckShipmentStatus_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b40dcf9f-7f19-4400-8f29-502d488b215f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9191/soap</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">\r
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockShipmentCompanyBinding</con:endpoint><con:endpoint>http://localhost:9090/esb/soap/shipment</con:endpoint></con:endpoints><con:operation id="c372dcad-8c76-4784-9213-ea9cfee80be5" isOneWay="false" action="checkShipmentStatus" name="checkShipmentStatus" bindingOperationName="checkShipmentStatus" type="Request-Response" outputName="CheckShipmentStatus_Output" inputName="CheckShipmentStatus_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9fce3bf6-7ac8-4354-b71b-9283c6b585d8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/shipment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">\r
    <soap:Header>\r
       <v1:headerRq>\r
          <!--Optional:-->\r
@@ -493,7 +494,37 @@
    <soap:Body>\r
       <v1:CheckShipmentStatusRq>\r
          <!--Optional:-->\r
+         <!--type: ShipmentCompanyTypeEnum - enumeration: [DHL,SERVIENTREGA,DEPRISA]-->\r
+         <partner>SERVIENTREGA</partner>\r
+         <!--Optional:-->\r
+         <order>\r
+            <!--Optional:-->\r
+            <orderInfo>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <orderId>14</orderId>\r
+            </orderInfo>\r
+         </order>\r
+      </v1:CheckShipmentStatusRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/CheckShipmentStatus_Input"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b91c8a5e-5a73-496a-83e4-fef92577bf03" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ASW1817:8088/mockShipmentCompanyBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
          <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:CheckShipmentStatusRq>\r
+         <!--Optional:-->\r
+         <!--type: ShipmentCompanyTypeEnum - enumeration: [DHL,SERVIENTREGA,DEPRISA]-->\r
          <partner>?</partner>\r
          <!--Optional:-->\r
          <order>\r
@@ -506,7 +537,7 @@
          </order>\r
       </v1:CheckShipmentStatusRq>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/CheckShipmentStatus_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="098dd687-006a-4d94-82ac-17fa694952a5" isOneWay="false" action="fulfillShipment" name="fulfillShipment" bindingOperationName="fulfillShipment" type="Request-Response" outputName="FulfillShipment_Output" inputName="FulfillShipment_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dc9031fb-57e7-4e4b-840f-a5fb3652041d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9191/soap</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/CheckShipmentStatus_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="65b58c91-fe20-4be0-9e6f-4a59d9c26157" isOneWay="false" action="fulfillShipment" name="fulfillShipment" bindingOperationName="fulfillShipment" type="Request-Response" outputName="FulfillShipment_Output" inputName="FulfillShipment_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b0f61af5-683e-4fdc-b81b-9a3ef5d43e91" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="text/xml; charset=iso-8859-1" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/shipment</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">\r
    <soap:Header>\r
       <v1:headerRq>\r
          <!--Optional:-->\r
@@ -523,7 +554,116 @@
    <soap:Body>\r
       <v1:FulfillShipmentRq>\r
          <!--Optional:-->\r
+         <!--type: ShipmentCompanyTypeEnum - enumeration: [DHL,SERVIENTREGA,DEPRISA]-->\r
+         <partner>SERVIENTREGA</partner>\r
+         <!--Optional:-->\r
+         <order>\r
+            <!--Optional:-->\r
+            <orderInfo>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <orderId>14</orderId>\r
+               <!--Zero or more repetitions:-->\r
+               <items>\r
+                  <!--Optional:-->\r
+                  <!--type: string-->\r
+                  <itemId>2</itemId>\r
+                  <!--Optional:-->\r
+                  <!--type: string-->\r
+                  <prodID>3</prodID>\r
+                  <!--Optional:-->\r
+                  <!--type: string-->\r
+                  <productName>4</productName>\r
+                  <!--Optional:-->\r
+                  <!--type: string-->\r
+                  <partNumber>5</partNumber>\r
+                  <!--Optional:-->\r
+                  <!--type: MoneyGeneric-->\r
+                  <price>6</price>\r
+                  <!--Optional:-->\r
+                  <!--type: long-->\r
+                  <quantity>7</quantity>\r
+               </items>\r
+               <items>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <itemId>12</itemId>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <prodID>13</prodID>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <productName>14</productName>
+                  <!--Optional:-->
+                  <!--type: string-->
+                  <partNumber>15</partNumber>
+                  <!--Optional:-->
+                  <!--type: MoneyGeneric-->
+                  <price>16</price>
+                  <!--Optional:-->
+                  <!--type: long-->
+                  <quantity>17</quantity>
+               </items>
+            </orderInfo>\r
+            <!--Optional:-->\r
+            <productVendorCompanyInfo>\r
+               <!--type: ProductVendorCompanyTypeEnum - enumeration: [SONY,RS]-->\r
+               <productVendorCompanyId>RS</productVendorCompanyId>\r
+            </productVendorCompanyInfo>\r
+         </order>\r
+         <!--Optional:-->\r
+         <addresseeInfo>\r
+            <!--Optional:-->\r
+            <addressee>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <name>8</name>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <lastName>9</lastName>\r
+            </addressee>\r
+            <!--Optional:-->\r
+            <addressToSend>\r
+               <!--Optional:-->\r
+               <!--type: CountryTypeEnum - enumeration: [AL,DZ,AR,AU,AT,BH,BY,BE,BO,BA,BR,BG,CA,CL,CN,CO,CR,HR,CY,CZ,DK,DO,EC,EG,SV,EE,FI,FR,DE,GR,GT,HN,HK,HU,IS,IN,ID,IQ,IE,IL,IT,JP,JO,KW,LV,LB,LT,LU,MK,MY,MT,MX,MA,NL,NZ,NI,NO,OM,PA,PY,PE,PH,PL,PT,PR,QA,RO,RU,SA,CS,SG,SK,SI,ZA,ES,SD,SE,CH,SY,TW,TH,TN,TR,UA,AE,GB,US,UY,VE,VN,YE]-->\r
+               <country>AR</country>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <state>10</state>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <city>11</city>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <neighborhood>12</neighborhood>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <street>13</street>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <zipcode>14</zipcode>\r
+            </addressToSend>\r
+         </addresseeInfo>\r
+      </v1:FulfillShipmentRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/FulfillShipment_Input"/><con:wsrmConfig version="1.2"/></con:call><con:call id="ff4f507f-220d-4ee9-b734-da4a1a419d9b" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ASW1817:8088/mockShipmentCompanyBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
          <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:FulfillShipmentRq>\r
+         <!--Optional:-->\r
+         <!--type: ShipmentCompanyTypeEnum - enumeration: [DHL,SERVIENTREGA,DEPRISA]-->\r
          <partner>?</partner>\r
          <!--Optional:-->\r
          <order>\r
@@ -595,7 +735,7 @@
          </addresseeInfo>\r
       </v1:FulfillShipmentRq>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/FulfillShipment_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="4a16af86-559f-48b4-a57c-9bf342d262de" port="8088" path="/mockShipmentCompanyBinding" host="ASW1817" name="ShipmentCompanyBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="checkShipmentStatus" id="3329f76b-7650-402e-a183-602a4df548d2" interface="ShipmentCompanyBinding" operation="checkShipmentStatus"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4226e13c-6606-4749-a74a-883a88f78ee9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/FulfillShipment_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="ace8eb02-69e2-43be-802a-5e78d0fe637d" port="8088" path="/mockShipmentCompanyBinding" host="ASW1817" name="ShipmentCompanyBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="checkShipmentStatus" id="0d3ca57b-709b-4896-b524-793bf94c9c4f" interface="ShipmentCompanyBinding" operation="checkShipmentStatus"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c1ad033c-c8e0-4f15-bd44-d70c8d374d56" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">
    <soap:Header>
       <v1:headerRs>
          <!--Optional:-->
@@ -612,7 +752,7 @@
          <sent>?</sent>
       </v1:CheckShipmentStatusRs>
    </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/CheckShipmentStatus_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="fulfillShipment" id="ef29ba91-5e0e-4a3a-a3b9-1a2496a44918" interface="ShipmentCompanyBinding" operation="fulfillShipment"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="a623d96d-214f-4e67-8c96-ffc014c0323c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/shipment/v1/ShipmentCompanyPortType/CheckShipmentStatus_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="fulfillShipment" id="346b77fd-2869-4481-aeaf-d9d5c40bbe83" interface="ShipmentCompanyBinding" operation="fulfillShipment"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="87e726e8-1485-465a-9e92-d39d33e233b1" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/shipment/v1">
    <soap:Header>
       <v1:headerRs>
          <!--Optional:-->

@@ -6,13 +6,13 @@ import javax.ws.rs.ext.Provider;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
-import com.servientrega.modelo.dto.utils.DTOExcepcionGenerica;
+import com.servientrega.modelo.dto.utils.DTOGenericException;
 
 @Provider
 public class ExcepcionGenericaMapper implements ExceptionMapper<Exception> {
 	@Override
     public Response toResponse(Exception exception) {
-    	DTOExcepcionGenerica dto = new DTOExcepcionGenerica(exception.getMessage());
-    	return Response.status(DTOExcepcionGenerica.CODIGO_EXCEPCION).entity(dto).type(APPLICATION_JSON).build();
+    	DTOGenericException dto = new DTOGenericException(exception.getMessage());
+    	return Response.status(DTOGenericException._CODE_EXCEPTION_).entity(dto).type(APPLICATION_JSON).build();
     }
 }

@@ -1,0 +1,3 @@
+<rap:orderQuouteElement xmlns:rap="http://RapidService.com.co/RapidServiceQuoteService">
+   <orderId>#[json:orderId]</orderId>
+</rap:orderQuouteElement>

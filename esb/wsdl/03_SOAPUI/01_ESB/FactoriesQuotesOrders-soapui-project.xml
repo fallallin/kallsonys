@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="23a75c3e-b537-44a2-82f1-ee864351e85f" activeEnvironment="Default" name="FactoriesQuotesOrders" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9719f0ee-24e9-4dd5-b281-f34d162908c8" wsaVersion="NONE" name="FactoriesQuotesOrdersBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1}FactoriesQuotesOrdersBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/wsdl/01_ESB/Message/01_Factories/wsdl/1.2/FactoriesQuotesOrders.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Message\01_Factories\wsdl\1.2\FactoriesQuotesOrders.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Message\01_Factories\wsdl\1.2\FactoriesQuotesOrders.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="FactoriesQuotesOrders" targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+<con:soapui-project id="fd62bbab-d651-4116-8cd7-926670cf91f1" activeEnvironment="Default" name="FactoriesQuotesOrders" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="4b1ceb1e-aedb-40c9-a9a9-956726d8074b" wsaVersion="NONE" name="FactoriesQuotesOrdersBinding" type="wsdl" bindingName="{http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1}FactoriesQuotesOrdersBinding" soapVersion="1_2" anonymous="optional" definition="file:/D:/workspacePUJ/GitHub/kallsonys/esb/app/mule/Kallsonys/src/main/wsdl/01_ESB/Message/01_Factories/wsdl/1.2/FactoriesQuotesOrders.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\01_Factories\wsdl\1.2\FactoriesQuotesOrders.wsdl"><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\01_Factories\wsdl\1.2\FactoriesQuotesOrders.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="FactoriesQuotesOrders" targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:excgen="http://www.kallsonys.com.co/cim/common/exceptiongeneric" xmlns:tns="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+  <wsdl:import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" location="../../../../Common/ExceptionGeneric.xsd"/>
+  <wsdl:import namespace="http://www.kallsonys.com.co/cim/message/payment/v1" location="../../xsd/FactoryQuotesOrder.xsd"/>
   <types>
     <schema targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
       <include schemaLocation="../../xsd/FactoryQuotesOrder.xsd"/>
-      <import namespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" schemaLocation="../../../../Common/exceptiongeneric.xsd"/>
     </schema>
   </types>
+  <wsdl:message name="headerRq">
+    <wsdl:part name="headerRq" element="tns:headerRq"/>
+  </wsdl:message>
+  <wsdl:message name="headerRs">
+    <wsdl:part name="headerRs" element="tns:headerRs"/>
+  </wsdl:message>
+  <wsdl:message name="FactorysQuotesOrders_in">
+    <wsdl:part name="FactorysQuotesOrdersRq" element="tns:FactorysQuotesOrdersRq"/>
+  </wsdl:message>
+  <wsdl:message name="FactorysQuotesOrders_out">
+    <wsdl:part name="FactorysQuotesOrdersRs" element="tns:FactorysQuotesOrdersRs"/>
+  </wsdl:message>
+  <wsdl:message name="FactorysQuotesOrders_fault1">
+    <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
+  </wsdl:message>
   <wsdl:message name="FactoryQuotesOrder_in">
     <wsdl:part name="FactoryQuotesOrderRq" element="tns:FactoryQuotesOrderRq"/>
   </wsdl:message>
@@ -25,6 +41,11 @@
     <wsdl:part name="exceptionGeneric" element="excgen:exceptionGeneric"/>
   </wsdl:message>
   <wsdl:portType name="FactoriesQuotesOrdersPortType">
+    <wsdl:operation name="factorysQuotesOrders">
+      <wsdl:input name="FactorysQuotesOrders_Input" message="tns:FactorysQuotesOrders_in"/>
+      <wsdl:output name="FactorysQuotesOrders_Output" message="tns:FactorysQuotesOrders_out"/>
+      <wsdl:fault name="FactorysQuotesOrders_Fault" message="tns:FactorysQuotesOrders_fault1"/>
+    </wsdl:operation>
     <wsdl:operation name="factoryQuotesOrder">
       <wsdl:input name="FactoryQuotesOrder_Input" message="tns:FactoryQuotesOrder_in"/>
       <wsdl:output name="FactoryQuotesOrder_Output" message="tns:FactoryQuotesOrder_out"/>
@@ -38,57 +59,100 @@
   </wsdl:portType>
   <wsdl:binding name="FactoriesQuotesOrdersBinding" type="tns:FactoriesQuotesOrdersPortType">
     <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="factorysQuotesOrders">
+      <soap12:operation soapAction="factorysQuotesOrders"/>
+      <wsdl:input name="FactorysQuotesOrders_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
+        <soap12:body parts="FactorysQuotesOrdersRq" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FactorysQuotesOrders_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:body parts="FactorysQuotesOrdersRs" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="FactorysQuotesOrders_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
+        <soap12:fault name="FactorysQuotesOrders_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="factoryQuotesOrder">
       <soap12:operation soapAction="factoryQuotesOrder"/>
       <wsdl:input name="FactoryQuotesOrder_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
         <soap12:body parts="FactoryQuotesOrderRq" use="literal"/>
       </wsdl:input>
       <wsdl:output name="FactoryQuotesOrder_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
         <soap12:body parts="FactoryQuotesOrderRs" use="literal"/>
       </wsdl:output>
       <wsdl:fault name="FactoryQuotesOrder_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
         <soap12:fault name="FactoryQuotesOrder_Fault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="validateOrderQuote">
       <soap12:operation soapAction="validateOrderQuote"/>
       <wsdl:input name="ValidateOrderQuote_Input">
+        <soap12:header message="tns:headerRq" part="headerRq" use="literal"/>
         <soap12:body parts="ValidateOrderQuoteRq" use="literal"/>
       </wsdl:input>
       <wsdl:output name="ValidateOrderQuote_Output">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
         <soap12:body parts="ValidateOrderQuoteRs" use="literal"/>
       </wsdl:output>
       <wsdl:fault name="ValidateOrderQuote_Fault">
+        <soap12:header message="tns:headerRs" part="headerRs" use="literal"/>
         <soap12:fault name="ValidateOrderQuote_Fault" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="FactoriesQuotesOrdersService">
     <wsdl:port name="FactoriesQuotesOrdersPort" binding="tns:FactoriesQuotesOrdersBinding">
-      <soap12:address location="http://localhost:8080/message/"/>
+      <soap12:address location="http://localhost:9090/esb/soap/vendor"/>
     </wsdl:port>
   </wsdl:service>
-</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Common\exceptiongeneric.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/common/exceptiongeneric">
-  <element name="exceptionGeneric" type="this:exceptionGeneric"/>
-  <complexType name="exceptionGeneric">
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\ExceptionGeneric.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/exceptiongeneric" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/common/exceptiongeneric">
+  <element name="exceptionGeneric" type="tns:ExceptionGeneric"/>
+  <complexType name="ExceptionGeneric">
     <sequence>
       <element name="code" type="string" minOccurs="1" maxOccurs="1"/>
       <element name="description" type="string" minOccurs="1" maxOccurs="1"/>
-      <element name="subCode" type="this:exceptionGeneric" minOccurs="0" maxOccurs="1"/>
+      <element name="subCode" type="tns:ExceptionGeneric" minOccurs="0" maxOccurs="1"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\Message\01_Factories\xsd\FactoryQuotesOrder.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fact="http://www.kallsonys.com.co/cim/businessentities/factory" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:this="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
-  <import namespace="http://www.kallsonys.com.co/cim/businessentities/factory" schemaLocation="../../../BusinessEntities/Factory.xsd"/>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Message\01_Factories\xsd\FactoryQuotesOrder.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:h="http://www.kallsonys.com.co/common/headers" xmlns:m="http://www.kallsonys.com.co/cim/common/money" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:order="http://www.kallsonys.com.co/cim/businessentities/order" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:this="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+  <import namespace="http://www.kallsonys.com.co/common/headers" schemaLocation="../../../Common/Headers.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../../../Common/Money.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="../../../BusinessEntities/ProductVendorCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="../../../BusinessEntities/ProductVendorCompany.xsd"/>
   <import namespace="http://www.kallsonys.com.co/cim/businessentities/order" schemaLocation="../../../BusinessEntities/Order.xsd"/>
   <import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="../../../BusinessEntities/Item.xsd"/>
+  <element name="headerRq" type="h:HeaderRqType"/>
+  <element name="headerRs" type="h:HeaderRsType"/>
+  <element name="FactorysQuotesOrdersRq">
+    <complexType>
+      <complexContent>
+        <restriction base="order:Order_v1.0">
+          <sequence>
+            <element name="orderInfo" type="order:OrderInfoWithoutPrice_v1.0" minOccurs="0"/>
+          </sequence>
+        </restriction>
+      </complexContent>
+    </complexType>
+  </element>
+  <element name="FactorysQuotesOrdersRs">
+    <complexType>
+      <sequence>
+        <element name="quotesOrdersByFactory" type="this:QuotesOrdersByFactoryType" maxOccurs="unbounded"/>
+      </sequence>
+    </complexType>
+  </element>
   <element name="FactoryQuotesOrderRq">
     <complexType>
       <complexContent>
-        <restriction base="order:Order">
+        <restriction base="order:Order_v1.0">
           <sequence>
-            <element name="factoryId" type="fact:FactoryTypeEnum" maxOccurs="1"/>
-            <element name="orderId" type="string" maxOccurs="1"/>
-            <element name="items" type="this:ItemsType" maxOccurs="1"/>
+            <element name="orderInfo" type="order:OrderInfoWithoutPrice_v1.0" minOccurs="0"/>
+            <element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
           </sequence>
         </restriction>
       </complexContent>
@@ -97,9 +161,9 @@
   <element name="FactoryQuotesOrderRs">
     <complexType>
       <complexContent>
-        <restriction base="order:Order">
+        <restriction base="order:OrderInfo_v1.0">
           <sequence>
-            <element name="supplierPrice" type="decimal" minOccurs="1" maxOccurs="1"/>
+            <element name="orderPrice" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
           </sequence>
         </restriction>
       </complexContent>
@@ -108,10 +172,10 @@
   <element name="ValidateOrderQuoteRq">
     <complexType>
       <complexContent>
-        <restriction base="order:Order">
+        <restriction base="order:Order_v1.0">
           <sequence>
-            <element name="factoryId" type="fact:FactoryTypeEnum" maxOccurs="1"/>
-            <element name="orderId" type="string" maxOccurs="1"/>
+            <element name="orderInfo" type="this:OrderInfoType" minOccurs="0"/>
+            <element name="productVendorCompanyInfo" type="this:ProductVendorCompanyType" minOccurs="0"/>
           </sequence>
         </restriction>
       </complexContent>
@@ -119,20 +183,26 @@
   </element>
   <element name="ValidateOrderQuoteRs">
     <complexType>
-      <complexContent>
-        <restriction base="order:Order">
-          <sequence>
-            <element name="result" type="boolean" maxOccurs="1"/>
-          </sequence>
-        </restriction>
-      </complexContent>
+      <sequence>
+        <element name="result" type="boolean" maxOccurs="1"/>
+      </sequence>
     </complexType>
   </element>
+  <complexType name="QuotesOrdersByFactoryType">
+    <complexContent>
+      <restriction base="order:Order_v1.0">
+        <sequence>
+          <element name="orderInfo" type="this:OrderInfoPriceType" minOccurs="0"/>
+          <element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
   <complexType name="ItemsType">
     <complexContent>
-      <restriction base="order:ItemsType">
+      <restriction base="order:OrderInfo_v1.0">
         <sequence>
-          <element name="item" type="this:ItemType" maxOccurs="unbounded"/>
+          <element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
       </restriction>
     </complexContent>
@@ -141,90 +211,397 @@
     <complexContent>
       <restriction base="item:Item">
         <sequence>
-          <element name="itemId" type="string" minOccurs="1" maxOccurs="1"/>
-          <element name="quantity" type="long" minOccurs="1" maxOccurs="1"/>
+          <element name="itemId" type="string" maxOccurs="1"/>
+          <element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
         </sequence>
       </restriction>
     </complexContent>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\BusinessEntities\Factory.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/factory" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/factory">
-  <complexType name="Factory">
+  <complexType name="OrderInfoType">
+    <complexContent>
+      <restriction base="order:OrderInfo_v1.0">
+        <sequence>
+          <element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="OrderInfoPriceType">
+    <complexContent>
+      <restriction base="order:OrderInfo_v1.0">
+        <sequence>
+          <element name="orderPrice" type="m:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ProductVendorCompanyType">
+    <complexContent>
+      <restriction base="pvc:ProductVendorCompany">
+        <sequence>
+          <element name="productVendorCompanyId" type="pvc:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\Headers.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/common/headers" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/common/headers">
+  <complexType name="HeaderType">
     <sequence>
-      <element name="factoryId" type="this:FactoryTypeEnum" maxOccurs="1"/>
+      <element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+      <element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+      <element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="message" type="string" minOccurs="0" maxOccurs="1"/>
     </sequence>
   </complexType>
-  <simpleType name="FactoryTypeEnum">
-    <restriction base="string">
-      <enumeration value="SONY"/>
-      <enumeration value="RAPIDSERVICE"/>
+  <complexType name="HeaderRqType">
+    <complexContent>
+      <restriction base="tns:HeaderType">
+        <sequence>
+          <element name="transactionID" type="date" minOccurs="0" maxOccurs="1"/>
+          <element name="date" type="date" minOccurs="0" maxOccurs="1"/>
+          <element name="loginUser" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="HeaderRsType">
+    <complexContent>
+      <restriction base="tns:HeaderType">
+        <sequence>
+          <element name="code" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="message" type="string" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\Common\Money.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/common/money" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/common/money">
+  <element name="money" type="this:MoneyGeneric"/>
+  <simpleType name="MoneyGeneric">
+    <restriction base="decimal">
+      <fractionDigits value="2"/>
     </restriction>
   </simpleType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\BusinessEntities\Order.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/order" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:fact="http://www.kallsonys.com.co/cim/businessentities/factory" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/order">
-  <import namespace="http://www.kallsonys.com.co/cim/businessentities/factory" schemaLocation="Factory.xsd"/>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\ProductVendorCompany.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany">
+  <complexType name="ProductVendorCompany">
+    <sequence>
+      <element name="productVendorCompanyId" type="tns:ProductVendorCompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ProductVendorCompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="SONY"/>
+      <enumeration value="RS"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Order.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/order" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:pvc="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" xmlns:sc="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" xmlns:item="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:money="http://www.kallsonys.com.co/cim/common/money" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/order">
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/productvendorcompany" schemaLocation="ProductVendorCompany.xsd"/>
+  <import namespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" schemaLocation="ShipmentCompany.xsd"/>
   <import namespace="http://www.kallsonys.com.co/cim/businessentities/item" schemaLocation="Item.xsd"/>
-  <complexType name="Order">
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
+  <!--Product Entity-->
+  <complexType name="Order_v1.0">
     <sequence>
-      <element name="factoryId" type="fact:FactoryTypeEnum" minOccurs="0" maxOccurs="1"/>
+      <element name="orderInfo" type="tns:OrderInfo_v1.0" minOccurs="0"/>
+      <element name="productVendorCompanyInfo" type="pvc:ProductVendorCompany" minOccurs="0"/>
+      <element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="OrderInfo_v1.0">
+    <sequence>
       <element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
-      <element name="items" type="this:ItemsType" minOccurs="0" maxOccurs="unbounded"/>
-      <element name="supplierPrice" type="decimal" minOccurs="0" maxOccurs="1"/>
-      <element name="result" type="boolean" minOccurs="0" maxOccurs="1"/>
+      <element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="orderPrice" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
     </sequence>
   </complexType>
-  <complexType name="ItemsType">
+  <complexType name="OrderInfoWithoutPrice_v1.0">
+    <complexContent>
+      <restriction base="tns:OrderInfo_v1.0">
+        <sequence>
+          <element name="orderId" type="string" minOccurs="0" maxOccurs="1"/>
+          <element name="items" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ShipmentInfo_v1.0">
     <sequence>
-      <element name="item" type="item:Item" minOccurs="0" maxOccurs="unbounded"/>
+      <element name="shippingCompanyInfo" type="sc:ShipmentCompany" minOccurs="0"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\wsdl\01_ESB\BusinessEntities\Item.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org)-->
-<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/item" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/item">
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\ShipmentCompany.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2011 sp1 (http://www.altova.com) by End User (free.org)-->
+<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:this="http://www.kallsonys.com.co/cim/businessentities/shipmentcompany">
+  <complexType name="ShipmentCompany">
+    <sequence>
+      <element name="shipmentCompanyId" type="this:ShipmentCompanyTypeEnum" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <simpleType name="ShipmentCompanyTypeEnum">
+    <restriction base="string">
+      <enumeration value="DHL"/>
+      <enumeration value="SERVIENTREGA"/>
+      <enumeration value="DEPRISA"/>
+    </restriction>
+  </simpleType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\D:\workspacePUJ\GitHub\kallsonys\esb\app\mule\Kallsonys\src\main\wsdl\01_ESB\BusinessEntities\Item.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://www.kallsonys.com.co/cim/businessentities/item" elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.kallsonys.com.co/cim/businessentities/item" xmlns:money="http://www.kallsonys.com.co/cim/common/money">
+  <import namespace="http://www.kallsonys.com.co/cim/common/money" schemaLocation="../Common/Money.xsd"/>
   <complexType name="Item">
     <sequence>
-      <element name="itemId" type="string" maxOccurs="1"/>
+      <element name="itemId" type="string" minOccurs="0" maxOccurs="1"/>
       <element name="itemName" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="prodID" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="productName" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="partNumber" type="string" minOccurs="0" maxOccurs="1"/>
       <element name="itemDescription" type="string" minOccurs="0" maxOccurs="1"/>
+      <element name="price" type="money:MoneyGeneric" minOccurs="0" maxOccurs="1"/>
       <element name="quantity" type="long" minOccurs="0" maxOccurs="1"/>
     </sequence>
   </complexType>
-</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockFactoriesQuotesOrdersBinding</con:endpoint><con:endpoint>http://localhost:8080/message/</con:endpoint></con:endpoints><con:operation id="85fae4b7-2054-4946-8d22-7bd34789c857" isOneWay="false" action="factoryQuotesOrder" name="factoryQuotesOrder" bindingOperationName="factoryQuotesOrder" type="Request-Response" outputName="FactoryQuotesOrder_Output" inputName="FactoryQuotesOrder_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0c42ffc5-10c5-4a7e-8ef4-d443554a2d47" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/message/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/Vendorquotesorder/v1">\r
-   <soap:Header/>\r
-   <soap:Body>\r
-      <v1:VendorQuotesOrderRq>\r
-         <!--type: VendorTypeEnum - enumeration: [SONY,RAPIDSERVICE]-->\r
-         <VendorId>?</VendorId>\r
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ASW1817:8088/mockFactoriesQuotesOrdersBinding</con:endpoint><con:endpoint>http://localhost:9090/esb/soap/vendor</con:endpoint></con:endpoints><con:operation id="2663cbfc-3829-42ba-bdea-8b75db42e39e" isOneWay="false" action="factoryQuotesOrder" name="factoryQuotesOrder" bindingOperationName="factoryQuotesOrder" type="Request-Response" outputName="FactoryQuotesOrder_Output" inputName="FactoryQuotesOrder_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="347945ab-ee41-4755-bcfe-7c42d7cf5b17" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/vendor</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
          <!--type: string-->\r
-         <orderId>?</orderId>\r
-         <items>\r
-            <!--1 or more repetitions:-->\r
-            <item>\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:FactoryQuotesOrderRq>\r
+         <!--Optional:-->\r
+         <orderInfo>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <orderId>?</orderId>\r
+            <!--Zero or more repetitions:-->\r
+            <items>\r
+               <!--Optional:-->\r
                <!--type: string-->\r
                <itemId>?</itemId>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemName>?</itemName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <prodID>?</prodID>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <productName>?</productName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <partNumber>?</partNumber>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemDescription>?</itemDescription>\r
+               <!--Optional:-->\r
+               <!--type: MoneyGeneric-->\r
+               <price>?</price>\r
+               <!--Optional:-->\r
                <!--type: long-->\r
                <quantity>?</quantity>\r
-            </item>\r
-         </items>\r
-      </v1:VendorQuotesOrderRq>\r
+            </items>\r
+         </orderInfo>\r
+         <!--Optional:-->\r
+         <productVendorCompanyInfo>\r
+            <!--type: ProductVendorCompanyTypeEnum - enumeration: [SONY,RS]-->\r
+            <productVendorCompanyId>?</productVendorCompanyId>\r
+         </productVendorCompanyInfo>\r
+      </v1:FactoryQuotesOrderRq>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactoryQuotesOrder_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d6dc4975-c634-406c-a97e-b2f77b09d0c9" isOneWay="false" action="validateOrderQuote" name="validateOrderQuote" bindingOperationName="validateOrderQuote" type="Request-Response" outputName="ValidateOrderQuote_Output" inputName="ValidateOrderQuote_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a680333f-9624-4be2-a0b6-ec84eae71165" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/message/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">\r
-   <soap:Header/>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactoryQuotesOrder_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="87abc3ee-1b0a-47e5-8993-d66cf19db734" isOneWay="false" action="factorysQuotesOrders" name="factorysQuotesOrders" bindingOperationName="factorysQuotesOrders" type="Request-Response" outputName="FactorysQuotesOrders_Output" inputName="FactorysQuotesOrders_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c0a16727-6926-4729-93d6-4d1d796a2425" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/vendor</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:FactorysQuotesOrdersRq>\r
+         <!--Optional:-->\r
+         <orderInfo>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <orderId>10</orderId>\r
+            <!--Zero or more repetitions:-->\r
+            <items>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemId>1</itemId>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemName>2</itemName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <prodID>3</prodID>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <productName>4</productName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <partNumber>5</partNumber>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemDescription>6</itemDescription>\r
+               <!--Optional:-->\r
+               <!--type: MoneyGeneric-->\r
+               <price>7</price>\r
+               <!--Optional:-->\r
+               <!--type: long-->\r
+               <quantity>8</quantity>\r
+            </items>\r
+         </orderInfo>\r
+      </v1:FactorysQuotesOrdersRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:username>kallsonys</con:username><con:password>k4lls0ny5</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactorysQuotesOrders_Input"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c8c2824f-4d9a-4023-84a7-b5e06221a314" name="Request 2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://ASW1817:8088/mockFactoriesQuotesOrdersBinding</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <v1:FactorysQuotesOrdersRq>\r
+         <!--Optional:-->\r
+         <orderInfo>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <orderId>?</orderId>\r
+            <!--Zero or more repetitions:-->\r
+            <items>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemId>?</itemId>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemName>?</itemName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <prodID>?</prodID>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <productName>?</productName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <partNumber>?</partNumber>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <itemDescription>?</itemDescription>\r
+               <!--Optional:-->\r
+               <!--type: MoneyGeneric-->\r
+               <price>?</price>\r
+               <!--Optional:-->\r
+               <!--type: long-->\r
+               <quantity>?</quantity>\r
+            </items>\r
+         </orderInfo>\r
+      </v1:FactorysQuotesOrdersRq>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactorysQuotesOrders_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="dbab58fa-f447-48d7-9521-b01cdb1646ed" isOneWay="false" action="validateOrderQuote" name="validateOrderQuote" bindingOperationName="validateOrderQuote" type="Request-Response" outputName="ValidateOrderQuote_Output" inputName="ValidateOrderQuote_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a65f612-3f5a-41ba-b4f0-2ba32d272934" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9090/esb/soap/vendor</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">\r
+   <soap:Header>\r
+      <v1:headerRq>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <transactionID>?</transactionID>\r
+         <!--Optional:-->\r
+         <!--type: date-->\r
+         <date>?</date>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <loginUser>?</loginUser>\r
+      </v1:headerRq>\r
+   </soap:Header>\r
    <soap:Body>\r
       <v1:ValidateOrderQuoteRq>\r
-         <!--type: FactoryTypeEnum - enumeration: [SONY,RAPIDSERVICE]-->\r
-         <factoryId>?</factoryId>\r
-         <!--type: string-->\r
-         <orderId>?</orderId>\r
+         <!--Optional:-->\r
+         <orderInfo>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <orderId>?</orderId>\r
+         </orderInfo>\r
+         <!--Optional:-->\r
+         <productVendorCompanyInfo>\r
+            <!--type: ProductVendorCompanyTypeEnum - enumeration: [SONY,RS]-->\r
+            <productVendorCompanyId>?</productVendorCompanyId>\r
+         </productVendorCompanyInfo>\r
       </v1:ValidateOrderQuoteRq>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/ValidateOrderQuote_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="8c02a11e-9d7a-41ac-9d5f-a0fa372880ca" port="8088" path="/mockFactoriesQuotesOrdersBinding" host="ASW1817" name="FactoriesQuotesOrdersBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="factoryQuotesOrder" id="ab3007f7-907e-4fda-a9bf-4a10fe2daa6a" interface="FactoriesQuotesOrdersBinding" operation="factoryQuotesOrder"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="166b53c3-ae39-4b1a-99e9-89f6e2276ae9" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
-   <soap:Header/>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/ValidateOrderQuote_Input"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="bb58b99c-cddf-45ae-9bc7-6e87c1159606" port="8088" path="/mockFactoriesQuotesOrdersBinding" host="ASW1817" name="FactoriesQuotesOrdersBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="factoryQuotesOrder" id="a84d8a00-2a90-4042-86af-658bc6c279d7" interface="FactoriesQuotesOrdersBinding" operation="factoryQuotesOrder"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="69c407e4-2553-485e-88f8-ae55fe68012c" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
    <soap:Body>
       <v1:FactoryQuotesOrderRs>
-         <!--type: decimal-->
-         <supplierPrice>?</supplierPrice>
+         <!--Optional:-->
+         <!--type: MoneyGeneric-->
+         <orderPrice>?</orderPrice>
       </v1:FactoryQuotesOrderRs>
    </soap:Body>
-</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactoryQuotesOrder_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="validateOrderQuote" id="167530b2-95b6-4a0e-96b1-2977deb2e92c" interface="FactoriesQuotesOrdersBinding" operation="validateOrderQuote"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="08e3f2dc-fef8-403d-9cbf-863d9d4696fa" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
-   <soap:Header/>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactoryQuotesOrder_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="factorysQuotesOrders" id="422d934c-d8dc-4bdd-976d-fdfd030de37b" interface="FactoriesQuotesOrdersBinding" operation="factorysQuotesOrders"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4e63c2dc-ae04-4092-bfdd-90eecbd521a8" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
+   <soap:Body>
+      <v1:FactorysQuotesOrdersRs>
+         <!--1 or more repetitions:-->
+         <quotesOrdersByFactory>
+            <!--Optional:-->
+            <orderInfo>
+               <!--Optional:-->
+               <!--type: MoneyGeneric-->
+               <orderPrice>?</orderPrice>
+            </orderInfo>
+            <!--Optional:-->
+            <productVendorCompanyInfo>
+               <!--type: ProductVendorCompanyTypeEnum - enumeration: [SONY,RS]-->
+               <productVendorCompanyId>?</productVendorCompanyId>
+            </productVendorCompanyInfo>
+         </quotesOrdersByFactory>
+      </v1:FactorysQuotesOrdersRs>
+   </soap:Body>
+</soap:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1/FactoriesQuotesOrdersPortType/FactorysQuotesOrders_Output"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="validateOrderQuote" id="7f307879-6508-477f-866a-188789f0cca0" interface="FactoriesQuotesOrdersBinding" operation="validateOrderQuote"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="3249721d-b0fd-4a32-ad8a-8c577d8e00db" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v1="http://www.kallsonys.com.co/cim/message/factoryquotesorder/v1">
+   <soap:Header>
+      <v1:headerRs>
+         <!--Optional:-->
+         <!--type: string-->
+         <code>?</code>
+         <!--Optional:-->
+         <!--type: string-->
+         <message>?</message>
+      </v1:headerRs>
+   </soap:Header>
    <soap:Body>
       <v1:ValidateOrderQuoteRs>
          <!--type: boolean-->

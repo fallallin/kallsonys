@@ -1,0 +1,18 @@
+#[
+org.json.JSONObject jsonObject = new org.json.JSONObject(payload.toString());
+org.json.JSONObject orderId = jsonObject.get("orderid");
+org.json.JSONArray jsonArray = jsonObject.get("deprisaItems");
+String items = "";
+for(int i = 0; i < jsonArray.length(); i++) {
+	org.json.JSONObject itemnJsonObject = jsonArray.getJSONObject(i);
+	items += itemnJsonObject.getString("itemid") + ",";
+	items += itemnJsonObject.getString("prodid") + ",";
+	items += itemnJsonObject.getString("productname") + ",";
+    items += itemnJsonObject.getString("productnum") + ",";
+    items += itemnJsonObject.getInt("price") + ",";
+    items += itemnJsonObject.getInt("quantity") + ",";
+	items += orderId;
+	items += "\n";
+}
+items;
+]

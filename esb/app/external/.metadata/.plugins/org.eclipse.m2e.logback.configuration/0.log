@@ -828,3 +828,494 @@ java.lang.NullPointerException: null
 2017-10-21 14:59:27,370 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
 2017-10-21 14:59:31,428 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
 2017-10-21 14:59:31,677 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-29 22:34:14,641 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: servientrega:servientrega:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\pom.xml.
+2017-10-29 22:34:17,350 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-datamodel:servientrega-datamodel:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-datamodel\pom.xml.
+2017-10-29 22:34:18,618 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ejb:servientrega-ejb:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ejb\pom.xml.
+2017-10-29 22:34:19,361 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: servientrega-web:servientrega-web:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-web\pom.xml.
+2017-10-29 22:34:23,949 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
+2017-10-29 22:34:27,442 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-29 22:34:29,020 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/main/java
+2017-10-29 22:34:29,020 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/main/resources
+2017-10-29 22:34:29,021 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/test/java
+2017-10-29 22:34:29,021 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/test/resources
+2017-10-29 22:34:29,253 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/main/java
+2017-10-29 22:34:29,254 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/main/resources
+2017-10-29 22:34:29,254 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/test/java
+2017-10-29 22:34:29,255 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/test/resources
+2017-10-29 22:34:29,347 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/main/java
+2017-10-29 22:34:29,347 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/main/resources
+2017-10-29 22:34:29,348 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/test/java
+2017-10-29 22:34:29,348 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/test/resources
+2017-10-29 22:34:30,832 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-29 22:34:30,846 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 5 project(s) in 19 sec
+2017-10-29 22:34:45,515 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:34:45,551 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:34:45,642 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:34:45,644 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:34:47,461 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:34:47,463 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-29 22:35:00,215 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:35:00,270 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:35:00,280 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:35:00,285 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:35:02,160 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:35:02,164 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:35:02,165 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:35:02,169 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:35:02,170 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-29 22:35:02,170 [Worker-11] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-29 22:35:02,178 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:54:38,288 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:54:38,339 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:54:38,340 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:54:38,343 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:54:58,681 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:54:58,684 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:54:58,685 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:54:58,696 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:55:13,268 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:55:13,270 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:55:13,271 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:55:13,273 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:55:17,904 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:55:17,908 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:55:17,909 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:55:17,911 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:55:49,981 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:55:49,983 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:55:49,984 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:55:49,985 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:56:06,684 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:56:06,686 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:56:06,687 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:56:06,690 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:57:05,278 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:57:05,289 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:57:05,290 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:57:05,294 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:57:10,570 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:57:10,579 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-29 22:57:10,582 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:57:10,590 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:58:55,828 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:58:55,830 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:58:55,831 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:58:55,832 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:58:55,833 [Worker-22] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-29 22:58:55,833 [Worker-22] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-29 22:58:55,844 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:59:35,710 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:59:35,712 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:59:35,713 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:59:35,715 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-29 22:59:35,715 [Worker-24] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-29 22:59:35,715 [Worker-24] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-29 22:59:35,719 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-29 22:59:53,734 [Worker-22] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-29 22:59:53,734 [Worker-22] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean install package
+2017-10-30 09:33:57,973 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:33:58,388 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:33:58,402 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:33:58,457 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:33:59,026 [Worker-9] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 09:33:59,026 [Worker-9] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 09:33:59,594 [Worker-9] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:51,594 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:51,598 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:51,599 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:51,601 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:51,601 [Worker-4] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 09:37:51,601 [Worker-4] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 09:37:51,612 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:52,636 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:52,638 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:52,639 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:52,640 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:52,641 [Worker-20] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 09:37:52,641 [Worker-20] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 09:37:52,644 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:53,813 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:53,815 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:53,816 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:53,818 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:53,818 [Worker-3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 09:37:53,818 [Worker-3] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 09:37:53,820 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:54,881 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:54,884 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:54,885 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:37:54,887 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:37:54,888 [Worker-22] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 09:37:54,888 [Worker-22] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 09:37:54,891 [Worker-22] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:40:36,806 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0/javax.ws.rs-api-2.0-sources.jar
+2017-10-30 09:40:37,258 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0/javax.ws.rs-api-2.0-sources.jar
+2017-10-30 09:40:37,508 [Worker-23] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for javax.ws.rs:javax.ws.rs-api:2.0
+2017-10-30 09:40:37,812 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:40:37,814 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:40:37,815 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 09:40:37,817 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 09:40:37,817 [Worker-21] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 09:40:37,817 [Worker-21] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 09:40:37,821 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:03:16,833 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:03:16,865 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:03:16,901 [Worker-33] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:03:16,902 [Worker-33] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:04:13,435 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:13,437 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:04:13,439 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:13,440 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:04:14,064 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:14,066 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:04:14,068 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:14,069 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:04:24,644 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:24,646 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:04:24,648 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:24,649 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:04:34,145 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:34,146 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:04:34,147 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:04:34,148 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:05:09,012 [Worker-32] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-30 10:05:09,012 [Worker-32] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install package
+2017-10-30 10:05:46,347 [Worker-30] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-10-30 10:05:46,695 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: servientrega:servientrega:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\pom.xml.
+2017-10-30 10:05:47,199 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-datamodel:servientrega-datamodel:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-datamodel\pom.xml.
+2017-10-30 10:05:47,256 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
+2017-10-30 10:05:47,419 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ejb:servientrega-ejb:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ejb\pom.xml.
+2017-10-30 10:05:47,512 [Worker-30] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: servientrega-web:servientrega-web:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-web\pom.xml.
+2017-10-30 10:05:50,157 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:05:51,069 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/main/java
+2017-10-30 10:05:51,070 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/main/resources
+2017-10-30 10:05:51,071 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/test/java
+2017-10-30 10:05:51,071 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/test/resources
+2017-10-30 10:05:51,289 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:05:51,304 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/main/java
+2017-10-30 10:05:51,304 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/main/resources
+2017-10-30 10:05:51,304 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/test/java
+2017-10-30 10:05:51,304 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/test/resources
+2017-10-30 10:05:51,387 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/main/java
+2017-10-30 10:05:51,387 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/main/resources
+2017-10-30 10:05:51,388 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/test/java
+2017-10-30 10:05:51,388 [Worker-30] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/test/resources
+2017-10-30 10:05:52,726 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for servientrega-ear
+2017-10-30 10:05:52,775 [Worker-30] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 6 sec
+2017-10-30 10:06:03,859 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:03,861 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:06:03,897 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:03,898 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:06:04,382 [Worker-23] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-ear
+2017-10-30 10:06:04,382 [Worker-23] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-ear
+2017-10-30 10:06:04,686 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:04,766 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:06:04,774 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:04,776 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 10:06:05,364 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:05,365 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:06:05,367 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:05,369 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:06:06,056 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:06,063 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:06:06,064 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:06:06,065 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:06:06,066 [Worker-27] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 10:06:06,066 [Worker-27] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 10:06:06,071 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:07:07,141 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:07:07,144 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:07:07,145 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:07:07,146 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:07:27,531 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:07:27,534 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:07:27,536 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:07:27,539 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:08:34,257 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-10-30 10:08:34,385 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: servientrega:servientrega:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\pom.xml.
+2017-10-30 10:08:34,832 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-datamodel:servientrega-datamodel:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-datamodel\pom.xml.
+2017-10-30 10:08:34,885 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
+2017-10-30 10:08:35,128 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ejb:servientrega-ejb:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ejb\pom.xml.
+2017-10-30 10:08:35,219 [Worker-37] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: servientrega-web:servientrega-web:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-web\pom.xml.
+2017-10-30 10:08:36,913 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:08:37,265 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/main/java
+2017-10-30 10:08:37,265 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/main/resources
+2017-10-30 10:08:37,266 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/test/java
+2017-10-30 10:08:37,266 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/test/resources
+2017-10-30 10:08:37,439 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:08:37,454 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/main/java
+2017-10-30 10:08:37,454 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/main/resources
+2017-10-30 10:08:37,455 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/test/java
+2017-10-30 10:08:37,455 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/test/resources
+2017-10-30 10:08:37,687 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/main/java
+2017-10-30 10:08:37,687 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/main/resources
+2017-10-30 10:08:37,688 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/test/java
+2017-10-30 10:08:37,688 [Worker-37] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/test/resources
+2017-10-30 10:08:38,504 [Worker-37] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for servientrega-ear
+2017-10-30 10:08:38,544 [Worker-37] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 4 sec
+2017-10-30 10:08:39,153 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:39,155 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:08:39,166 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:39,167 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:08:39,714 [Worker-45] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-ear
+2017-10-30 10:08:39,714 [Worker-45] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-ear
+2017-10-30 10:08:39,989 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:40,086 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:08:40,096 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:40,098 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 10:08:40,507 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:40,508 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:08:40,509 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:40,510 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:08:41,211 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:41,212 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:08:41,213 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:08:41,214 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:08:41,215 [Worker-38] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 10:08:41,215 [Worker-38] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 10:08:41,218 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:18:17,821 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:18:17,828 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:18:17,829 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:18:17,830 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:21:13,749 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:21:13,751 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:21:13,752 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:21:13,753 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:22:42,965 [Worker-59] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-10-30 10:22:43,117 [Worker-59] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: servientrega:servientrega:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\pom.xml.
+2017-10-30 10:22:43,489 [Worker-59] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-datamodel:servientrega-datamodel:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-datamodel\pom.xml.
+2017-10-30 10:22:43,547 [Worker-59] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
+2017-10-30 10:22:43,690 [Worker-59] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ejb:servientrega-ejb:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ejb\pom.xml.
+2017-10-30 10:22:43,784 [Worker-59] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: servientrega-web:servientrega-web:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-web\pom.xml.
+2017-10-30 10:22:45,736 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:22:46,043 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/main/java
+2017-10-30 10:22:46,043 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/main/resources
+2017-10-30 10:22:46,044 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/test/java
+2017-10-30 10:22:46,044 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/test/resources
+2017-10-30 10:22:46,404 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:22:46,422 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/main/java
+2017-10-30 10:22:46,423 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/main/resources
+2017-10-30 10:22:46,423 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/test/java
+2017-10-30 10:22:46,423 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/test/resources
+2017-10-30 10:22:46,497 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/main/java
+2017-10-30 10:22:46,497 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/main/resources
+2017-10-30 10:22:46,497 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/test/java
+2017-10-30 10:22:46,497 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/test/resources
+2017-10-30 10:22:47,242 [Worker-59] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for servientrega-ear
+2017-10-30 10:22:47,281 [Worker-59] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 4 sec
+2017-10-30 10:22:48,167 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:48,168 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 10:22:48,182 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:48,183 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:22:48,586 [Worker-61] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-ear
+2017-10-30 10:22:48,586 [Worker-61] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-ear
+2017-10-30 10:22:48,826 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:48,907 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 10:22:48,915 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:48,916 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 10:22:49,081 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:49,082 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:22:49,083 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:49,085 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:22:49,756 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:49,758 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:22:49,759 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:49,760 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 10:22:49,761 [Worker-61] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 10:22:49,761 [Worker-61] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 10:22:49,765 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 10:22:57,662 [Worker-66] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-30 10:22:57,662 [Worker-66] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install package
+2017-10-30 10:26:02,930 [Worker-49] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-30 10:26:02,931 [Worker-49] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install package
+2017-10-30 13:03:59,312 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:03:59,433 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:03:59,442 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:03:59,443 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:04:18,239 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:04:18,241 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:04:18,242 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:04:18,244 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:04:40,346 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:04:40,348 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:04:40,349 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:04:40,350 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:04:51,725 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:04:51,727 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:04:51,728 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:04:51,729 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:05:52,221 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,251 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:05:52,252 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,253 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:05:52,314 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,316 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 13:05:52,320 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,322 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:05:52,323 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,324 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:05:52,346 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,348 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:05:52,348 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:05:52,350 [Worker-83] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:05:52,350 [Worker-83] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 13:05:52,350 [Worker-83] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 13:05:52,502 [Worker-83] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:12,727 [Worker-80] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-10-30 13:06:13,011 [Worker-80] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: servientrega:servientrega:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\pom.xml.
+2017-10-30 13:06:13,722 [Worker-80] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-datamodel:servientrega-datamodel:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-datamodel\pom.xml.
+2017-10-30 13:06:13,813 [Worker-80] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
+2017-10-30 13:06:14,133 [Worker-80] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ejb:servientrega-ejb:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ejb\pom.xml.
+2017-10-30 13:06:14,211 [Worker-80] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: servientrega-web:servientrega-web:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-web\pom.xml.
+2017-10-30 13:06:17,802 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 13:06:18,409 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/main/java
+2017-10-30 13:06:18,409 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/main/resources
+2017-10-30 13:06:18,410 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/test/java
+2017-10-30 13:06:18,410 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/test/resources
+2017-10-30 13:06:18,659 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 13:06:18,672 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/main/java
+2017-10-30 13:06:18,672 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/main/resources
+2017-10-30 13:06:18,673 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/test/java
+2017-10-30 13:06:18,673 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/test/resources
+2017-10-30 13:06:18,733 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/main/java
+2017-10-30 13:06:18,733 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/main/resources
+2017-10-30 13:06:18,734 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/test/java
+2017-10-30 13:06:18,734 [Worker-80] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/test/resources
+2017-10-30 13:06:19,867 [Worker-80] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for servientrega-ear
+2017-10-30 13:06:19,900 [Worker-80] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 7 sec
+2017-10-30 13:06:20,822 [Worker-87] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:20,824 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:06:20,832 [Worker-87] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:20,833 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:06:21,520 [Worker-59] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-ear
+2017-10-30 13:06:21,520 [Worker-59] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-ear
+2017-10-30 13:06:21,786 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:21,867 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 13:06:21,874 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:21,876 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 13:06:22,402 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:22,404 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:06:22,405 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:22,406 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:06:23,252 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:23,253 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:06:23,254 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:23,256 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:06:23,256 [Worker-59] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 13:06:23,256 [Worker-59] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 13:06:23,259 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:06:27,211 [Worker-87] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-30 13:06:27,212 [Worker-87] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install package
+2017-10-30 13:10:08,066 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:10:08,069 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:10:08,069 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:10:08,071 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:10:08,271 [Worker-85] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:10:08,272 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:10:08,273 [Worker-85] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:10:08,274 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:10:08,275 [Worker-85] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 13:10:08,275 [Worker-85] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 13:10:08,277 [Worker-85] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:14,866 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:14,868 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:11:14,869 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:14,871 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:11:14,896 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:14,898 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 13:11:14,925 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:14,927 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:11:14,934 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:14,935 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:11:15,184 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:15,186 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:11:15,187 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:11:15,188 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:11:15,188 [Worker-88] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 13:11:15,189 [Worker-88] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 13:11:15,191 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:12:08,758 [Worker-86] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-30 13:12:08,759 [Worker-86] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install package
+2017-10-30 13:13:30,714 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:13:30,715 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 13:14:39,589 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:14:39,591 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:14:39,592 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:14:39,594 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:16:28,445 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:16:28,446 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:16:28,447 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:16:28,448 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:16:37,321 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:16:37,322 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:16:37,323 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:16:37,325 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:16:59,272 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:16:59,274 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:16:59,274 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:16:59,276 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:17:49,057 [Worker-85] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-10-30 13:17:49,179 [Worker-85] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: servientrega:servientrega:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\pom.xml.
+2017-10-30 13:17:49,509 [Worker-85] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-datamodel:servientrega-datamodel:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-datamodel\pom.xml.
+2017-10-30 13:17:49,560 [Worker-85] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.EarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ear:servientrega-ear:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\pom.xml.
+2017-10-30 13:17:49,715 [Worker-85] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: servientrega-ejb:servientrega-ejb:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ejb\pom.xml.
+2017-10-30 13:17:49,815 [Worker-85] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: servientrega-web:servientrega-web:1.0-SNAPSHOT @ D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-web\pom.xml.
+2017-10-30 13:17:51,459 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 13:17:51,757 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/main/java
+2017-10-30 13:17:51,758 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/main/resources
+2017-10-30 13:17:51,758 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-datamodel/src/test/java
+2017-10-30 13:17:51,758 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-datamodel/src/test/resources
+2017-10-30 13:17:51,906 [Worker-85] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 13:17:51,916 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/main/java
+2017-10-30 13:17:51,916 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/main/resources
+2017-10-30 13:17:51,917 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-ejb/src/test/java
+2017-10-30 13:17:51,917 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-ejb/src/test/resources
+2017-10-30 13:17:51,975 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/main/java
+2017-10-30 13:17:51,975 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/main/resources
+2017-10-30 13:17:51,975 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /servientrega-web/src/test/java
+2017-10-30 13:17:51,975 [Worker-85] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /servientrega-web/src/test/resources
+2017-10-30 13:17:52,742 [Worker-85] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for servientrega-ear
+2017-10-30 13:17:52,804 [Worker-85] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2017-10-30 13:17:53,878 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:53,880 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-10-30 13:17:53,891 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:53,892 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:17:54,364 [Worker-84] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-ear
+2017-10-30 13:17:54,364 [Worker-84] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-ear
+2017-10-30 13:17:54,570 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:54,660 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Generating application.xml
+2017-10-30 13:17:54,667 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:54,668 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega\servientrega-ear\src\main\resources
+2017-10-30 13:17:54,788 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:54,789 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:17:54,790 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:54,791 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:17:55,302 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:55,303 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:17:55,303 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:17:55,305 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-10-30 13:17:55,305 [Worker-84] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-10-30 13:17:55,305 [Worker-84] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-10-30 13:17:55,308 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-10-30 13:18:04,722 [Worker-91] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\workspacePUJ\GitHub\kallsonys\esb\app\external\servientrega
+2017-10-30 13:18:04,722 [Worker-91] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install package
+2017-11-05 09:45:36,207 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 09:45:36,352 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-05 09:45:36,361 [Worker-7] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 09:45:36,377 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-05 09:45:43,098 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 09:45:43,167 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-05 09:45:43,169 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 09:45:43,237 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-05 09:45:51,179 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 09:45:51,228 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-05 09:45:51,229 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 09:45:51,249 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-05 09:45:51,311 [Worker-37] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of servientrega-web
+2017-11-05 09:45:51,312 [Worker-37] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for servientrega-web
+2017-11-05 09:45:51,429 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 13:46:52,953 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 13:46:53,188 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-05 13:46:53,189 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-11-05 13:46:53,213 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

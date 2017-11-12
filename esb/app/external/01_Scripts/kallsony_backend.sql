@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS `servientrega_items`;
 DROP TABLE IF EXISTS `servientrega_shipment`;
 DROP TABLE IF EXISTS `dhl_items`;
 DROP TABLE IF EXISTS `dhl_shipment`;
+DROP TABLE IF EXISTS `deprisa_shipment`;
 DROP TABLE IF EXISTS `kallsonys_properties`;
 
 
@@ -50,7 +51,7 @@ CREATE TABLE `servientrega_shipment` (
 CREATE TABLE `servientrega_items` (
   `itemid` varchar(20) NOT NULL,
   `ordid` varchar(20) NOT NULL,
-  `prodid` bigint(22) NOT NULL,
+  `prodid` varchar(22) NOT NULL,
   `productname` varchar(50) NOT NULL,
   `productnum` varchar(20) NOT NULL,
   `price` decimal(9,2) NOT NULL,
@@ -77,7 +78,7 @@ CREATE TABLE `dhl_items` (
   `itemID` varchar(20) NOT NULL,
   `partner` varchar(20) NOT NULL,
   `orderId` varchar(20) NOT NULL,
-  `prodID` bigint(22) NOT NULL,
+  `prodID` varchar(22) NOT NULL,
   `productName` varchar(50) NOT NULL,
   `partNumber` varchar(20) NOT NULL,
   `price` decimal(9,2) NOT NULL,
@@ -91,6 +92,12 @@ CREATE TABLE `kallsonys_properties` (
   `propertyValue` varchar(50) NOT NULL,
   `propertyDesc` varchar(200),
   PRIMARY KEY (`propertyId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `deprisa_shipment` (
+  `orderid` varchar(20) NOT NULL,
+  `status` varchar(5) NOT NULL,
+  PRIMARY KEY (`orderid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -109,3 +116,4 @@ INSERT INTO `kallsonys_backend`.`creditcard` (`id`, `typeCard`, `numberCard`) VA
 INSERT INTO `kallsonys_backend`.`creditcard` (`id`, `typeCard`, `numberCard`) VALUES (6, "MASTERCARD", "2003");
 
 INSERT INTO `kallsonys_backend`.`kallsonys_properties` (`propertyId`, `propertyValue`, `propertyDesc`) VALUES ("DECISOR_FACTORY", "RANDOM", "Indica quien atiende la orden, si va ser aleatoria o algun fabricante en particualr: SONY|RS");
+INSERT INTO `kallsonys_backend`.`kallsonys_properties` (`propertyId`, `propertyValue`, `propertyDesc`) VALUES ("PATH_DEPRISA", "D:/tmp/deprisa", "Ruta para dejar los archivos de deprisa");

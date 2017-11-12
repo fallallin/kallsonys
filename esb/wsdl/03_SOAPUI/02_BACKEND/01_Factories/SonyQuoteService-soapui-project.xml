@@ -132,6 +132,36 @@
          </items>\r
       </son:SonyQuoteServiceProcessRequest>\r
    </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/><con:wsrmConfig version="1.2"/></con:call><con:call id="30b8f218-d05f-4628-b38b-34fdd39b0c5c" name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/SonyFactory/SonyQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <son:SonyQuoteServiceProcessRequest>\r
+         <!--type: string-->\r
+         <orderId>?</orderId>\r
+         <!--Zero or more repetitions:-->\r
+         <items>\r
+            <!--type: string-->\r
+            <itemId>?</itemId>\r
+            <!--type: long-->\r
+            <quantity>?</quantity>\r
+         </items>\r
+      </son:SonyQuoteServiceProcessRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/><con:wsrmConfig version="1.2"/></con:call><con:call id="715ad66c-0179-4f50-b6db-689a4c62b182" name="Request 4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/SonyFactory/SonyQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <son:SonyQuoteServiceProcessRequest>\r
+         <!--type: string-->\r
+         <orderId>?</orderId>\r
+         <!--Zero or more repetitions:-->\r
+         <items>\r
+            <!--type: string-->\r
+            <itemId>?</itemId>\r
+            <!--type: long-->\r
+            <quantity>?</quantity>\r
+         </items>\r
+      </son:SonyQuoteServiceProcessRequest>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:#orderQuoute"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="254599d0-3f5b-4ce2-b35c-61d2ab08f85d" isOneWay="false" action="http://example.com/validateOrderQuoute" name="validateOrderQuoute" bindingOperationName="validateOrderQuoute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ede48dd9-80ce-4c54-b3d7-b41623a4d816" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/Sony/SonyQuoteService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:son="http://sony.com.co/SonyQuoteService">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r

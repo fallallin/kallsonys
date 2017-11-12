@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <http:request-config name="RESTServientrega" host="localhost" port="7001" basePath="/servientrega-web/webresources" doc:name="HTTP Request Configuration"/>
+    <flow name="shipmentservientregafulfillFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration_back" path="/shipment/servientrega/fulfillshipment" allowedMethods="POST" doc:name="HTTP"/>
+        <logger message="#[message.payloadAs(java.lang.String)]" level="INFO" doc:name="Logger"/>
+        <http:request config-ref="RESTServientrega" path="/envio/verificarEstadoEnvio" method="POST" doc:name="HTTP">
+            <http:request-builder>
+                <http:query-param paramName="orderId" value="#[json:orderId]"/>
+            </http:request-builder>
+        </http:request>
+        <catch-exception-strategy doc:name="Catch Exception Strategy">
+            <logger message="#[message.payloadAs(java.lang.String)]" level="INFO" doc:name="Logger"/>
+        </catch-exception-strategy>
+    </flow>
+</mule>
